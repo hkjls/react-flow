@@ -1,6 +1,6 @@
 import { Edge, Node } from "@xyflow/react";
 import { ElectricalComponentType } from "../types";
-import { Battery, Bulb, Capacitor, Inductor, Resistor } from "../icons";
+import { Battery, Bulb, Capacitor, Inductor, Resistor, ContactElec } from "../icons";
 import { Box } from "@chakra-ui/react";
 
 export const initialEdges: Edge[] = [];
@@ -47,6 +47,12 @@ export const COMPONENTS = [
     type: ElectricalComponentType.Battery,
     label: "Battery",
   },
+  {
+    icon: <ContactElec height={24} />,
+    type: ElectricalComponentType.ContactElec,
+    label: "ContactElec"
+  },
+
   {
     icon: <Bulb color="black" height={24} isOn />,
     type: ElectricalComponentType.Bulb,

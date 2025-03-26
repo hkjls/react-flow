@@ -29,6 +29,7 @@ import ConnectionLine from "../Components/ConnectionLine";
 import { ElectricalComponentState, ElectricalComponentType } from "../types";
 import Bulb from "../Components/Bulb";
 import Battery from "../Components/Battery";
+import ContactElec from "../Components/ContactElec";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -38,7 +39,7 @@ import { useData, useUpdateData } from "../api";
 import DownloadBtn from "../Components/DownloadBtn";
 import { useDarkMode } from "../store";
 import useHistory from "../hooks/useHistory";
-import Numeric from "../icons/image/ICONEACTEMIUM.png"
+import Numeric from "../icons/image/ICONEACTEMIUM.png";
 import MenuBar from "../Components/Menu";
 
 const nodeTypes = {
@@ -46,6 +47,7 @@ const nodeTypes = {
   bulb: Bulb,
   battery: Battery,
   board: Board,
+  contactelec:ContactElec,
 };
 
 const edgeTypes = {
