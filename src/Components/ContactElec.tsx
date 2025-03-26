@@ -2,7 +2,7 @@ import { Handle, Node, NodeProps, Position } from "@xyflow/react";
 import React from "react";
 import { ElectricalComponentData, ElectricalComponentType } from "../types";
 import { Box, Text } from "@chakra-ui/react";
-import { default as BatteryIcon } from "../icons/Battery";
+import { default as ContactElecIcon } from "../icons/ContactElec";
 import { getUnit } from "../utils";
 import Terminal from "./Terminal";
 import { useDarkMode } from "../store";
@@ -17,7 +17,7 @@ export default function ContactElec({
 
   return (
     <Box>
-      <BatteryIcon height={60} />
+      <ContactElecIcon height={60} />
       <Text
         fontSize="xx-small"
         position={"absolute"}

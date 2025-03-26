@@ -78,12 +78,13 @@ export const Workflow = () => {
     [addEdge]
   );
 
-  const isValidConnection = (connection: Edge | Connection) => {
-    const { source, target } = connection;
+  // const isValidConnection = (connection: Edge | Connection) => {
+  //   const { source, target } = connection;
 
-    if (source === target) return false;
-    return true;
-  };
+  //   if (source === target) return false;
+  //   return true;
+  // };
+  const isValidConnection = () => true
 
   const dragOutsideRef = useRef<ElectricalComponentType | null>(null);
 
@@ -179,6 +180,14 @@ export const Workflow = () => {
         position,
         data: {},
         style: { height: 200, width: 200 },
+      };
+    } else if (type === ElectricalComponentType.ContactElec) {
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data : { value: 50},
+        parentId: board?.id
       };
     }
 
