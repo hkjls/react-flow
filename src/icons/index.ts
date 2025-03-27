@@ -8,3 +8,4 @@ export { default as ContactorDN} from "./ElecIcons/Contactor-DN";
 export { default as ContactorLC1} from "./ElecIcons/Contactor-LC1";
 export { default as ContactorLS1} from "./ElecIcons/Contactor-LS1";
 export { default as ThermalRelayLR2} from "./ElecIcons/ThermalRelay-LR2";
+export { default as SupportElec} from "./ElecIcons/SupportElec";

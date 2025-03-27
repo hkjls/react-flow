@@ -34,6 +34,7 @@ import ContactorLSI from "../Components/ElecIComponents/Contactor-LS1";
 import ContactorLCI from "../Components/ElecIComponents/Contactor-LC1";
 import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
 import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
+import SupportElec from "../icons/ElecIcons/SupportElec";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -56,7 +57,8 @@ const nodeTypes = {
   contactorlsi: ContactorLSI,
   contactorlci: ContactorLCI,
   contactordn: ContactorDN,
-  circuitbreaker: CircuitBreaker
+  circuitbreaker: CircuitBreaker,
+  supportelect: SupportElec
 };
 
 const edgeTypes = {
@@ -221,6 +223,13 @@ export const Workflow = () => {
         data: { value: 15},
       };
     } else if(type == ElectricalComponentType.CircuitBreaker32A){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15},
+      };
+    } else if(type == ElectricalComponentType.SupportElec){
       node = {
         id: uuid(),
         type,
@@ -502,7 +511,7 @@ export const Workflow = () => {
       )}
       <MenuBar />
       <UserGrades/>
-      
+
       <ReactFlow
         onInit={setRfInstance}
         nodes={nodes}
