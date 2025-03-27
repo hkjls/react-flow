@@ -45,6 +45,7 @@ import { useDarkMode } from "../store";
 import useHistory from "../hooks/useHistory";
 import Numeric from "../icons/image/ICONEACTEMIUM.png";
 import MenuBar from "../Components/Menu";
+import UserGrades from "../Components/UserGrades";
 
 const nodeTypes = {
   electricalComponent: ElectricalComponent,
@@ -500,6 +501,7 @@ export const Workflow = () => {
         </Flex>
       )}
       <MenuBar />
+      <UserGrades/>
       
       <ReactFlow
         onInit={setRfInstance}
