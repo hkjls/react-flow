@@ -26,7 +26,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import ElectricalComponent from "../Components/ElectricalComponent";
 import Wire from "../Components/Wire";
 import ConnectionLine from "../Components/ConnectionLine";
-import { ElectricalComponentState, ElectricalComponentType } from "../types";
+import { ElectricalComponentState, ElectricalComponentType, ElectricalComponentData } from "../types";
 import Bulb from "../Components/Bulb";
 import Battery from "../Components/Battery";
 import ThermalRelayLR2 from "../Components/ElecIComponents/ThermalRelay-LR2"
@@ -96,8 +96,10 @@ export const Workflow = () => {
 
   const dragOutsideRef = useRef<ElectricalComponentType | null>(null);
 
-  const { screenToFlowPosition, getIntersectingNodes, setViewport } =
+  const { screenToFlowPosition, getIntersectingNodes, setViewport, getNodes, getEdges } =
     useReactFlow();
+
+  console.log(getEdges())
 
   const onDragStart = (
     event: React.DragEvent<HTMLButtonElement>,

@@ -63,8 +63,9 @@ export default function Bulb({
     if (visited.has(nodeId)) return false; // 🔹 Empêche les boucles infinies
     visited.add(nodeId); // 🔹 Marque le nœud comme visité
   
-    const nodes = getNodes();
+    const nodes = getNodes(); //get 
     const edges = getEdges();
+    console.log(edges)
     const node = nodes.find((node) => node.id === nodeId);
     if (!node) return false;
   
