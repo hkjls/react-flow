@@ -1,6 +1,17 @@
 import { Edge, Node } from "@xyflow/react";
 import { ElectricalComponentType } from "../types";
-import { Battery, Bulb, Capacitor, Inductor, Resistor, ContactElec } from "../icons";
+import { 
+  Battery, 
+  Bulb, 
+  Capacitor, 
+  Inductor, 
+  Resistor,
+  CircuitBreaker32A,
+  ContactorDN,
+  ContactorLC1,
+  ContactorLS1,
+  ThermalRelayLR2
+} from "../icons";
 import { Box } from "@chakra-ui/react";
 
 export const initialEdges: Edge[] = [];
@@ -47,11 +58,6 @@ export const COMPONENTS = [
     type: ElectricalComponentType.Battery,
     label: "Battery",
   },
-  {
-    icon: <ContactElec height={24} />,
-    type: ElectricalComponentType.ContactElec,
-    label: "ContactElec"
-  },
 
   {
     icon: <Bulb color="black" height={24} isOn />,
@@ -70,4 +76,29 @@ export const COMPONENTS = [
     type: ElectricalComponentType.Board,
     label: "Bulb",
   },
+  {
+    icon: <CircuitBreaker32A height={24}/>,
+    type: ElectricalComponentType.CircuitBreaker32A,
+    label: "CircuitBreaker32A"
+  },
+  {
+    icon: <ContactorDN height={24} />,
+    type: ElectricalComponentType.ContactorDN,
+    label: "ContactorDN"
+  },
+  {
+    icon: <ContactorLC1 height={24} />,
+    type: ElectricalComponentType.ContactorLC1,
+    label: "ContactorLC1"
+  },
+  {
+    icon: <ContactorLS1 height={24} />,
+    type: ElectricalComponentType.ContactorLS1,
+    label: "ContactorLS1"
+  },
+  {
+    icon: <ThermalRelayLR2 height={24} />,
+    type: ElectricalComponentType.ThermalRelayLR2,
+    label: "ThermalRelayR2"
+  }
 ];

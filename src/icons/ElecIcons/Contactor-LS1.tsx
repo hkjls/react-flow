@@ -1,8 +1,8 @@
-import bat from "./image/pngwing.com.png"
+import ContactorLS1_icon from "../image/Contactor-LS1.png"
 
-export default function Battery({ height }: { height?: number }) {
+export default function ContactorLS1({ height }: { height?: number }) {
   return (
-    <img src={bat} alt="" style={{
+    <img src={ContactorLS1_icon} alt="" style={{
       height:height
     }} />
     // <svg

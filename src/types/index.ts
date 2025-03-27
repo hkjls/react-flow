@@ -5,7 +5,11 @@ export enum ElectricalComponentType {
   Inductor = "inductor",
   Battery = "battery",
   Board = "board",
-  ContactElec= "contactelec"
+  CircuitBreaker32A = "circuitbreaker",
+  ContactorDN = "contactordn",
+  ContactorLC1 = "contactorlci",
+  ContactorLS1 = "contactorlsi",
+  ThermalRelayLR2 = "thermalrelay" //number and signs exclude
 }
 
 export enum ElectricalComponentState {

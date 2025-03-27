@@ -22,7 +22,7 @@ export default function Wire({
   });
 
   const isConnected = !!(source && target)
-  console.log(`wire connected : ${isConnected}`)
+  // console.log(`wire connected : ${isConnected}`)
 
   return (
     <>

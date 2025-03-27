@@ -1,4 +1,4 @@
-import bat from "./image/pngwing.com.png"
+import bat from "./image/Batery.png"
 
 export default function Battery({ height }: { height?: number }) {
   return (

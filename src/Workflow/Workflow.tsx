@@ -29,7 +29,11 @@ import ConnectionLine from "../Components/ConnectionLine";
 import { ElectricalComponentState, ElectricalComponentType } from "../types";
 import Bulb from "../Components/Bulb";
 import Battery from "../Components/Battery";
-import ContactElec from "../Components/ContactElec";
+import ThermalRelayLR2 from "../Components/ElecIComponents/ThermalRelay-LR2"
+import ContactorLSI from "../Components/ElecIComponents/Contactor-LS1";
+import ContactorLCI from "../Components/ElecIComponents/Contactor-LC1";
+import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
+import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -47,7 +51,11 @@ const nodeTypes = {
   bulb: Bulb,
   battery: Battery,
   board: Board,
-  contactelec:ContactElec,
+  thermalrelay: ThermalRelayLR2,
+  contactorlsi: ContactorLSI,
+  contactorlci: ContactorLCI,
+  contactordn: ContactorDN,
+  circuitbreaker: CircuitBreaker
 };
 
 const edgeTypes = {
@@ -67,9 +75,9 @@ export const Workflow = () => {
         type: "wire",
         id: uuid(),
         markerEnd: {
-          type: MarkerType.ArrowClosed,
-          width: 20,
-          height: 20,
+          type: MarkerType.Arrow,
+          width: 0,
+          height: 0,
           color: "#FFC300",
         },
       };
@@ -78,13 +86,13 @@ export const Workflow = () => {
     [addEdge]
   );
 
-  // const isValidConnection = (connection: Edge | Connection) => {
-  //   const { source, target } = connection;
+  const isValidConnection = (connection: Edge | Connection) => {
+    const { source, target } = connection;
 
-  //   if (source === target) return false;
-  //   return true;
-  // };
-  const isValidConnection = () => true
+    if (source === target) return true;
+    return true;
+  };
+  // const isValidConnection = () => true
 
   const dragOutsideRef = useRef<ElectricalComponentType | null>(null);
 
@@ -181,13 +189,40 @@ export const Workflow = () => {
         data: {},
         style: { height: 200, width: 200 },
       };
-    } else if (type === ElectricalComponentType.ContactElec) {
+    } else if (type == ElectricalComponentType.ThermalRelayLR2){
       node = {
         id: uuid(),
         type,
         position,
-        data : { value: 50},
-        parentId: board?.id
+        data: { value: 15},
+      };
+    } else if (type == ElectricalComponentType.ContactorLS1){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15},
+      };
+    } else if(type == ElectricalComponentType.ContactorLC1){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15},
+      };
+    } else if(type == ElectricalComponentType.ContactorDN){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15},
+      };
+    } else if(type == ElectricalComponentType.CircuitBreaker32A){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15},
       };
     }
 
