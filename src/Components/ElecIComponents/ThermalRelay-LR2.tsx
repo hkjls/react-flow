@@ -35,61 +35,61 @@ const ThermalRelayR2 = ({
                 style={{ left: 10, top: 7 }}
                 type="source"
                 position={Position.Top}
-                id="left"
+                id="left-thr"
             />
             <Terminal
                 style={{ left: 30, top: 7 }}
                 type="source"
                 position={Position.Top}
-                id="center"
+                id="center-thr"
             />
             <Terminal
                 style={{ left: 50, top: 7 }}
                 type="source"
                 position={Position.Top}
-                id="right"
+                id="right-thr"
             />
             <Terminal
                 style={{ left: 6, bottom: 6 }}
                 type="target"
                 position={Position.Bottom}
-                id="right"
+                id="right-thr"
             />
             <Terminal
                 style={{ left: 14, bottom: 12 }}
                 type="target"
                 position={Position.Bottom}
-                id="right-up"
+                id="right-up-thr"
             />
             <Terminal
                 style={{ left: 22, bottom: 6 }}
                 type="target"
                 position={Position.Bottom}
-                id="right-center"
+                id="right-center-thr"
             />
             <Terminal
                 style={{ left: 30, bottom: 12 }}
                 type="target"
                 position={Position.Bottom}
-                id="center-up"
+                id="center-up-thr"
             />
             <Terminal
                 style={{ left: 38, bottom: 6 }}
                 type="target"
                 position={Position.Bottom}
-                id="left-center"
+                id="left-center-thr"
             />
             <Terminal
                 style={{ left: 46, bottom: 12 }}
                 type="target"
                 position={Position.Bottom}
-                id="left-up"
+                id="left-up-thr"
             />
             <Terminal
                 style={{ left: 52, bottom: 6 }}
                 type="target"
                 position={Position.Bottom}
-                id="left"
+                id="left-thr"
             />
         </Box>
     )

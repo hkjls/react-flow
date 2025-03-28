@@ -38,33 +38,33 @@ const ContactorLCI =({
 
             <Terminal
                 style={{ left: 15 + 0*top_x, top: 7 - top_y }}
-                type="source"
+                type="target"
                 position={Position.Top}
-                id="left-top"
+                id="left-top-lci"
             />
             <Terminal
                 style={{ left: 15 + top_x, top: 7 - top_y }}
-                type="source"
+                type="target"
                 position={Position.Top}
-                id="right-top"
+                id="right-top-lci"
             />
 
             <Terminal
                 style={{ left: 12 + 0*bottom_x, bottom: 6 + 0*bottom_y }}
-                type="target"
+                type="source"
                 position={Position.Bottom}
-                id="left-bottom"
+                id="left-bottom-lci"
             />
             <Terminal
                 style={{ left: 12 + bottom_x, bottom: 6 + 0*bottom_y }}
-                type="target"
+                type="source"
                 position={Position.Bottom}
-                id="center-bottom"
+                id="center-bottom-lci"
             /><Terminal
                 style={{ left: 12 + 2.3*bottom_x, bottom: 6 + 0*bottom_y }}
-                type="target"
+                type="source"
                 position={Position.Bottom}
-                id="right-bottom"
+                id="right-bottom-lci"
             />
         </Box>
     )

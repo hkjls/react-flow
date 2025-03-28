@@ -34,7 +34,7 @@ import ContactorLSI from "../Components/ElecIComponents/Contactor-LS1";
 import ContactorLCI from "../Components/ElecIComponents/Contactor-LC1";
 import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
 import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
-import SupportElec from "../icons/ElecIcons/SupportElec";
+import SupportElec from "../Components/ElecIComponents/SupportElec";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -46,7 +46,7 @@ import { useDarkMode } from "../store";
 import useHistory from "../hooks/useHistory";
 import Numeric from "../icons/image/ICONEACTEMIUM.png";
 import MenuBar from "../Components/Menu";
-import UserGrades from "../Components/UserGrades";
+import UserGrade from "../Components/UserTest";
 
 const nodeTypes = {
   electricalComponent: ElectricalComponent,
@@ -58,7 +58,7 @@ const nodeTypes = {
   contactorlci: ContactorLCI,
   contactordn: ContactorDN,
   circuitbreaker: CircuitBreaker,
-  supportelect: SupportElec
+  supportelec: SupportElec,
 };
 
 const edgeTypes = {
@@ -66,6 +66,7 @@ const edgeTypes = {
 };
 
 export const Workflow = () => {
+  const [connexion, addConnexion] = useState(0)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
@@ -99,10 +100,8 @@ export const Workflow = () => {
 
   const dragOutsideRef = useRef<ElectricalComponentType | null>(null);
 
-  const { screenToFlowPosition, getIntersectingNodes, setViewport, getNodes, getEdges } =
+  const { screenToFlowPosition, getIntersectingNodes, setViewport } =
     useReactFlow();
-
-  console.log(getEdges())
 
   const onDragStart = (
     event: React.DragEvent<HTMLButtonElement>,
@@ -458,7 +457,7 @@ export const Workflow = () => {
       const { x = 0, y = 0, zoom = 1 } = reactFlowState.viewport;
       setNodes(reactFlowState.nodes || []);
       setEdges(reactFlowState.edges || []);
-      setViewport({ x, y, zoom });
+      setViewport({ x, y, zoom });  
     }
   }, [reactFlowState]);
 
@@ -510,7 +509,7 @@ export const Workflow = () => {
         </Flex>
       )}
       <MenuBar />
-      <UserGrades/>
+      <UserGrade/>
 
       <ReactFlow
         onInit={setRfInstance}

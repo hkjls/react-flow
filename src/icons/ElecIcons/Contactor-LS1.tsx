@@ -2,7 +2,7 @@ import ContactorLS1_icon from "../image/Contactor-LS1.png"
 
 export default function ContactorLS1({ height }: { height?: number }) {
   return (
-    <img src={ContactorLS1_icon} alt="Contactor-LS1" title="Contacteur LS1" style={{
+    <img src={ContactorLS1_icon} alt="Contactor-LS1" title="Contacteur LC1" style={{
       height:height
     }} />
     // <svg

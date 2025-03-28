@@ -13,11 +13,11 @@ const SupportElec=({
     data: {value}
 }:NodeProps<SupportElec_Node>)=>{
     const unit = getUnit(type as ElectricalComponentType)
-    const top_x : number = 33
+    const top_x : number = 10
 
     return(
         <Box>
-            <SupportElecIcon height={60} />
+            <SupportElecIcon height={65} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -33,11 +33,56 @@ const SupportElec=({
             </Text>
 
             <Terminal
-                style={{ left: 14 + top_x, bottom: 8 }}
+                style={{ left: 5 +  + 0* top_x, top: 8}}
                 type="target"
-                position={Position.Bottom}
-                id="right-bottom"
+                position={Position.Top}
+                id="left-1-sprt"
+            />
+            <Terminal
+                style={{ left: 5 + top_x, top: 8}}
+                type="target"
+                position={Position.Top}
+                id="left-center-1-sprt"
+            />
+            <Terminal
+                style={{ left: 5  + 2* top_x, top: 8}}
+                type="target"
+                position={Position.Top}
+                id="right-center-1-sprt"
+            />
+            <Terminal
+                style={{ left: 5  + 3* top_x, top: 8 }}
+                type="target"
+                position={Position.Top}
+                id="right-1-sprt"
+            />
+
+            <Terminal
+                style={{ left: 45 +  + 0* top_x, top: 8}}
+                type="source"
+                position={Position.Top}
+                id="left-2-sprt"
+            />
+            <Terminal
+                style={{ left: 45 + top_x, top: 8}}
+                type="source"
+                position={Position.Top}
+                id="left-center-2-sprt"
+            />
+            <Terminal
+                style={{ left: 45  + 2* top_x, top: 8}}
+                type="source"
+                position={Position.Top}
+                id="right-center-2-sprt"
+            />
+            <Terminal
+                style={{ left: 45  + 3* top_x, top: 8 }}
+                type="source"
+                position={Position.Top}
+                id="right-2-sprt"
             />
         </Box>
     )
 }
+
+export default SupportElec

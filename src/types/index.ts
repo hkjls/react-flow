@@ -10,7 +10,8 @@ export enum ElectricalComponentType {
   ContactorLC1 = "contactorlci",
   ContactorLS1 = "contactorlsi",
   ThermalRelayLR2 = "thermalrelay", //number and signs exclude
-  SupportElec = "support",
+  SupportElec = "supportelec",
+  SocketElec = "socketelec",
 }
 
 export enum ElectricalComponentState {

@@ -40,50 +40,50 @@ const ContactorDN =({
                 style={{ left: 5 + 0*top_x, top: 7 - top_y }}
                 type="source"
                 position={Position.Top}
-                id="left-top"
+                id="left-top-dn"
             />
             <Terminal
                 style={{ left: 5 + 1*top_x, top: 7 - 18*top_y }}
                 type="source"
                 position={Position.Top}
-                id="left-up-center-top"
+                id="left-up-center-top-dn"
             />
             <Terminal
                 style={{ left: 5 + 2*top_x, top: 7 - top_y }}
                 type="source"
                 position={Position.Top}
-                id="left-center-top"
+                id="left-center-top-dn"
             />
             <Terminal
                 style={{ left: 5 + 4*top_x, top: 7 - top_y }}
                 type="source"
                 position={Position.Top}
-                id="right-top"
+                id="right-top-dn"
             />
 
             <Terminal
                 style={{ left: 6 + 0*bottom_x, bottom: 6 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
-                id="left-bottom"
+                id="left-bottom-dn"
             />
             <Terminal
                 style={{ left: 6 + 1*bottom_x, bottom: 6 - 18*bottom_y }}
                 type="target"
                 position={Position.Bottom}
-                id="left-bottom-down-center"
+                id="left-bottom-down-center-dn"
             />
             <Terminal
                 style={{ left: 6 + 2*bottom_x, bottom: 6 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
-                id="left-bottom-center"
+                id="left-bottom-center-dn"
             />
             <Terminal
                 style={{ left: 6 + 4*bottom_x, bottom: 6 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
-                id="right-bottom"
+                id="right-bottom-dn"
             />
         </Box>
     )

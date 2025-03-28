@@ -37,29 +37,29 @@ const CircuitBreaker =({
 
             <Terminal
                 style={{ left: 13 + 0*top_x, top: 19 - top_y }}
-                type="source"
+                type="target"
                 position={Position.Top}
-                id="left-up"
+                id="left-up-cbr"
             />
 
             <Terminal
                 style={{ left: 14 + top_x, top: 19 - top_y }}
-                type="source"
+                type="target"
                 position={Position.Top}
-                id="right-up"
+                id="right-up-cbr"
             />
 
             <Terminal
                 style={{ left: 13 + 0*bottom_x, bottom: 8 + 0*bottom_y }}
-                type="target"
+                type="source"
                 position={Position.Bottom}
-                id="left-bottom"
+                id="left-bottom-cbr"
             />
             <Terminal
                 style={{ left: 14 + bottom_x, bottom: 8 + 0*bottom_y }}
-                type="target"
+                type="source"
                 position={Position.Bottom}
-                id="right-bottom"
+                id="right-bottom-cbr"
             />
         </Box>
     )

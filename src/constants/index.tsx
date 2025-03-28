@@ -11,7 +11,8 @@ import {
   ContactorLC1,
   ContactorLS1,
   ThermalRelayLR2,
-  SupportElect
+  SupportElec,
+  SocketElecII
 } from "../icons";
 import { Box } from "@chakra-ui/react";
 
@@ -103,8 +104,13 @@ export const COMPONENTS = [
     label: "ThermalRelayR2"
   },
   {
-    icon: <SupportElect height={24} />,
+    icon: <SupportElec height={24} />,
     type: ElectricalComponentType.SupportElec,
     label: "SupportElec"
+  },
+  {
+    icon: <SocketElecII height={24} />,
+    type: ElectricalComponentType.SocketElec,
+    label: "SocketElec"
   }
 ];
