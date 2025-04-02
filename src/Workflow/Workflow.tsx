@@ -49,6 +49,7 @@ import useHistory from "../hooks/useHistory";
 import Numeric from "../icons/image/ICONEACTEMIUM.png";
 import MenuBar from "../Components/Menu";
 import UserGrade from "../Components/UserTest";
+import CircuitElecModel from "../Components/UserTest/Tests/CircuitElecModel";
 
 const nodeTypes = {
   electricalComponent: ElectricalComponent,
@@ -89,8 +90,11 @@ export const Workflow = () => {
           color: "#FFC300",
         },
       };
-      console.log(connection.sourceHandle, connection.targetHandle)
-      // addEdge(edge);
+      const isEdgeValid:boolean = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
+      addEdgeConnected((prev)=>prev + 1)
+      if (isEdgeValid){
+        addEdge(edge);
+      }
     },
     [addEdge, nodes, addEdgeConnected, edges]
   );
