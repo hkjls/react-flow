@@ -25,6 +25,7 @@ import { v4 as uuid } from "uuid";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ElectricalComponent from "../Components/ElectricalComponent";
 import Wire from "../Components/Wire";
+import Flow from "../Components/Wire2";
 import ConnectionLine from "../Components/ConnectionLine";
 import { ElectricalComponentState, ElectricalComponentType, ElectricalComponentData } from "../types";
 import Bulb from "../Components/Bulb";
@@ -35,6 +36,7 @@ import ContactorLCI from "../Components/ElecIComponents/Contactor-LC1";
 import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
 import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
 import SupportElec from "../Components/ElecIComponents/SupportElec";
+import SocketElecII from "../Components/ElecIComponents/SocketElec2";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -59,6 +61,7 @@ const nodeTypes = {
   contactordn: ContactorDN,
   circuitbreaker: CircuitBreaker,
   supportelec: SupportElec,
+  socketelecii: SocketElecII
 };
 
 const edgeTypes = {
@@ -69,6 +72,7 @@ export const Workflow = () => {
   const [connexion, addConnexion] = useState(0)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [edgeConnected, addEdgeConnected] = useState(0)
 
   const { addNode, removeNode, addEdge, removeEdge, undo, redo } = useHistory();
 
@@ -85,10 +89,28 @@ export const Workflow = () => {
           color: "#FFC300",
         },
       };
+
+      const { source, target }=connection
+      const sourceNode = edges.filter((edge)=>edge.source === source)
+      const sourceTarget = edges.filter((edge)=>edge.target == target)
+
+      const sourcesEdge = edges.map((edge)=>edge.source)
+      const targetsEdge = edges.map((edge)=>edge.target)
+      console.log(sourcesEdge, targetsEdge)
+
+      if(sourceNode != sourceTarget){
+        addEdgeConnected((inc)=> inc + 1)
+        // console.log(sourceNode, sourceTarget)
+
+      }
       addEdge(edge);
     },
-    [addEdge]
+    [addEdge, nodes, addEdgeConnected, edges]
   );
+
+  useEffect(()=>{
+    
+  }, [onConnect])
 
   const isValidConnection = (connection: Edge | Connection) => {
     const { source, target } = connection;
@@ -229,6 +251,13 @@ export const Workflow = () => {
         data: { value: 15},
       };
     } else if(type == ElectricalComponentType.SupportElec){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15},
+      };
+    } else if(type == ElectricalComponentType.SocketElecII){
       node = {
         id: uuid(),
         type,
@@ -509,7 +538,7 @@ export const Workflow = () => {
         </Flex>
       )}
       <MenuBar />
-      <UserGrade/>
+      <UserGrade edgeConnected={edgeConnected}/>
 
       <ReactFlow
         onInit={setRfInstance}

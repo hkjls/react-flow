@@ -40,32 +40,32 @@ export const initialNodes: Node[] = [
 ];
 
 export const COMPONENTS = [
-  {
-    icon: <Resistor />,
-    type: ElectricalComponentType.Resistor,
-    label: "Resistor",
-  },
-  {
-    icon: <Capacitor height={16} />,
-    type: ElectricalComponentType.Capacitor,
-    label: "Capacitor",
-  },
-  {
-    icon: <Inductor height={8} />,
-    type: ElectricalComponentType.Inductor,
-    label: "Inductor",
-  },
-  {
-    icon: <Battery height={24} />,
-    type: ElectricalComponentType.Battery,
-    label: "Battery",
-  },
+  // {
+  //   icon: <Resistor />,
+  //   type: ElectricalComponentType.Resistor,
+  //   label: "Resistor",
+  // },
+  // {
+  //   icon: <Capacitor height={16} />,
+  //   type: ElectricalComponentType.Capacitor,
+  //   label: "Capacitor",
+  // },
+  // {
+  //   icon: <Inductor height={8} />,
+  //   type: ElectricalComponentType.Inductor,
+  //   label: "Inductor",
+  // },
+  // {
+  //   icon: <Battery height={24} />,
+  //   type: ElectricalComponentType.Battery,
+  //   label: "Battery",
+  // },
 
-  {
-    icon: <Bulb color="black" height={24} isOn />,
-    type: ElectricalComponentType.Bulb,
-    label: "Bulb",
-  },
+  // {
+  //   icon: <Bulb color="black" height={24} isOn />,
+  //   type: ElectricalComponentType.Bulb,
+  //   label: "Bulb",
+  // },
   {
     icon: (
       <Box
@@ -76,7 +76,7 @@ export const COMPONENTS = [
       ></Box>
     ),
     type: ElectricalComponentType.Board,
-    label: "Bulb",
+    label: "Board",
   },
   {
     icon: <CircuitBreaker32A height={24}/>,
@@ -110,7 +110,7 @@ export const COMPONENTS = [
   },
   {
     icon: <SocketElecII height={24} />,
-    type: ElectricalComponentType.SocketElec,
+    type: ElectricalComponentType.SocketElecII,
     label: "SocketElec"
   }
 ];

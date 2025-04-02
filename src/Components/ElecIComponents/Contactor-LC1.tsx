@@ -4,7 +4,7 @@ import { Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
 
-import {default as ContactorLCIIcon} from "../../icons/ElecIcons/Contactor-LC1"
+import {default as ContactorLCIIcon} from "../../icons/ElecIcons/Contactor-DN"
 
 type ContactorLCI_Node = Node<ElectricalComponentData, "string">
 

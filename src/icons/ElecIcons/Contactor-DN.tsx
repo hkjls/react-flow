@@ -1,12 +1,11 @@
-import ContactorDN_icon from "../image/Contactor-DN.png"
+import ContactDN_icon from "../image/Contactor-DN.png"
 
-const ContactorDN = ({ height }: { height? : number}) => {
+const ContactDN = ({height}:{height? : number}) => {
     return(
-        <img src={ContactorDN_icon} alt="Contactor DN" title="Contacteur LS1" style={{
-            height: height
-        }} />
+        <img src={ContactDN_icon} alt="Contactor DN" title="Contacteur DN" style={{
+            height:height
+        }}/>
     )
-
 }
 
-export default ContactorDN
+export  default ContactDN

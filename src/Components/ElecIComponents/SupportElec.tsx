@@ -17,7 +17,7 @@ const SupportElec=({
 
     return(
         <Box>
-            <SupportElecIcon height={65} />
+            <SupportElecIcon height={65} width={100} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -58,25 +58,25 @@ const SupportElec=({
             />
 
             <Terminal
-                style={{ left: 45 +  + 0* top_x, top: 8}}
+                style={{ left: 45 +  2* top_x, top: 8}}
                 type="source"
                 position={Position.Top}
                 id="left-2-sprt"
             />
             <Terminal
-                style={{ left: 45 + top_x, top: 8}}
+                style={{ left: 45 + 3*top_x, top: 8}}
                 type="source"
                 position={Position.Top}
                 id="left-center-2-sprt"
             />
             <Terminal
-                style={{ left: 45  + 2* top_x, top: 8}}
+                style={{ left: 45  + 4* top_x, top: 8}}
                 type="source"
                 position={Position.Top}
                 id="right-center-2-sprt"
             />
             <Terminal
-                style={{ left: 45  + 3* top_x, top: 8 }}
+                style={{ left: 45  + 5* top_x, top: 8 }}
                 type="source"
                 position={Position.Top}
                 id="right-2-sprt"

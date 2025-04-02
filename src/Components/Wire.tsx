@@ -1,4 +1,11 @@
-import { BaseEdge, EdgeProps, getSmoothStepPath } from "@xyflow/react";
+import { 
+  BaseEdge, 
+  EdgeProps, 
+  getSmoothStepPath,
+  addEdge,
+  Connection,
+  Edge
+} from "@xyflow/react";
 import React from "react";
 
 export default function Wire({

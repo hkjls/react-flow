@@ -8,10 +8,10 @@ type connectedEdge = {
     targetHandle: (string | null | undefined)
 }
 
-const UserGrades=()=>{
+const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
     const stateEdge = useStore(state => state.edges)
     const {getNodes, getEdges} = useReactFlow();
-    const [edgeConnected, addEdgeConnected] = useState(0)
+    // const [edgeConnected, addEdgeConnected] = useState(0)
     const [useNote, addUserNote] = useState(0)
 
     useEffect(()=>{
@@ -23,9 +23,9 @@ const UserGrades=()=>{
             if(CircuitElecModel(success.sourceHandle, success.targetHandle)){
                 addUserNote(useNote + 1)
             }
-            console.log(CircuitElecModel(success.sourceHandle, success.targetHandle))
-            console.log(success)
-            addEdgeConnected(edgeConnected + 1)
+            // console.log(CircuitElecModel(success.sourceHandle, success.targetHandle))
+            // console.log(success)
+            // addEdgeConnected(edgeConnected + 1)
         }
     }, [stateEdge])
     
@@ -53,7 +53,7 @@ const UserGrades=()=>{
             <div>
                 <button
                     onClick={()=>{
-                        addEdgeConnected(0)
+                        // addEdgeConnected(0)
                         addUserNote(0)
                     }}
                     style={{
