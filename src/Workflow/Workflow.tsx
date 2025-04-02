@@ -99,10 +99,6 @@ export const Workflow = () => {
     [addEdge, nodes, addEdgeConnected, edges]
   );
 
-  useEffect(()=>{
-    
-  }, [onConnect])
-
   const isValidConnection = (connection: Edge | Connection) => {
     const { source, target } = connection;
 
