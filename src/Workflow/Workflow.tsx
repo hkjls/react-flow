@@ -89,21 +89,8 @@ export const Workflow = () => {
           color: "#FFC300",
         },
       };
-
-      const { source, target }=connection
-      const sourceNode = edges.filter((edge)=>edge.source === source)
-      const sourceTarget = edges.filter((edge)=>edge.target == target)
-
-      const sourcesEdge = edges.map((edge)=>edge.source)
-      const targetsEdge = edges.map((edge)=>edge.target)
-      console.log(sourcesEdge, targetsEdge)
-
-      if(sourceNode != sourceTarget){
-        addEdgeConnected((inc)=> inc + 1)
-        // console.log(sourceNode, sourceTarget)
-
-      }
-      addEdge(edge);
+      console.log(connection.sourceHandle, connection.targetHandle)
+      // addEdge(edge);
     },
     [addEdge, nodes, addEdgeConnected, edges]
   );
