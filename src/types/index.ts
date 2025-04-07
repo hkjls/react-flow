@@ -21,6 +21,9 @@ export enum ElectricalComponentState {
 
 export type ElectricalComponentData = {
   value?: number;
+  nEntry?: number;
+  nOutput?: number;
+  Desc?: string;
   type?: ElectricalComponentType;
   rotation?: number;
   state?: ElectricalComponentState;

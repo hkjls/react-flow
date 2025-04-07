@@ -96,7 +96,8 @@ export const COMPONENTS = [
   {
     icon: <ContactorLS1 height={24} />,
     type: ElectricalComponentType.ContactorLS1,
-    label: "ContactorLS1"
+    label: "ContactorLS1",
+    joelas:"Hey"
   },
   {
     icon: <ThermalRelayLR2 height={24} />,

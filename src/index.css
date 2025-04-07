@@ -9,3 +9,164 @@
 .react-flow__handle.valid {
   background: #55dd99;
 }
+/* Menu Style Configuration */
+#menu{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  padding: 10px;
+  background: rgb(255, 255, 255);
+  width: 500px;
+  border-radius: 5px;
+}
+
+#menu-bar{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  list-style: none;
+}
+
+.menu-list{
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-list:nth-child(2)::after {
+  content: "⯆";
+  position: absolute;
+  margin-left: 10px;
+}
+
+.menu-list:nth-child(2) ul{
+  position: absolute;
+  border: solid rgba(0, 0, 0, 0.062) 0.1px;
+  width: 250px;
+  text-align: left;
+  padding-left: 15px;
+  list-style: none;
+  background: rgb(255, 255, 255);
+  display: none;
+  border-radius: 13px;
+}
+
+.menu-list ul li:hover{
+  background-color: rgb(240, 247, 247);
+}
+
+.menu-list:nth-child(2):hover ul{
+  display: block;
+}
+
+/*Historic Table Style Configuration*/
+#historic{
+  position: absolute;
+  z-index: 3000;
+  top: 15px;
+  right: 300px;
+  border: solid rgba(0, 0, 0, 0.137) 0.1px;
+  border-radius: 10px;
+  width: 450px;
+  background: white;
+  text-align: center;
+}
+
+#historic h3{
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+#historic table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/*User Grade Style Configuration*/
+#userGrades{
+  position: absolute;
+  z-index: 3000;
+  bottom: 15px;
+  right: 15px;
+  border: solid rgba(0, 0, 0, 0.137) 0.1px;
+  border-radius: 5px;
+  width: 1000px;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#userGrades:hover{
+  opacity: 1;
+}
+
+#userGradesList{
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.userInfo:nth-child(1){
+  width: 340px;
+}
+
+#btn-initializing{
+  position: absolute;
+  bottom: 50px;
+}
+
+/* Component Info Style Configuration */
+.component:nth-child(1){
+  display: flex;
+  align-items: center;
+}
+
+.component:nth-child(2) h3 + ul{
+  position: relative;
+  left: 218px;
+}
+
+.component:nth-child(1) h3 + div{
+  font-weight: 600;
+  position: absolute;
+  right: 140px;
+}
+
+#ComponentDetail{
+  position: absolute;
+  z-index: 3000;
+  border: solid rgba(0, 0, 0, 0.137) 0.1px;
+  border-radius: 10px;
+  width: 100%;
+  background: white;
+  padding: 15px;
+}
+
+#componentEdges ul{
+  list-style: none;
+  padding-left: 0px;
+}
+
+/* Panel Style Configuration */
+#Panel h2{
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  padding-bottom: 15px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color:#afca0b
+}

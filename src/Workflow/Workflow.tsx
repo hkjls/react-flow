@@ -19,6 +19,7 @@ import {
   useStore,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
+import "../index.css";
 import { Box, Flex, IconButton, Spinner, Text } from "@chakra-ui/react";
 import { COMPONENTS, initialEdges, initialNodes } from "../constants";
 import { v4 as uuid } from "uuid";
@@ -207,49 +208,49 @@ export const Workflow = () => {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
+        data: { value: 15, Desc: "Composant Electronique", nEntry:3, nOutput:7},
       };
     } else if (type == ElectricalComponentType.ContactorLS1){
       node = {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
+        data: { value: 15, Desc: "Composant Electronique", nEntry:4, nOutput:4},
       };
     } else if(type == ElectricalComponentType.ContactorLC1){
       node = {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
+        data: { value: 15, Desc: "Composant Electronique", nEntry:6, nOutput:4},
       };
     } else if(type == ElectricalComponentType.ContactorDN){
       node = {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
+        data: { value: 15, Desc: "Composant Electronique", nEntry:2, nOutput: 3},
       };
     } else if(type == ElectricalComponentType.CircuitBreaker32A){
       node = {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
-      };
+        data: { value: 15, Desc: "Pour couper le courant", nEntry:2, nOutput: 2},
+      };2
     } else if(type == ElectricalComponentType.SupportElec){
       node = {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
+        data: { value: 15, Desc: "Composant Electronique", nEntry:8, nOutput: 0},
       };
     } else if(type == ElectricalComponentType.SocketElecII){
       node = {
         id: uuid(),
         type,
         position,
-        data: { value: 15},
+        data: { value: 15, Desc: "Composant Electronique", nEntry:9, nOutput:0},
       };
     }
 
@@ -504,12 +505,12 @@ export const Workflow = () => {
           top={0}
           left={0}
           height="100%"
-          width="150px"
+          width="500px"
           alignItems={"center"}
           bg="transparent"
           marginLeft="12px"
         >
-          <Box
+          {/* <Box
             bg="white"
             border="1px solid #ccc"
             borderRadius="12px"
@@ -519,9 +520,9 @@ export const Workflow = () => {
             marginBottom="50px"
             position={"relative"}
             zIndex={1000}
-          >
+          > */}
             <ComponentDetail node={selectedNode} key={selectedNode.id} />
-          </Box>
+          {/* </Box> */}
         </Flex>
       )}
       <MenuBar />
@@ -570,13 +571,14 @@ export const Workflow = () => {
             height: 400,
           }}
         >
-          <div style={{
+          <div id="Panel" style={{
             display: "flex",
             justifyContent: "left",
             alignItems: "center",
             marginBottom: 25
           }}>
             <img src={Numeric} alt="Numeric" width="80px" height="80px"></img>
+            <h2>Actemium</h2>
           </div>
           <Flex direction={"column"} gap={5}>
             <div>

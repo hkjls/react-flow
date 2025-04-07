@@ -9,11 +9,12 @@ type connectedEdge = {
 }
 
 const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
+    const stateNode = useStore(state => state.nodes)
     const stateEdge = useStore(state => state.edges)
     const {getNodes, getEdges} = useReactFlow();
     // const [edgeConnected, addEdgeConnected] = useState(0)
+    const [nd, setND] = useState(0)
     const [useNote, addUserNote] = useState(0)
-
     useEffect(()=>{
         if (typeof getEdges()[0] !== "undefined"){
             const success: connectedEdge = {
@@ -23,23 +24,26 @@ const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
             if(CircuitElecModel(success.sourceHandle, success.targetHandle)){
                 addUserNote(useNote + 1)
             }
-            // console.log(CircuitElecModel(success.sourceHandle, success.targetHandle))
-            // console.log(success)
-            // addEdgeConnected(edgeConnected + 1)
         }
-    }, [stateEdge])
+    }, [stateEdge.length])
+
+    useEffect(()=>{
+        setND(stateNode.length)
+        if (stateNode.length - 3 >= 0){
+                setND(stateNode.length - 3)
+        }
+    }, [stateNode.length])
+
     
     return(
-        <div
-            style={{
-                position:"absolute",
-                bottom:"30px",
-                left:"250px",
-                zIndex:"2000",
-                textAlign:"left"
-            }}
-        >
-            <div>
+        <div id="userGrades">
+            <ul id='userGradesList'>
+                <li className="userInfo">Nom du Participant :</li>
+                <li className="userInfo">Note du Participant : {useNote}</li>
+                <li className="userInfo">Tentative de Connection : {edgeConnected}</li>
+                <li className="userInfo">Nombre de Composant : {nd}</li>
+            </ul>
+            {/* <div>
                 <div style={{
                     fontSize:"1.3em"
                     }}>Note du Participant : {useNote}</div>
@@ -49,8 +53,8 @@ const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
                 }}>
                     Connection effectué : {edgeConnected}
                 </div>
-            </div>
-            <div>
+            </div> */}
+            <div id='btn-initializing'>
                 <button
                     onClick={()=>{
                         // addEdgeConnected(0)

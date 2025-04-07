@@ -1,6 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
+import Historic from './Historic';
 
 const MenuBar: React.FC = () => {
+  const [histVisible, setHistVisible] = useState("none");
   const handleMenuClick = (action: string) => {
     switch (action) {
       case 'fichier':
@@ -19,53 +22,25 @@ const MenuBar: React.FC = () => {
   };
 
   return (
-    <div style={{
-        position: 'absolute',
-        display: 'flex',
-        backgroundColor: '#fff',
-        borderRadius: 15,
-        flexDirection: 'column',
-        gap:20,
-        zIndex:5000,
-
-    }}>
-      <button style={{
-            padding: 5,
-            border: 'none',
-            backgroundColor: 'transparent',
-            cursor: 'pointer',
-            color: '#000',
-            fontSize: 20,
-            fontWeight: 600,
-            textAlign: 'left',
-            width: 200,
-            borderRadius: 15,
-      }} onClick={() => handleMenuClick('fichier')} className="hover:underline">Test 1</button>
-      <button style={{
-            padding: 5,
-            border: 'none',
-            backgroundColor: 'transparent',
-            cursor: 'pointer',
-            color: '#000',
-            fontSize: 20,
-            fontWeight: 600,
-            textAlign: 'left',
-            width: 200,
-            borderRadius: 15,
-      }} onClick={() => handleMenuClick('nouveau')} className="hover:underline">Test 2</button>
-      <button style={{
-            padding: 5,
-            border: 'none',
-            backgroundColor: 'transparent',
-            cursor: 'pointer',
-            color: '#000',
-            fontSize: 20,
-            fontWeight: 600,
-            textAlign: 'left',
-            width: 200,
-            borderRadius: 15,
-      }} onClick={() => handleMenuClick('quit')} className="hover:underline">Test 3</button>
-    </div>
+    <>
+      <div id="menu">
+        <ul id="menu-bar">
+          <li className="menu-list">Nouveau</li>
+          <li className="menu-list">Listes des Tests
+              <ul>
+                <li className="menu-list-list">Test_Elec 1</li>
+                <li className="menu-list-list">Test_Elec 2</li>
+                <li className="menu-list-list">Test_Elec 3</li>
+              </ul>
+          </li>
+          
+          <li className="menu-list"
+            onClick={() => setHistVisible(histVisible === "none" ? "block" : "none")}
+          >Historique</li>
+        </ul>
+      </div>
+      <Historic disp={histVisible} />
+    </>
   );
 };
 
