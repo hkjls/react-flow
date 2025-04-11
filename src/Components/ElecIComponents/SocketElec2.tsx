@@ -17,7 +17,7 @@ const SocketElecII=({
 
     return(
         <Box>
-            <SupportElecIcon height={65} width={100} />
+            <SupportElecIcon height={150} width={400} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -32,55 +32,55 @@ const SocketElecII=({
                 {value} {unit}
             </Text>
             <Terminal
-                style={{ left: 5 + 0* top_x, top: 8}}
+                style={{ left: 34 + 0* top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="left-1-sckt"
             />
             <Terminal
-                style={{ left: 5 + top_x, top: 8}}
+                style={{ left: 62 + top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="left-2-sckt"
             />
             <Terminal
-                style={{ left: 5 + 2*top_x, top: 8}}
+                style={{ left: 88 + 2*top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="left-3-sckt"
             />
             <Terminal
-                style={{ left: 5 + 3*top_x, top: 8}}
+                style={{ left: 117 + 3*top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="left-4-sckt"
             />
             <Terminal
-                style={{ left: 5 + 4*top_x, top: 8}}
+                style={{ left: 144 + 4*top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="left-5-sckt"
             />
             <Terminal
-                style={{ left: 5 + 5*top_x, top: 8}}
+                style={{ left: 172 + 5*top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="left-6-sckt"
             />
             <Terminal
-                style={{ left: 5 + 7*top_x, top: 8}}
+                style={{ left: 227 + 7*top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="right-1-sckt"
             />
             <Terminal
-                style={{ left: 5 + 8*top_x, top: 8}}
+                style={{ left: 254 + 8*top_x, top: 27}}
                 type="target"
                 position={Position.Top}
                 id="right-2-sckt"
             />
             <Terminal
-            style={{ left: 5 + 9*top_x, top: 8}}
+            style={{ left: 282 + 9*top_x, top: 27}}
             type="target"
             position={Position.Top}
             id="right-3-sckt"

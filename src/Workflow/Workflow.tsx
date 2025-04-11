@@ -38,6 +38,11 @@ import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
 import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
 import SupportElec from "../Components/ElecIComponents/SupportElec";
 import SocketElecII from "../Components/ElecIComponents/SocketElec2";
+import ButtonRed1 from "../Components/ElecIComponents/ButtonRed1";
+import ButtonRed2 from "../Components/ElecIComponents/ButtonRed2";
+import ButtonRed3 from "../Components/ElecIComponents/ButtonRed3";
+import ButtonGreen from "../Components/ElecIComponents/ButtonGreen";
+import MiniSocket from "../Components/ElecIComponents/MiniSocket";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -52,6 +57,7 @@ import MenuBar from "../Components/Menu";
 import UserGrade from "../Components/UserTest";
 import CircuitElecModel from "../Components/UserTest/Tests/CircuitElecModel";
 
+
 const nodeTypes = {
   electricalComponent: ElectricalComponent,
   bulb: Bulb,
@@ -63,7 +69,12 @@ const nodeTypes = {
   contactordn: ContactorDN,
   circuitbreaker: CircuitBreaker,
   supportelec: SupportElec,
-  socketelecii: SocketElecII
+  socketelecii: SocketElecII,
+  buttonredi: ButtonRed1,
+  buttonredii: ButtonRed2,
+  buttonrediii: ButtonRed3,
+  buttongreen: ButtonGreen,
+  minisocket: MiniSocket,
 };
 
 const edgeTypes = {
@@ -88,11 +99,12 @@ export const Workflow = () => {
           type: MarkerType.Arrow,
           width: 0,
           height: 0,
-          color: "#FFC300",
+          color: "blue",
         },
       };
       const isEdgeValid:boolean = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
       addEdgeConnected((prev)=>prev + 1)
+      console.log(edge)
       if (isEdgeValid){
         addEdge(edge);
       }
@@ -163,46 +175,48 @@ export const Workflow = () => {
       };
       position = { x: dragX - x, y: dragY - y };
     }
-
     let node: Node | undefined;
+    
     if (
       [
         ElectricalComponentType.Capacitor,
-        ElectricalComponentType.Inductor,
-        ElectricalComponentType.Resistor,
+        // ElectricalComponentType.Resistor,
+        // ElectricalComponentType.Inductor,
+        // ElectricalComponentType.ContactorDN
       ].includes(type)
     ) {
       node = {
         id: uuid(),
-        type: "electricalComponent",
+        type: ElectricalComponentType.ContactorDN,
         position,
-        data: { type, value: 3 },
-        parentId: board?.id,
+        data: { value: 15, Desc: "Composant Electronique", nEntry:3, nOutput:7},
+        // data: { type, value: 3 },
+        // parentId: board?.id,
       };
-    } else if (type === ElectricalComponentType.Bulb) {
-      node = {
-        id: uuid(),
-        type,
-        position,
-        data: { value: 12 },
-        parentId: board?.id,
-      };
-    } else if (type === ElectricalComponentType.Battery) {
-      node = {
-        id: uuid(),
-        type,
-        position,
-        data: { value: 12 },
-        parentId: board?.id,
-      };
-    } else if (type === ElectricalComponentType.Board) {
-      node = {
-        id: uuid(),
-        type,
-        position,
-        data: {},
-        style: { height: 200, width: 200 },
-      };
+    // } else if (type === ElectricalComponentType.Bulb) {
+    //   node = {
+    //     id: uuid(),
+    //     type,
+    //     position,
+    //     data: { value: 12 },
+    //     parentId: board?.id,
+    //   };
+    // } else if (type === ElectricalComponentType.Battery) {
+    //   node = {
+    //     id: uuid(),
+    //     type,
+    //     position,
+    //     data: { value: 12 },
+    //     parentId: board?.id,
+    //   };
+    // } else if (type === ElectricalComponentType.Board) {
+    //   node = {
+    //     id: uuid(),
+    //     type,
+    //     position,
+    //     data: {},
+    //     style: { height: 200, width: 200 },
+    //   };
     } else if (type == ElectricalComponentType.ThermalRelayLR2){
       node = {
         id: uuid(),
@@ -252,6 +266,41 @@ export const Workflow = () => {
         position,
         data: { value: 15, Desc: "Composant Electronique", nEntry:9, nOutput:0},
       };
+    } else if(type == ElectricalComponentType.ButtonRedI){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15, Desc: "Composant Electronique", nEntry:1, nOutput:1},
+      };
+    } else if(type == ElectricalComponentType.ButtonRedII){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15, Desc: "Composant Electronique", nEntry:1, nOutput:1},
+      };
+    } else if(type == ElectricalComponentType.ButtonRedIII){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15, Desc: "Composant Electronique", nEntry:1, nOutput:1},
+      };
+    } else if(type == ElectricalComponentType.ButtonGreen){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15, Desc: "Composant Electronique", nEntry:1, nOutput:1},
+      };
+    } else if(type == ElectricalComponentType.MiniSocket){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15, Desc: "Composant Electronique", nEntry:6, nOutput:0},
+      };
     }
 
     if (node) addNode(node);
@@ -292,8 +341,8 @@ export const Workflow = () => {
     const overlappingNode = getIntersectingNodes(dragNode)?.[0];
     overlappingNodeRef.current = overlappingNode;
 
-    setNodes((prevNodes) =>
-      prevNodes.map((node) => {
+    setNodes((prevNodes) =>{
+      return prevNodes.map((node) => {
         if (node.id === dragNode.id) {
           return {
             ...node,
@@ -314,9 +363,10 @@ export const Workflow = () => {
                   : undefined,
             },
           };
-        }
+        }    
         return node;
       })
+    }
     );
   };
 
@@ -466,6 +516,31 @@ export const Workflow = () => {
     );
   }, [showContent]);
 
+  // useEffect(() => {
+  //   setNodes((prevNodes) => {
+  //     if (prevNodes.length === 0) {
+  //       const newNode = [{
+  //         id: uuid(),
+  //         type: ElectricalComponentType.ContactorDN,
+  //         position: { x: 100, y: 100 },
+  //         data: { label: "Node de départ" },
+  //       },
+  //       {
+  //         id: uuid(),
+  //         type: ElectricalComponentType.ContactorLC1,
+  //         position: {x: 400, y: 400},
+  //         data: { label: "Node de fin" },
+  //       }
+  //     ];
+  //       newNode.forEach((node) => {
+  //         [...prevNodes, node]
+  //       })
+  //       return newNode;
+  //     }
+  //     return prevNodes;
+  //   });
+  // }, []);
+
   const { mutateAsync: saveFlow, isPending } = useUpdateData();
   const { data: reactFlowState } = useData();
 
@@ -491,7 +566,7 @@ export const Workflow = () => {
   };
 
   const { isDark, toggleMode } = useDarkMode();
-
+  
   return (
     <Box
       height={"100vh"}
@@ -525,7 +600,7 @@ export const Workflow = () => {
           {/* </Box> */}
         </Flex>
       )}
-      <MenuBar />
+      <MenuBar n={nodes} setN={setNodes}/>
       <UserGrade edgeConnected={edgeConnected}/>
 
       <ReactFlow

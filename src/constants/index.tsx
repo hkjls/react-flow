@@ -1,42 +1,42 @@
 import { Edge, Node } from "@xyflow/react";
 import { ElectricalComponentType } from "../types";
-import { 
-  Battery, 
-  Bulb, 
-  Capacitor, 
-  Inductor, 
-  Resistor,
+import {
   CircuitBreaker32A,
   ContactorDN,
   ContactorLC1,
   ContactorLS1,
   ThermalRelayLR2,
   SupportElec,
-  SocketElecII
+  SocketElecII,
+  ButtonRed1,
+  ButtonRed2,
+  ButtonRed3,
+  ButtonGreen,
+  MiniSocket
 } from "../icons";
 import { Box } from "@chakra-ui/react";
 
 export const initialEdges: Edge[] = [];
 
 export const initialNodes: Node[] = [
-  {
-    id: "1",
-    position: { x: 100, y: 100 },
-    type: "electricalComponent",
-    data: { type: ElectricalComponentType.Resistor, value: 3 },
-  },
-  {
-    id: "2",
-    position: { x: 200, y: 200 },
-    type: "electricalComponent",
-    data: { type: ElectricalComponentType.Capacitor, value: 3 },
-  },
-  {
-    id: "3",
-    position: { x: 300, y: 300 },
-    type: "electricalComponent",
-    data: { type: ElectricalComponentType.Inductor, value: 3 },
-  },
+  // {
+  //   id: "1",
+  //   position: { x: 100, y: 100 },
+  //   type: "electricalComponent",
+  //   data: { type: ElectricalComponentType.Resistor, value: 3 },
+  // },
+  // {
+  //   id: "2",
+  //   position: { x: 200, y: 200 },
+  //   type: "electricalComponent",
+  //   data: { type: ElectricalComponentType.Capacitor, value: 3 },
+  // },
+  // {
+  //   id: "3",
+  //   position: { x: 300, y: 300 },
+  //   type: "electricalComponent",
+  //   data: { type: ElectricalComponentType.Inductor, value: 3 },
+  // }
 ];
 
 export const COMPONENTS = [
@@ -96,8 +96,7 @@ export const COMPONENTS = [
   {
     icon: <ContactorLS1 height={24} />,
     type: ElectricalComponentType.ContactorLS1,
-    label: "ContactorLS1",
-    joelas:"Hey"
+    label: "ContactorLS1"
   },
   {
     icon: <ThermalRelayLR2 height={24} />,
@@ -113,5 +112,30 @@ export const COMPONENTS = [
     icon: <SocketElecII height={24} />,
     type: ElectricalComponentType.SocketElecII,
     label: "SocketElec"
+  },
+  {
+    icon: <ButtonRed1 height={24} />,
+    type: ElectricalComponentType.ButtonRedI,
+    label: "ButtonRed1"
+  },
+  {
+    icon: <ButtonRed2 height={24} />,
+    type: ElectricalComponentType.ButtonRedII,
+    label: "ButtonRed2"
+  },
+  {
+    icon: <ButtonRed3 height={24} />,
+    type: ElectricalComponentType.ButtonRedIII,
+    label: "ButtonRed3"
+  },
+  {
+    icon: <ButtonGreen height={24} />,
+    type: ElectricalComponentType.ButtonGreen,
+    label: "ButtonGreen"
+  },
+  {
+    icon: <MiniSocket height={8} />,
+    type: ElectricalComponentType.MiniSocket,
+    label: "MiniSocket"
   }
 ];

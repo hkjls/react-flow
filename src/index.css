@@ -57,7 +57,7 @@
   background-color: rgb(240, 247, 247);
 }
 
-.menu-list:nth-child(2):hover ul{
+.menu-list:nth-child(2):hover > ul{
   display: block;
 }
 
@@ -94,7 +94,7 @@
   right: 15px;
   border: solid rgba(0, 0, 0, 0.137) 0.1px;
   border-radius: 5px;
-  width: 1000px;
+  width: 1130px;
   background: white;
   padding-left: 15px;
   padding-right: 15px;

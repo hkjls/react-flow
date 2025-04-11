@@ -17,7 +17,7 @@ const SupportElec=({
 
     return(
         <Box>
-            <SupportElecIcon height={65} width={100} />
+            <SupportElecIcon height={140} width={450} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -33,50 +33,50 @@ const SupportElec=({
             </Text>
 
             <Terminal
-                style={{ left: 5 +  + 0* top_x, top: 8}}
+                style={{ left: 29 + 0* top_x, top: 25}}
                 type="target"
                 position={Position.Top}
                 id="left-1-sprt"
             />
             <Terminal
-                style={{ left: 5 + top_x, top: 8}}
+                style={{ left: 47 + top_x, top: 25}}
                 type="target"
                 position={Position.Top}
                 id="left-center-1-sprt"
             />
             <Terminal
-                style={{ left: 5  + 2* top_x, top: 8}}
+                style={{ left: 65  + 2* top_x, top: 25}}
                 type="target"
                 position={Position.Top}
                 id="right-center-1-sprt"
             />
             <Terminal
-                style={{ left: 5  + 3* top_x, top: 8 }}
+                style={{ left: 83  + 3* top_x, top: 25 }}
                 type="target"
                 position={Position.Top}
                 id="right-1-sprt"
             />
 
             <Terminal
-                style={{ left: 45 +  2* top_x, top: 8}}
+                style={{ left: 177 +  2* top_x, top: 25}}
                 type="source"
                 position={Position.Top}
                 id="left-2-sprt"
             />
             <Terminal
-                style={{ left: 45 + 3*top_x, top: 8}}
+                style={{ left: 195 + 3*top_x, top: 25}}
                 type="source"
                 position={Position.Top}
                 id="left-center-2-sprt"
             />
             <Terminal
-                style={{ left: 45  + 4* top_x, top: 8}}
+                style={{ left: 213  + 4* top_x, top: 25}}
                 type="source"
                 position={Position.Top}
                 id="right-center-2-sprt"
             />
             <Terminal
-                style={{ left: 45  + 5* top_x, top: 8 }}
+                style={{ left: 231  + 5* top_x, top: 25 }}
                 type="source"
                 position={Position.Top}
                 id="right-2-sprt"

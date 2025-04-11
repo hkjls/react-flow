@@ -21,7 +21,7 @@ const ContactorLCI =({
 
     return(
         <Box>
-            <ContactorLCIIcon height={60} />
+            <ContactorLCIIcon height={150} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -37,31 +37,32 @@ const ContactorLCI =({
             </Text>
 
             <Terminal
-                style={{ left: 15 + 0*top_x, top: 7 - top_y }}
+                style={{ left: 68 + 0*top_x, top: 28 - top_y }}
                 type="target"
                 position={Position.Top}
                 id="left-top-lci"
             />
             <Terminal
-                style={{ left: 15 + top_x, top: 7 - top_y }}
+                style={{ left: 85 + top_x, top: 28 - top_y }}
                 type="target"
                 position={Position.Top}
                 id="right-top-lci"
             />
 
             <Terminal
-                style={{ left: 12 + 0*bottom_x, bottom: 6 + 0*bottom_y }}
+                style={{ left: 54 + 0*bottom_x, bottom: 30 + 0*bottom_y }}
                 type="source"
                 position={Position.Bottom}
                 id="left-bottom-lci"
             />
             <Terminal
-                style={{ left: 12 + bottom_x, bottom: 6 + 0*bottom_y }}
-                type="source"
+                style={{ left: 60 + bottom_x, bottom: 30 + 0*bottom_y }}
+                type="target"
                 position={Position.Bottom}
                 id="center-bottom-lci"
-            /><Terminal
-                style={{ left: 12 + 2.3*bottom_x, bottom: 6 + 0*bottom_y }}
+            />
+            <Terminal
+                style={{ left: 85 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
                 type="source"
                 position={Position.Bottom}
                 id="right-bottom-lci"

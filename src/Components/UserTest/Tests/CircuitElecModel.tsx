@@ -67,7 +67,29 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
         return true
     }
 
-    
+    if(source == "left-1-msckt" && target == "left-1-sprt"){
+        return true
+    }
+
+    if(source == "left-2-sprt" && target == "left-4-msckt"){
+        return true
+    }
+
+    if(source == "left-3-msckt" && target == "left-1-sckt"){
+        return true
+    }
+
+    if(source == "left-2-msckt" && target == "right-3-sckt"){
+        return true
+    }
+
+    if(source == "left-bottom-lci" && target == "left-5-msckt"){
+        return true
+    }
+
+    if(source == "left-bottom-lci" && target == "center-bottom-lci"){
+        return true
+    }
     return false
 }
 

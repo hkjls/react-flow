@@ -20,7 +20,7 @@ const ContactorLSI =({
     const bottom_y : number = 0
     return(
         <Box>
-            <ContactorLSIIcon height={60} />
+            <ContactorLSIIcon height={190} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -36,37 +36,37 @@ const ContactorLSI =({
             </Text>
 
             <Terminal
-                style={{ left: 5 + 0*top_x, top: 7 - top_y }}
+                style={{ left: 61 + 0*top_x, top: 55 - top_y }}
                 type="source"
                 position={Position.Top}
                 id="left-up-lsi"
             />
             <Terminal
-                style={{ left: 5 + 0*top_x, top: 7 - 0*top_y}}
+                style={{ left: 61 + 0*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
                 id="left-lsi"
             />
             <Terminal
-                style={{ left: 5 + 1.5*top_x, top: 7 - 0*top_y}}
+                style={{ left: 68 + 1.5*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
                 id="left-center-lsi"
             />
             <Terminal
-                style={{ left: 5 + 3.5*top_x, top: 7 - 0*top_y}}
+                style={{ left: 71 + 3.5*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
                 id="right-center-lsi"
             />
             <Terminal
-                style={{ left: 5 + 5*top_x, top: 7 - 0*top_y}}
+                style={{ left: 78 + 5*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
                 id="right-lsi"
             />
             <Terminal
-                style={{ left: 5 + 5*top_x, top: 7 - top_y }}
+                style={{ left: 78 + 5*top_x, top: 55 - top_y }}
                 type="source"
                 position={Position.Top}
                 id="right-up-lsi"
@@ -74,25 +74,25 @@ const ContactorLSI =({
 
 
             <Terminal
-                style={{ left: 6 + 0*bottom_x, bottom: 6 + 0*bottom_y }}
+                style={{ left: 64 + 0*bottom_x, bottom: 43 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
                 id="left-lsi"
             />
             <Terminal
-                style={{ left: 6 + bottom_x, bottom: 6 + bottom_y}}
+                style={{ left: 69 + bottom_x, bottom: 43 + bottom_y}}
                 type="target"
                 position={Position.Bottom}
                 id="left-center-lsi"
             />
             <Terminal
-                style={{ left: 6 + 2*bottom_x, bottom: 6 + 2*bottom_y }}
+                style={{ left: 76 + 2*bottom_x, bottom: 43 + 2*bottom_y }}
                 type="target"
                 position={Position.Bottom}
                 id="right-center-lsi"
             />
             <Terminal
-                style={{ left: 6 + 3*bottom_x, bottom: 6 + 3*bottom_y}}
+                style={{ left: 83 + 3*bottom_x, bottom: 43 + 3*bottom_y}}
                 type="target"
                 position={Position.Bottom}
                 id="right-lsi"

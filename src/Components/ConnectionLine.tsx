@@ -26,5 +26,5 @@ export default function ConnectionLine({
   if (connectionStatus === "valid") color = "#55dd99";
   if (connectionStatus === "invalid") color = "#ff6060";
 
-  return <path fill="none" stroke={color} strokeWidth={1.5} d={d} />;
+  return <path fill="none" stroke={color} strokeWidth={2} d={d} />;
 }

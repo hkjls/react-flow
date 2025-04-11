@@ -20,7 +20,7 @@ const CircuitBreaker =({
     const bottom_y : number = 0
     return(
         <Box>
-            <CircuitBreakerIcon height={60} />
+            <CircuitBreakerIcon height={150} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -36,27 +36,27 @@ const CircuitBreaker =({
             </Text>
 
             <Terminal
-                style={{ left: 13 + 0*top_x, top: 19 - top_y }}
+                style={{ left: 67 + 0*top_x, top: 44 - top_y }}
                 type="target"
                 position={Position.Top}
                 id="left-up-cbr"
             />
 
             <Terminal
-                style={{ left: 14 + top_x, top: 19 - top_y }}
+                style={{ left: 62 + top_x, top: 43 - top_y }}
                 type="target"
                 position={Position.Top}
                 id="right-up-cbr"
             />
 
             <Terminal
-                style={{ left: 13 + 0*bottom_x, bottom: 8 + 0*bottom_y }}
+                style={{ left: 67 + 0*bottom_x, bottom: 24 + 0*bottom_y }}
                 type="source"
                 position={Position.Bottom}
                 id="left-bottom-cbr"
             />
             <Terminal
-                style={{ left: 14 + bottom_x, bottom: 8 + 0*bottom_y }}
+                style={{ left: 62 + bottom_x, bottom: 25 + 0*bottom_y }}
                 type="source"
                 position={Position.Bottom}
                 id="right-bottom-cbr"

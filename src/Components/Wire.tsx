@@ -4,7 +4,8 @@ import {
   getSmoothStepPath,
   addEdge,
   Connection,
-  Edge
+  Edge,
+  useReactFlow
 } from "@xyflow/react";
 import React from "react";
 
@@ -30,40 +31,25 @@ export default function Wire({
 
   const isConnected = !!(source && target)
   // console.log(`wire connected : ${isConnected}`)
-
+  const {deleteElements} = useReactFlow();
+  
+  const handleClick = () => {
+    deleteElements({ edges: [{ id: `${source}-${target}` }] });
+  };
+  
   return (
     <>
       <BaseEdge
         style={{
           stroke: "green",
+          zIndex: 5000,
+          cursor: "pointer"
         }}
         markerEnd={markerEnd}
         path={d}
+        interactionWidth={10}
+        
       />
-      {/* <circle
-        r="4"
-        fill="green"
-        style={{
-          filter: "drop-shadow(0px 0px 2px rgb(0, 255, 55))",
-        }}
-      >
-        <animateMotion dur="2s" repeatCount={"indefinite"} path={d} />
-      </circle>
-      <circle fill="transparent" stroke="green" strokeWidth={2}>
-        <animate
-          attributeName="r"
-          values="2;6"
-          dur="2s"
-          repeatCount={"indefinite"}
-        />
-        <animate
-          attributeName="opacity"
-          values="1;0"
-          dur="2s"
-          repeatCount={"indefinite"}
-        />
-        <animateMotion dur="2s" repeatCount={"indefinite"} path={d} />
-      </circle> */}
     </>
   );
 }

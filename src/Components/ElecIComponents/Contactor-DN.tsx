@@ -21,7 +21,7 @@ const ContactorDN =({
 
     return(
         <Box>
-            <ContactorDNIcon height={60}/>
+            <ContactorDNIcon height={200}/>
             <Text
                 fontSize="xx-small"
                 position={"absolute"}
@@ -37,50 +37,50 @@ const ContactorDN =({
             </Text>
 
             <Terminal
-                style={{ left: 5 + 0*top_x, top: 7 - top_y }}
+                style={{ left: 43 + 0*top_x, top: 62 - top_y }}
                 type="source"
                 position={Position.Top}
                 id="left-top-dn"
             />
             <Terminal
-                style={{ left: 5 + 1*top_x, top: 7 - 18*top_y }}
+                style={{ left: 48 + 1*top_x, top: 62 - 18*top_y }}
                 type="source"
                 position={Position.Top}
                 id="left-up-center-top-dn"
             />
             <Terminal
-                style={{ left: 5 + 2*top_x, top: 7 - top_y }}
+                style={{ left: 55 + 2*top_x, top: 62 - top_y }}
                 type="source"
                 position={Position.Top}
                 id="left-center-top-dn"
             />
             <Terminal
-                style={{ left: 5 + 4*top_x, top: 7 - top_y }}
+                style={{ left: 65 + 4*top_x, top: 62 - top_y }}
                 type="source"
                 position={Position.Top}
                 id="right-top-dn"
             />
 
             <Terminal
-                style={{ left: 6 + 0*bottom_x, bottom: 6 + 0*bottom_y }}
+                style={{ left: 43 + 0*bottom_x, bottom: 40 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
                 id="left-bottom-dn"
             />
             <Terminal
-                style={{ left: 6 + 1*bottom_x, bottom: 6 - 18*bottom_y }}
+                style={{ left: 48 + 1*bottom_x, bottom: 40 - 18*bottom_y }}
                 type="target"
                 position={Position.Bottom}
                 id="left-bottom-down-center-dn"
             />
             <Terminal
-                style={{ left: 6 + 2*bottom_x, bottom: 6 + 0*bottom_y }}
+                style={{ left: 53 + 2*bottom_x, bottom: 40 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
                 id="left-bottom-center-dn"
             />
             <Terminal
-                style={{ left: 6 + 4*bottom_x, bottom: 6 + 0*bottom_y }}
+                style={{ left: 65 + 4*bottom_x, bottom: 40 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
                 id="right-bottom-dn"

@@ -10,3 +10,8 @@ export { default as ContactorLS1} from "./ElecIcons/Contactor-LC1";
 export { default as ThermalRelayLR2} from "./ElecIcons/ThermalRelay-LR2";
 export { default as SupportElec} from "./ElecIcons/SupportElec";
 export { default as SocketElecII} from "./ElecIcons/SocketElec2";
+export { default as ButtonRed1} from "./ElecIcons/ButtonRed1";
+export { default as ButtonRed2} from "./ElecIcons/ButtonRed2";
+export { default as ButtonRed3} from "./ElecIcons/ButtonRed3";
+export { default as ButtonGreen} from "./ElecIcons/ButtonGreen";
+export { default as MiniSocket} from "./ElecIcons/MiniSocket";

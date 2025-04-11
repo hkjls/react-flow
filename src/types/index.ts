@@ -12,6 +12,11 @@ export enum ElectricalComponentType {
   ThermalRelayLR2 = "thermalrelay", //number and signs exclude
   SupportElec = "supportelec",
   SocketElecII = "socketelecii",
+  ButtonRedI = "buttonredi",
+  ButtonRedII = "buttonredii",
+  ButtonRedIII = "buttonrediii",
+  ButtonGreen = "buttongreen",
+  MiniSocket = "minisocket",
 }
 
 export enum ElectricalComponentState {
