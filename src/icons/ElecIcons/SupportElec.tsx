@@ -5,7 +5,7 @@ const SupportElec =({height, width}:{height?:number, width?:number})=>{
         <img src={SupportElec_icon} alt="Support Elec" title="Support"
             style={{
                 height:height,
-                width:width
+                width:width,
             }}
         />
     )

@@ -1,6 +1,6 @@
 import {Node, NodeProps, Position} from "@xyflow/react"
 import { ElectricalComponentData, ElectricalComponentType } from "../../types"
-import { Box, Text} from "@chakra-ui/react"
+import { background, Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
 
@@ -16,8 +16,12 @@ const SupportElec=({
     const top_x : number = 10
 
     return(
-        <Box>
-            <SupportElecIcon height={140} width={450} />
+        <Box
+            style={{
+                transform:"rotateZ(0deg)"
+            }}
+        >
+            <SupportElecIcon height={120} width={450} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}

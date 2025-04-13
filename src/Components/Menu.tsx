@@ -19,7 +19,6 @@ const MenuBar=({n, setN}:any) => {
                 <li className="menu-list-list">
                   <SimMotor n={n} setN={setN}/>
                 </li>
-                <li className="menu-list-list">Test_Elec 3</li>
               </ul>
           </li>
           

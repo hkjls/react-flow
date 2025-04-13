@@ -17,7 +17,7 @@ const SocketElecII=({
 
     return(
         <Box>
-            <SupportElecIcon height={150} width={400} />
+            <SupportElecIcon height={130} width={350} />
             <Text
                 fontSize="xx-small"
                 position={"absolute"}

@@ -20,7 +20,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import "../index.css";
-import { Box, Flex, IconButton, Spinner, Text } from "@chakra-ui/react";
+import { Box, Flex, IconButton, position, Spinner, Text } from "@chakra-ui/react";
 import { COMPONENTS, initialEdges, initialNodes } from "../constants";
 import { v4 as uuid } from "uuid";
 import { Floppy, Moon, Sun } from "react-bootstrap-icons";
@@ -91,21 +91,28 @@ export const Workflow = () => {
 
   const onConnect = useCallback(
     (connection: Connection) => {
+      const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
+      
       const edge = {
         ...connection,
         type: "wire",
         id: uuid(),
+        style:{
+          stroke: isEdgeValid.color,
+          strokeWidth:"2px",
+        },
         markerEnd: {
           type: MarkerType.Arrow,
           width: 0,
           height: 0,
-          color: "blue",
+          color: "yellow",
+          zIndex: "8000"
         },
       };
-      const isEdgeValid:boolean = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
+
+
       addEdgeConnected((prev)=>prev + 1)
-      console.log(edge)
-      if (isEdgeValid){
+      if (isEdgeValid.status){
         addEdge(edge);
       }
     },
@@ -209,14 +216,14 @@ export const Workflow = () => {
     //     data: { value: 12 },
     //     parentId: board?.id,
     //   };
-    // } else if (type === ElectricalComponentType.Board) {
-    //   node = {
-    //     id: uuid(),
-    //     type,
-    //     position,
-    //     data: {},
-    //     style: { height: 200, width: 200 },
-    //   };
+    } else if (type === ElectricalComponentType.Board) {
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: {},
+        style: { height: 400, width: 600 },
+      };
     } else if (type == ElectricalComponentType.ThermalRelayLR2){
       node = {
         id: uuid(),

@@ -19,6 +19,7 @@ export default function Wire({
   markerEnd,
   source,
   target,
+  style
 }: EdgeProps) {
   const [d] = getSmoothStepPath({
     sourceX,
@@ -40,11 +41,7 @@ export default function Wire({
   return (
     <>
       <BaseEdge
-        style={{
-          stroke: "green",
-          zIndex: 5000,
-          cursor: "pointer"
-        }}
+        style={style}
         markerEnd={markerEnd}
         path={d}
         interactionWidth={10}
