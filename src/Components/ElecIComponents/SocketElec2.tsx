@@ -13,78 +13,122 @@ const SocketElecII=({
     data: {value}
 }:NodeProps<SocketElec_Node>)=>{
     const unit =getUnit(type as ElectricalComponentType)
-    const top_x : number = 10
+    const top_x : number = 0
+    const top_y : number = -3
 
     return(
         <Box>
             <SupportElecIcon height={130} width={350} />
-            <Text
-                fontSize="xx-small"
-                position={"absolute"}
-                bottom={"16px"}
-                right="0px"
-                color="black"
-                background={"white"}
-                width={15}
-                textAlign={"center"}
-                border="none"
-            >
-                {value} {unit}
-            </Text>
             <Terminal
-                style={{ left: 34 + 0* top_x, top: 27}}
+                style={{ left: 30 + 0* top_x, top: 27 + top_y}}
                 type="target"
                 position={Position.Top}
                 id="left-1-sckt"
             />
             <Terminal
-                style={{ left: 62 + top_x, top: 27}}
-                type="target"
+                style={{ left: 62 + top_x, top: 27 + top_y}}
+                type="source"
                 position={Position.Top}
                 id="left-2-sckt"
             />
             <Terminal
-                style={{ left: 88 + 2*top_x, top: 27}}
+                style={{ left: 95 + 2*top_x, top: 27 + top_y}}
                 type="target"
                 position={Position.Top}
                 id="left-3-sckt"
             />
             <Terminal
-                style={{ left: 117 + 3*top_x, top: 27}}
-                type="target"
+                style={{ left: 128 + 3*top_x, top: 27 + top_y}}
+                type="source"
                 position={Position.Top}
                 id="left-4-sckt"
             />
             <Terminal
-                style={{ left: 144 + 4*top_x, top: 27}}
-                type="target"
+                style={{ left: 162 + 4*top_x, top: 27 + top_y}}
+                type="source"
                 position={Position.Top}
                 id="left-5-sckt"
             />
             <Terminal
-                style={{ left: 172 + 5*top_x, top: 27}}
-                type="target"
+                style={{ left: 194 + 5*top_x, top: 27 + top_y}}
+                type="source"
                 position={Position.Top}
                 id="left-6-sckt"
             />
             <Terminal
-                style={{ left: 227 + 7*top_x, top: 27}}
-                type="target"
+                style={{ left: 260 + 7*top_x, top: 27 + top_y}}
+                type="source"
                 position={Position.Top}
                 id="right-1-sckt"
             />
             <Terminal
-                style={{ left: 254 + 8*top_x, top: 27}}
-                type="target"
+                style={{ left: 293 + 8*top_x, top: 27 + top_y}}
+                type="source"
                 position={Position.Top}
                 id="right-2-sckt"
             />
             <Terminal
-            style={{ left: 282 + 9*top_x, top: 27}}
-            type="target"
-            position={Position.Top}
-            id="right-3-sckt"
-        />
+                style={{ left: 325 + 9*top_x, top: 27 + top_y}}
+                type="target"
+                position={Position.Top}
+                id="right-3-sckt"
+            />
+
+
+            <Terminal
+                style={{ left: 30 + 0* top_x, top: 27 + 70 + top_y}}
+                type="target"
+                position={Position.Top}
+                id="left-1-sckt-d"
+            />
+            <Terminal
+                style={{ left: 62 + top_x, top: 27+ 70 + top_y}}
+                type="source"
+                position={Position.Top}
+                id="left-2-sckt-d"
+            />
+            <Terminal
+                style={{ left: 95 + 2*top_x, top: 27+ 70 + top_y}}
+                type="target"
+                position={Position.Top}
+                id="left-3-sckt-d"
+            />
+            <Terminal
+                style={{ left: 128 + 3*top_x, top: 27+ 70 + top_y}}
+                type="source"
+                position={Position.Top}
+                id="left-4-sckt-d"
+            />
+            <Terminal
+                style={{ left: 162 + 4*top_x, top: 27+ 70 + top_y}}
+                type="source"
+                position={Position.Top}
+                id="left-5-sckt-d"
+            />
+            <Terminal
+                style={{ left: 194 + 5*top_x, top: 27+ 70 + top_y}}
+                type="source"
+                position={Position.Top}
+                id="left-6-sckt-d"
+            />
+            <Terminal
+                style={{ left: 260 + 7*top_x, top: 27+ 70 + top_y}}
+                type="source"
+                position={Position.Top}
+                id="right-1-sckt-d"
+            />
+            <Terminal
+                style={{ left: 293 + 8*top_x, top: 27+ 70 + top_y}}
+                type="source"
+                position={Position.Top}
+                id="right-2-sckt-d"
+            />
+            <Terminal
+                style={{ left: 325 + 9*top_x, top: 27+ 70 + top_y}}
+                type="target"
+                position={Position.Top}
+                id="right-3-sckt-d"
+            />
         </Box>
     )
 }

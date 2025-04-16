@@ -166,6 +166,134 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
             status: true
         }
     }
+
+    if(source == "left-up-cbrn" && target == "center-bottom-lci"){
+        return {
+            color:"#6b7075",
+            status: true
+        }
+    }
+    if(source == "right-up-lsi" && target == "left-bottom-cbrn"){
+        return {
+            color:"#6b7075",
+            status: true
+        }
+    }
+    if(source == "left-6-sckt" && target == "left-bottom-cbrn"){
+        return {
+            color:"#6b7075",
+            status: true
+        }
+    }
+    if(source == "right-bottom-lci" && target == "right-up-cbrn"){
+        return {
+            color:"#6b7075",
+            status: true
+        }
+    }
+    if(source == "left-up-center-top-dn" && target == "right-bottom-cbrn"){
+        return {
+            color:"#6b7075",
+            status: true
+        }
+    }
+    if(source == "right-center-thr" && target == "right-bottom-cbrn"){
+        return {
+            color:"#6b7075",
+            status: true
+        }
+    }
+    if(source == "right-1-sckt" && target == "left-bottom-down-center-dn"){
+        return {
+            color:"green",
+            status: true
+        }
+    }
+    if(source == "right-2-sckt" && target == "left-center-thr"){
+        return {
+            color:"yellow",
+            status: true
+        }
+    }
+    if(source == "left-2-sckt" && target == "left-thr"){
+        return {
+            color:"yellow",
+            status: true
+        }
+    }
+    if(source == "right-lsi" && target == "left-3-sckt"){
+        return {
+            color:"green",
+            status: true
+        }
+    }
+    if(source == "left-4-sckt" && target == "right-lsi"){
+        return {
+            color:"blue",
+            status: true
+        }
+    }
+    if(source == "left-up-lsi" && target == "right-lsi"){
+        return {
+            color:"blue",
+            status: true
+        }
+    }
+    if(source == "left-5-sckt" && target == "right-thr"){
+        return {
+            color:"yellow",
+            status: true
+        }
+    }
+    if(source == "left-6-sckt-d" && target == "down-red1"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "right-1-sckt-d" && target == "up-red3"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "right-2-sckt-d" && target == "down-red3"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "left-2-sckt-d" && target == "up-btn-red2"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "down-btn-red2" && target == "down-btn-green"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "down-btn-red2" && target == "left-3-sckt-d"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "left-4-sckt-d" && target == "down-btn-green"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+    if(source == "left-5-sckt-d" && target == "up-red1"){
+        return {
+            color:"black",
+            status: true
+        }
+    }
+
     return {
         color:"red",
         status: false

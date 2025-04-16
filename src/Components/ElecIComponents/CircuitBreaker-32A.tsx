@@ -21,19 +21,6 @@ const CircuitBreaker =({
     return(
         <Box>
             <CircuitBreakerIcon height={150} />
-            <Text
-                fontSize="xx-small"
-                position={"absolute"}
-                bottom={"16px"}
-                right="0px"
-                color="black"
-                background={"white"}
-                width={15}
-                textAlign={"center"}
-                border="none"
-            >
-                {value} {unit}
-            </Text>
 
             <Terminal
                 style={{ left: 67 + 0*top_x, top: 44 - top_y }}

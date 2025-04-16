@@ -6,6 +6,7 @@ export enum ElectricalComponentType {
   Battery = "battery",
   Board = "board",
   CircuitBreaker32A = "circuitbreaker",
+  CircuitBreaker32AN = "circuitbreakern",
   ContactorDN = "contactordn",
   ContactorLC1 = "contactorlci",
   ContactorLS1 = "contactorlsi",

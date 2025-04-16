@@ -17,6 +17,7 @@ import {
   useNodesState,
   useReactFlow,
   useStore,
+  ConnectionState
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import "../index.css";
@@ -37,6 +38,7 @@ import ContactorLSI from "../Components/ElecIComponents/Contactor-LS1";
 import ContactorLCI from "../Components/ElecIComponents/Contactor-LC1";
 import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
 import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
+import CircuitBreakerN from "../Components/ElecIComponents/CircuitBreaker-32AN";
 import SupportElec from "../Components/ElecIComponents/SupportElec";
 import SocketElecII from "../Components/ElecIComponents/SocketElec2";
 import ButtonRed1 from "../Components/ElecIComponents/ButtonRed1";
@@ -68,6 +70,7 @@ const nodeTypes = {
   contactorlci: ContactorLCI,
   contactordn: ContactorDN,
   circuitbreaker: CircuitBreaker,
+  circuitbreakern: CircuitBreakerN,
   supportelec: SupportElec,
   socketelecii: SocketElecII,
   buttonredi: ButtonRed1,
@@ -82,6 +85,7 @@ const edgeTypes = {
 };
 
 export const Workflow = () => {
+  const {getNodes, getEdges} = useReactFlow()
   const [connexion, addConnexion] = useState(0)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -91,6 +95,8 @@ export const Workflow = () => {
 
   const onConnect = useCallback(
     (connection: Connection) => {
+      
+      // console.log(connection.sourceHandle, connection.targetHandle)
       const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
       
       const edge = {
@@ -109,6 +115,31 @@ export const Workflow = () => {
           zIndex: "8000"
         },
       };
+
+      const autoConnection = {
+        id: uuid(),
+        type: "wire",
+        source:"down-btn-red2",
+        target:"down-btn-green",
+        style:{
+          stroke: "green",
+          strokeWidth:"2px"
+        },
+        markerEnd:{
+          type: MarkerType.Arrow,
+          width: 0,
+          height: 0,
+          color: "yellow",
+          zIndex: "8000"
+        }
+      }
+
+      if(connection.sourceHandle == "left-center-2-sprt" && connection.targetHandle == "right-up-thr"){
+        // const btn_green = 
+        // console.log(getNodes)
+        // console.log(getEdges)
+        addEdge(autoConnection)
+      }
 
 
       addEdgeConnected((prev)=>prev + 1)
@@ -258,7 +289,14 @@ export const Workflow = () => {
         type,
         position,
         data: { value: 15, Desc: "Pour couper le courant", nEntry:2, nOutput: 2},
-      };2
+      };
+    }else if(type == ElectricalComponentType.CircuitBreaker32AN){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { value: 15, Desc: "Pour couper le courant", nEntry:2, nOutput: 2},
+      };
     } else if(type == ElectricalComponentType.SupportElec){
       node = {
         id: uuid(),
@@ -603,7 +641,7 @@ export const Workflow = () => {
             position={"relative"}
             zIndex={1000}
           > */}
-            <ComponentDetail node={selectedNode} key={selectedNode.id} />
+            {/* <ComponentDetail node={selectedNode} key={selectedNode.id} /> */}
           {/* </Box> */}
         </Flex>
       )}

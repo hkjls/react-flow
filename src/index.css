@@ -133,6 +133,10 @@
   bottom: 50px;
 }
 
+#btn-initializing button:active{
+  color: #55dd99;
+}
+
 /* Component Info Style Configuration */
 .component:nth-child(1){
   display: flex;
@@ -178,3 +182,67 @@
   color:#afca0b;
 }
 
+/* Panel Subject */
+#panel-subject{
+  position: absolute;
+  left: 15px;
+  top: 100px;
+  border: solid 0.1px black;
+  margin-left: 15px;
+  border-radius: 10px;
+  width: 220px;
+  height: 500px;
+  z-index: 2000;
+  background: white;
+}
+
+#panel-subject h2{
+  text-align: center;
+  margin-top: 10px;
+}
+
+#Circuit-Image{
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: solid black 0.1px;
+  border-radius: 10px;
+  height: 78%;
+  display: flex;
+  justify-content: center;
+}
+
+#image-scroll-pannel{
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+#image-scroll-pannel ul{
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
+
+#image-scroll-pannel li{
+  list-style: none;
+  border: solid rgba(136, 136, 136, 0.384) 0.1px;
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#image-scroll-pannel li:hover{
+  background: #AFCA0B;
+}
+
+#image-scroll-pannel li:active{
+  background: #b0ca0b4d;
+}
+
+.react-flow__edges{
+  z-index: 5000 !important;
+}

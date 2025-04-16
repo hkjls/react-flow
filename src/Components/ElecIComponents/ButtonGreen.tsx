@@ -16,33 +16,21 @@ const ButtonGreen=({
     const x:number = 10
 
     return(
-        <Box>
+        <Box style={{
+            transform:"rotateZ(90deg)"
+        }}>
             <ButtonGreenIcon height={90} />
-            <Text
-                fontSize="xx-small"
-                position={"absolute"}
-                bottom={"16px"}
-                right="0px"
-                color="black"
-                background={"white"}
-                width={15}
-                textAlign={"center"}
-                border="none"
-            >
-                {value} {unit}
-            </Text>
-
             <Terminal
                 style={{ left: 11, top: 25 + x}}
                 type="target"
                 position={Position.Top}
-                id="left-1-sprt"
+                id="up-btn-green"
             />
             <Terminal
                 style={{ left: 11, top: 50 + x}}
                 type="target"
                 position={Position.Top}
-                id="left-center-1-sprt"
+                id="down-btn-green"
             />
         </Box>
     )}

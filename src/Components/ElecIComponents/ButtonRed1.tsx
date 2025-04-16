@@ -15,33 +15,22 @@ const ButtonRed1=({
     const unit = getUnit(type as ElectricalComponentType)
     const x : number = 17
     return(
-        <Box>
+        <Box style={{
+            transform:"rotateZ(90deg)"
+        }}>
             <ButtonRed1Icon height={90} />
-            <Text
-                fontSize="xx-small"
-                position={"absolute"}
-                bottom={"16px"}
-                right="0px"
-                color="black"
-                background={"white"}
-                width={15}
-                textAlign={"center"}
-                border="none"
-            >
-                {value} {unit}
-            </Text>
 
             <Terminal
                 style={{ left: 5, top: 25 + x}}
                 type="target"
                 position={Position.Top}
-                id="left-1-sprt"
+                id="up-red1"
             />
             <Terminal
                 style={{ left: 5, top: 50 + x}}
                 type="target"
                 position={Position.Top}
-                id="left-center-1-sprt"
+                id="down-red1"
             />
         </Box>
     )}

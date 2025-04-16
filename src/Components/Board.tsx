@@ -18,8 +18,8 @@ export default function Board({ selected }: NodeProps<BoardNode>) {
 
   return (
     <Box
-      border={`2px solid ${color}`}
-      borderRadius="8px"
+      border={`1px solid ${color}`}
+      borderRadius="0px"
       height="100%"
       width="100%"
       {...(selected && { boxShadow: `${color} 0px 0px 4px` })}

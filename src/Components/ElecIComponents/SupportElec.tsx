@@ -22,19 +22,6 @@ const SupportElec=({
             }}
         >
             <SupportElecIcon height={120} width={450} />
-            <Text
-                fontSize="xx-small"
-                position={"absolute"}
-                bottom={"16px"}
-                right="0px"
-                color="black"
-                background={"white"}
-                width={15}
-                textAlign={"center"}
-                border="none"
-            >
-                {value} {unit}
-            </Text>
 
             <Terminal
                 style={{ left: 29 + 0* top_x, top: 25}}

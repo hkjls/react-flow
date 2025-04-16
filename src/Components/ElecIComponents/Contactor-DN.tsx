@@ -22,19 +22,6 @@ const ContactorDN =({
     return(
         <Box>
             <ContactorDNIcon height={200}/>
-            <Text
-                fontSize="xx-small"
-                position={"absolute"}
-                bottom={"16px"}
-                right="0px"
-                color="black"
-                background={"white"}
-                width={15}
-                textAlign={"center"}
-                border="none"
-            >
-                {value} {unit}
-            </Text>
 
             <Terminal
                 style={{ left: 43 + 0*top_x, top: 62 - top_y }}

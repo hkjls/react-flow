@@ -2,6 +2,7 @@ import { Edge, Node } from "@xyflow/react";
 import { ElectricalComponentType } from "../types";
 import {
   CircuitBreaker32A,
+  CircuitBreaker32AN,
   ContactorDN,
   ContactorLC1,
   ContactorLS1,
@@ -16,7 +17,9 @@ import {
 } from "../icons";
 import { Box } from "@chakra-ui/react";
 
-export const initialEdges: Edge[] = [];
+export const initialEdges: Edge[] = [
+  
+];
 
 export const initialNodes: Node[] = [
   // {
@@ -82,6 +85,11 @@ export const COMPONENTS = [
     icon: <CircuitBreaker32A height={24}/>,
     type: ElectricalComponentType.CircuitBreaker32A,
     label: "CircuitBreaker32A"
+  },
+  {
+    icon: <CircuitBreaker32AN height={24}/>,
+    type: ElectricalComponentType.CircuitBreaker32AN,
+    label: "CircuitBreaker32AN"
   },
   {
     icon: <ContactorDN height={24} />,
