@@ -269,7 +269,7 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
             status: true
         }
     }
-    if(source == "down-btn-red2" && target == "down-btn-green"){
+    if(source == "down-btn-red2" && target == "up-btn-green"){
         return {
             color:"black",
             status: true

@@ -96,7 +96,7 @@ export const Workflow = () => {
   const onConnect = useCallback(
     (connection: Connection) => {
       
-      // console.log(connection.sourceHandle, connection.targetHandle)
+      console.log(connection.sourceHandle, connection.targetHandle)
       const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
       
       const edge = {

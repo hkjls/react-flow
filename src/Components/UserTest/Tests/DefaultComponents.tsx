@@ -76,28 +76,28 @@ const SimMotor=({n, setN}:any)=>{
                 {
                     id: uuid(),
                     type: ElectricalComponentType.ButtonRedI,
-                    position: {x: 800 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
+                    position: {x: 1135 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
                     data: { label: "Grp btn" },
                     draggable: false
                 },
                 {
                     id: uuid(),
                     type: ElectricalComponentType.ButtonGreen,
-                    position: {x: 900 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
+                    position: {x: 1035 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
                     data: { label: "Grp btn" },
                     draggable: false
                 },
                 {
                     id: uuid(),
                     type: ElectricalComponentType.ButtonRedII,
-                    position: {x: 1000 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
+                    position: {x: 935 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
                     data: { label: "Grp btn" },
                     draggable: false
                 },
                 {
                     id: uuid(),
                     type: ElectricalComponentType.ButtonRedIII,
-                    position: {x: 1100 + x_gbtn+x_all, y: 900 + y_gbtn+y_all},
+                    position: {x: 800 + x_gbtn+x_all, y: 920 + y_gbtn+y_all},
                     data: { label: "Grp btn" },
                     draggable: false
                 },
