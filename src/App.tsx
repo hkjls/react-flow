@@ -4,6 +4,9 @@ import { Workflow } from "./Workflow/Workflow";
 import "./index.css";
 import { ReactFlowProvider } from "@xyflow/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AuthProvider } from "./auth";
+import Interface from "./auth/interface";
+import { TestProvider } from "./Context/exo_type";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,7 +24,12 @@ function App() {
     <ChakraProvider>
       <QueryClientProvider client={queryClient}>
         <ReactFlowProvider>
-          <Workflow />
+          <AuthProvider>
+            <TestProvider>
+              <Interface/>
+            </TestProvider>
+            {/* <Workflow /> */}
+          </AuthProvider>
         </ReactFlowProvider>
       </QueryClientProvider>
     </ChakraProvider>

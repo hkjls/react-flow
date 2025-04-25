@@ -17,7 +17,9 @@ import {
   useNodesState,
   useReactFlow,
   useStore,
-  ConnectionState
+  ConnectionState,
+  applyEdgeChanges,
+  EdgeChange
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import "../index.css";
@@ -58,6 +60,8 @@ import Numeric from "../icons/image/ICONEACTEMIUM.png";
 import MenuBar from "../Components/Menu";
 import UserGrade from "../Components/UserTest";
 import CircuitElecModel from "../Components/UserTest/Tests/CircuitElecModel";
+import { useAuth } from "../auth";
+import { useTest } from "../Context/exo_type";
 
 
 const nodeTypes = {
@@ -85,10 +89,13 @@ const edgeTypes = {
 };
 
 export const Workflow = () => {
+  const {user} = useAuth()
+  const {choice, handleChoice} = useTest()
   const {getNodes, getEdges} = useReactFlow()
   const [connexion, addConnexion] = useState(0)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  // const [edges, setEdges] = useEdgesState(initialEdges)
   const [edgeConnected, addEdgeConnected] = useState(0)
 
   const { addNode, removeNode, addEdge, removeEdge, undo, redo } = useHistory();
@@ -115,32 +122,6 @@ export const Workflow = () => {
           zIndex: "8000"
         },
       };
-
-      const autoConnection = {
-        id: uuid(),
-        type: "wire",
-        source:"down-btn-red2",
-        target:"down-btn-green",
-        style:{
-          stroke: "green",
-          strokeWidth:"2px"
-        },
-        markerEnd:{
-          type: MarkerType.Arrow,
-          width: 0,
-          height: 0,
-          color: "yellow",
-          zIndex: "8000"
-        }
-      }
-
-      if(connection.sourceHandle == "left-center-2-sprt" && connection.targetHandle == "right-up-thr"){
-        // const btn_green = 
-        // console.log(getNodes)
-        // console.log(getEdges)
-        addEdge(autoConnection)
-      }
-
 
       addEdgeConnected((prev)=>prev + 1)
       if (isEdgeValid.status){
@@ -367,10 +348,10 @@ export const Workflow = () => {
     edgeReconnectSuccessful.current = false;
   };
 
-  const onReconnect: OnReconnect = (oldEdge, newConnection) => {
-    edgeReconnectSuccessful.current = true;
-    setEdges((prevEdges) => reconnectEdge(oldEdge, newConnection, prevEdges));
-  };
+  // const onReconnect: OnReconnect = (oldEdge, newConnection) => {
+  //   edgeReconnectSuccessful.current = true;
+  //   setEdges((prevEdges) => reconnectEdge(oldEdge, newConnection, prevEdges));
+  // };
 
   const onReconnectEnd = (_: MouseEvent | TouchEvent, edge: Edge) => {
     if (!edgeReconnectSuccessful.current) {
@@ -646,7 +627,7 @@ export const Workflow = () => {
         </Flex>
       )}
       <MenuBar n={nodes} setN={setNodes}/>
-      <UserGrade edgeConnected={edgeConnected}/>
+      <UserGrade edgeConnected={edgeConnected} addEdgeConnected={addEdgeConnected}/>
 
       <ReactFlow
         onInit={setRfInstance}
@@ -665,11 +646,12 @@ export const Workflow = () => {
         onNodeClick={onNodeClick}
         onPaneClick={onPaneClick}
         onReconnectStart={onReconnectStart}
-        onReconnect={onReconnect}
+        // onReconnect={onReconnect}
         onReconnectEnd={onReconnectEnd}
         onNodeDrag={onNodeDrag}
         onNodeDragStop={onNodeDragStop}
         colorMode={isDark ? "dark" : "light"}
+        minZoom={0.7}
       >
         <Panel position="top-center">
           <IconButton
@@ -680,7 +662,7 @@ export const Workflow = () => {
             onClick={toggleMode}
           />
         </Panel>
-        <Panel
+        {choice == "free" ? <Panel
           position="top-right"
           style={{
             border: "1px solid #ccc",
@@ -730,7 +712,23 @@ export const Workflow = () => {
               </Flex>
             </div>
           </Flex>
-        </Panel>
+        </Panel> 
+         
+          : <div id="Panel" style={{
+            position: "absolute",
+            width: "280px",
+            height:"125px",
+            right: "15px",
+            display: "flex",
+            gap: "5px",
+            justifyContent: "left",
+            alignItems: "center",
+            marginBottom: 25
+          }}>
+            <img src={Numeric} alt="Numeric" width="80px" height="80px"></img>
+            <h2>Actemium</h2>
+          </div> }
+
         <Background
           variant={BackgroundVariant.Lines}
           gap={10}

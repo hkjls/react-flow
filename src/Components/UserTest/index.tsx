@@ -3,6 +3,7 @@ import { useReactFlow, useStore } from '@xyflow/react'
 import { useEffect, useState } from 'react'
 import CircuitElecModel from './Tests/CircuitElecModel'
 import Recycle from "../../icons/image/svg/recycle-refresh-reload-repeat-rotate-sync-svgrepo-com.png"
+import { useAuth } from '../../auth'
 
 type connectedEdge = {
     sourceHandle: (string | null | undefined),
@@ -10,7 +11,8 @@ type connectedEdge = {
 }
 
 
-const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
+const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
+    const {time, timeHandle} = useAuth()
     const stateNode = useStore(state => state.nodes)
     const stateEdge = useStore(state => state.edges)
     const {getNodes, getEdges} = useReactFlow();
@@ -22,6 +24,8 @@ const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
     const [timeRef, setTimeRef] = useState(1)
     const [pauseRef, setPauseRef] = useState(0)
     const [useNote, addUserNote] = useState(0)
+
+    
     useEffect(()=>{
         if (typeof getEdges()[0] !== "undefined"){
             const success: connectedEdge = {
@@ -38,52 +42,58 @@ const UserGrades=({edgeConnected}:{edgeConnected:number})=>{
         setND(stateNode.length)
         if (stateNode.length - 3 >= 0){
                 setND(stateNode.length - 3)
-        }
-    }, [stateNode.length])
+            }
+        }, [stateNode.length])
 
     useEffect(()=>{
         let intervalId : number | null = null
-
         if(isRunning){
             intervalId = setInterval(()=>{
                 setElapsedTime((prevTime)=> prevTime + 1)
             }, 1000)
         }
-
+        
         return() =>{
             if(intervalId !== null){
                 clearInterval(intervalId)
             }
         }
     }, [isRunning])
-
+    
     useEffect(()=>{
         if(getEdges().length > pauseRef){
             setIsRunning(true)
             setTimeRef(1)
         }
 
-        if(timeRef == 0){
+        if(timeRef == 0 || time == true){
             setIsRunning(false)
             setPauseRef(getEdges().length)
         }
+
+        if(time == true){
+            setIsRunning(false)
+            addEdgeConnected(0)
+            addUserNote(0)
+            setElapsedTime(0)
+            timeHandle()
+        }
     }, [timeRef, getEdges()])
     // const handleStart=()=>{
-    //     setIsRunning(true)
-    // }
-
+        //     setIsRunning(true)
+        // }
+        
     const handlePause=()=>{
         setTimeRef(0)
     }
-
+        
     const formatTime =(seconds: number)=>{
-        const hours = Math.floor(seconds/3600)
-        const minutes = Math.floor((seconds%3600)/60)
-        const secs = seconds % 60
+    const hours = Math.floor(seconds/3600)
+    const minutes = Math.floor((seconds%3600)/60)
+    const secs = seconds % 60
 
         return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
     }
-
     
     return(
         <div id="userGrades">

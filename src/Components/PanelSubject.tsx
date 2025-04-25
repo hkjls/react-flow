@@ -29,7 +29,7 @@ const PanelSubject=():ReactElement=>{
                     <li
                         onClick={
                             ()=>{
-                                if(nimg < Object.entries(images).length - 1){
+                                if(nimg < Object.entries(images).length){
                                     setNimg(nimg + 1)
                                 }
                             }

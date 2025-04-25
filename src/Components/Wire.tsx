@@ -34,7 +34,6 @@ export default function Wire({
     offset:27,
     borderRadius: 20
   });
-  console.log(getSmoothStepPath)
   const isConnected = !!(source && target)
   // console.log(`wire connected : ${isConnected}`)
   const {deleteElements} = useReactFlow();
@@ -48,6 +47,7 @@ export default function Wire({
     <>
       <BaseEdge
         style={{...style, zIndex: 3000, position:"absolute"}}
+        
         markerEnd={markerEnd}
         path={d}
         interactionWidth={10}

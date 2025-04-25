@@ -246,3 +246,112 @@
 .react-flow__edges{
   z-index: 5000 !important;
 }
+
+/* Authentication Interface */
+#auth{
+  position: absolute;
+  background: #232887;
+  top: 100px;
+  left: 40%;
+  border-radius: 15px;
+  min-width: 450px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#logo-actemium{
+  height: 75px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#logo-actemium div{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  gap: 15px;
+}
+
+#logo-actemium img{
+  height: 80%;
+}
+
+#logo-actemium h2{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  font-size: 32px;
+}
+
+#user-auth{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+#user-auth div{
+  border: #39AF0D solid 0.1px;
+  border-radius: 5px;
+  width: 98%;
+  padding-top: 35px;
+}
+
+#user-auth-field{
+  margin: 10px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+#user-auth-field li{
+  display: flex;
+  flex-direction: end;
+  height: 35px;
+}
+
+#user-auth-field li label{
+  width: 30%;
+  padding-right: 10px;
+  display: flex;
+  justify-content: end;
+  align-items:center;
+  color: white;
+  font-size: 18px;
+}
+
+#user-auth-field li input{
+  width: 65%;
+  border-radius: 7px;
+  display: flex;
+  justify-content: end;
+  align-items:center;
+  padding: 5px;
+}
+
+
+#submit{
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding: 15px;
+}
+
+.btn-submit{
+  background: #39AF0D;
+  border-radius: 5px;
+  width: 120px;
+  height: 30px;
+  font-size: 18px;
+  color: white;
+}
+
+.btn-submit:active{
+  background: #237406;
+}
+
