@@ -6,12 +6,16 @@ import FreeSim from './UserTest/Tests/FreeSim';
 import PanelSubject from './PanelSubject';
 import { useAuth } from '../auth';
 import { useTest } from '../Context/exo_type';
+import { useNavigate } from 'react-router-dom';
 
 const MenuBar=({n, setN}:any) => {
-  const {handleChoice} = useTest()
+  const {test_choice, handleChoice, user, setMountEdge} = useTest()
   const [histVisible, setHistVisible] = useState("none");
   const [exe, setExe] = useState(false)
   const { timeHandle} = useAuth()
+  const navigate = useNavigate()
+
+  const f_choice = test_choice.handleChoice
 
   return (
     <>
@@ -22,6 +26,7 @@ const MenuBar=({n, setN}:any) => {
               setN([])
               setExe(false)
               timeHandle()
+              setMountEdge(0)
             }}
           >Nouveau</li>
           <li className="menu-list">Listes des Tests
@@ -29,7 +34,7 @@ const MenuBar=({n, setN}:any) => {
                 <li className="menu-list-list"
                   onClick={()=>{
                     setExe(false)
-                    handleChoice("free")
+                    f_choice("free")
                   }}
                 >
                   <FreeSim n={n} setN={setN}/>
@@ -37,12 +42,29 @@ const MenuBar=({n, setN}:any) => {
                 <li className="menu-list-list"
                   onClick={()=>{
                     setExe(true)
-                    handleChoice("motor")
+                    f_choice("Démarreur pour un moteur")
                   }}
                 >
                   <SimMotor n={n} setN={setN}/>
                 </li>
               </ul>
+          </li>
+          {/*           
+          <li className="menu-list"
+            onClick={() => setHistVisible(histVisible === "none" ? "block" : "none")}
+          >Historique</li> */}
+          <li className="menu-list">
+            <span>Certification</span>
+            <ul>
+              <li className="certification"
+                  onClick={()=>{
+                    user("******", "********")
+                    navigate("/Certification")
+                  }}
+              >Voir
+              </li>
+              <li className="certification">Détails</li>
+            </ul>
           </li>
           <li className='menu-list'
           onClick={()=>{
@@ -50,10 +72,6 @@ const MenuBar=({n, setN}:any) => {
           }}>
             Deconnexion
           </li>
-          {/*           
-          <li className="menu-list"
-            onClick={() => setHistVisible(histVisible === "none" ? "block" : "none")}
-          >Historique</li> */}
         </ul>
         
       {exe ? <PanelSubject/> : <div></div>}

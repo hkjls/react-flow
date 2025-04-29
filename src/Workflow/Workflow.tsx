@@ -89,14 +89,60 @@ const edgeTypes = {
 };
 
 export const Workflow = () => {
-  const {user} = useAuth()
-  const {choice, handleChoice} = useTest()
+  const {test_choice, setMountEdge, choice} = useTest()
   const {getNodes, getEdges} = useReactFlow()
   const [connexion, addConnexion] = useState(0)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   // const [edges, setEdges] = useEdgesState(initialEdges)
   const [edgeConnected, addEdgeConnected] = useState(0)
+
+  let valid_list:string[]
+  valid_list = [
+    "left-top-dn left-center-1-sprt",
+    "left-center-top-dn right-center-1-sprt",
+    "right-top-dn right-1-sprt",
+    "left-top-dn left-up-cbr",
+    "left-center-top-dn right-up-cbr",
+    "left-lsi left-bottom-dn",
+    "left-center-lsi left-bottom-center-dn",
+    "right-center-lsi right-bottom-dn",
+    "left-thr left-lsi",
+    "center-thr left-center-lsi",
+    "right-thr right-center-lsi",
+    "left-center-2-sprt right-up-thr",
+    "right-center-2-sprt center-up-thr",
+    "right-2-sprt left-up-thr",
+    "left-2-sprt left-4-msckt",
+    "left-bottom-cbr left-top-lci",
+    "right-bottom-cbr right-top-lci",
+    "left-1-msckt left-1-sprt",
+    "left-3-msckt left-1-sckt",
+    "left-2-msckt right-3-sckt",
+    "left-bottom-lci left-5-msckt",
+    "left-bottom-lci center-bottom-lci",
+    "left-up-cbrn center-bottom-lci",
+    "right-up-lsi left-bottom-cbrn",
+    "left-6-sckt left-bottom-cbrn",
+    "right-bottom-lci right-up-cbrn",
+    "left-up-center-top-dn right-bottom-cbrn",
+    "right-center-thr right-bottom-cbrn",
+    "right-1-sckt left-bottom-down-center-dn",
+    "right-2-sckt left-center-thr",
+    "left-2-sckt left-thr",
+    "right-lsi left-3-sckt",
+    "left-4-sckt right-lsi",
+    "left-up-lsi right-lsi",
+    "left-5-sckt right-thr",
+    "left-6-sckt-d down-red1",
+    "right-1-sckt-d up-red3",
+    "right-2-sckt-d down-red3",
+    "left-2-sckt-d up-btn-red2",
+    "down-btn-red2 up-btn-green",
+    "down-btn-red2 left-3-sckt-d",
+    "left-4-sckt-d down-btn-green",
+    "left-5-sckt-d up-red1"
+  ];
 
   const { addNode, removeNode, addEdge, removeEdge, undo, redo } = useHistory();
 
@@ -105,7 +151,12 @@ export const Workflow = () => {
       
       console.log(connection.sourceHandle, connection.targetHandle)
       const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
-      
+      let valid_connection:string
+      valid_connection = `${connection.sourceHandle} ${connection.targetHandle}`
+      var exist:boolean = valid_list.includes(valid_connection)
+
+      setMountEdge(valid_list.length)
+
       const edge = {
         ...connection,
         type: "wire",
@@ -123,8 +174,12 @@ export const Workflow = () => {
         },
       };
 
+      if(test_choice.choice == "free"){
+        exist = true
+      }
+
       addEdgeConnected((prev)=>prev + 1)
-      if (isEdgeValid.status){
+      if (exist){
         addEdge(edge);
       }
     },
@@ -662,7 +717,7 @@ export const Workflow = () => {
             onClick={toggleMode}
           />
         </Panel>
-        {choice == "free" ? <Panel
+        {test_choice.choice == "free" ? <Panel
           position="top-right"
           style={{
             border: "1px solid #ccc",

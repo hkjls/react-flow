@@ -24,7 +24,7 @@ const CircuitBreakerN = ({
             
             <Terminal
                 style={{ left: 59 + 0*top_x, top: 27 - top_y }}
-                type="source"
+                type={true ? "source" : "target"}
                 position={Position.Top}
                 id="left-up-cbrn"
             />

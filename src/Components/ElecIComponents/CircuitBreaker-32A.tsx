@@ -28,6 +28,12 @@ const CircuitBreaker =({
                 position={Position.Top}
                 id="left-up-cbr"
             />
+            <Terminal
+                style={{ left: 67 + 0*top_x, top: 44 - top_y }}
+                type="source"
+                position={Position.Top}
+                id="left-up-cbr"
+            />
 
             <Terminal
                 style={{ left: 62 + top_x, top: 43 - top_y }}

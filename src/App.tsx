@@ -1,12 +1,12 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { useState } from "react";
-import { Workflow } from "./Workflow/Workflow";
 import "./index.css";
 import { ReactFlowProvider } from "@xyflow/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./auth";
 import Interface from "./auth/interface";
 import { TestProvider } from "./Context/exo_type";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Certification from "./Pages/Certification";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,9 +26,13 @@ function App() {
         <ReactFlowProvider>
           <AuthProvider>
             <TestProvider>
-              <Interface/>
+              <Router>
+                <Routes>
+                  <Route path="/" element={<Interface/>}/>
+                  <Route path="/Certification" element={<Certification/>}/>
+                </Routes>
+              </Router>
             </TestProvider>
-            {/* <Workflow /> */}
           </AuthProvider>
         </ReactFlowProvider>
       </QueryClientProvider>

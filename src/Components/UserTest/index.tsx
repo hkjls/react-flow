@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import CircuitElecModel from './Tests/CircuitElecModel'
 import Recycle from "../../icons/image/svg/recycle-refresh-reload-repeat-rotate-sync-svgrepo-com.png"
 import { useAuth } from '../../auth'
+import { useTest } from '../../Context/exo_type'
 
 type connectedEdge = {
     sourceHandle: (string | null | undefined),
@@ -12,6 +13,8 @@ type connectedEdge = {
 
 
 const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
+    const {setMistake, setCorrect, mountEdge} = useTest()
+
     const {time, timeHandle} = useAuth()
     const stateNode = useStore(state => state.nodes)
     const stateEdge = useStore(state => state.edges)
@@ -36,6 +39,7 @@ const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
                 addUserNote(useNote + 1)
             }
         }
+        setMistake(useNote)
     }, [stateEdge.length])
 
     useEffect(()=>{
@@ -78,6 +82,8 @@ const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
             setElapsedTime(0)
             timeHandle()
         }
+        setCorrect(edgeConnected)
+        
     }, [timeRef, getEdges()])
     // const handleStart=()=>{
         //     setIsRunning(true)
@@ -100,11 +106,12 @@ const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
             <ul id='userGradesList'>
                 <li className="userInfo">
                     <span>Temps :</span>
-                    <span>{formatTime(elapsedTime)}</span>
+                    <span id="lapsTime">{formatTime(elapsedTime)}</span>
                     
                 </li>
-                <li className="userInfo">Note du Participant : {useNote}</li>
+                <li className="userInfo">Cablage Correct : {useNote}</li>
                 <li className="userInfo">Tentative de Connection : {edgeConnected}</li>
+                <li className="userInfo">Connection à faire : {mountEdge ? mountEdge : 0}</li>
                 <li className="userInfo">Nombre de Composant : {nd}</li>
             </ul>
             {/* <div>

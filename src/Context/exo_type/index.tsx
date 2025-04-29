@@ -1,15 +1,22 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, SetStateAction, useContext, useState } from "react";
 
 type test_choice = {
     choice: string,
     handleChoice:(c:string)=>void
 }
 
-const TestContext = createContext<test_choice | undefined>(undefined)
+const TestContext = createContext<any>(undefined)
 
 export const TestProvider=({children}:{children: ReactNode})=>{
 
     const [userChoice, setUserChoice] = useState<string>("free")
+    const [userName, setUserName] = useState<string | null>(null)
+    const [userFirstName, setUserFirstName] = useState<string | null>(null)
+
+    const [laps, setLaps] = useState<string | null | undefined>(null)
+    const [mistake, setMistake] = useState<string | null | undefined>(null)
+    const [correct, setCorrect] = useState<string | null>(null)
+    const [mountEdge, setMountEdge] = useState<number | null>(null)
 
     const test_choice:test_choice = {
         choice: userChoice,
@@ -17,8 +24,34 @@ export const TestProvider=({children}:{children: ReactNode})=>{
             setUserChoice(c)
         }
     }
+
+    const user=(userName:string, userFirstName:string):void=>{
+        setUserName(userName)
+        setUserFirstName(userFirstName)
+    }
+
+    const result=():void=>{
+        var t = document.getElementById("lapsTime")
+        setLaps(t?.textContent)
+    }
+
     return(
-        <TestContext.Provider value={test_choice}>
+        <TestContext.Provider value={
+            {
+                test_choice, 
+                userName,
+                userFirstName,
+                laps,
+                mistake,
+                correct,
+                mountEdge,
+                user,
+                result,
+                setMistake,
+                setCorrect,
+                setMountEdge
+            }
+        }>
             {children}
         </TestContext.Provider>
     )
