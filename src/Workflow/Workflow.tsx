@@ -62,6 +62,7 @@ import UserGrade from "../Components/UserTest";
 import CircuitElecModel from "../Components/UserTest/Tests/CircuitElecModel";
 import { useAuth } from "../auth";
 import { useTest } from "../Context/exo_type";
+import Alert from "../Components/UserTest/Tests/userAlert";
 
 
 const nodeTypes = {
@@ -89,7 +90,7 @@ const edgeTypes = {
 };
 
 export const Workflow = () => {
-  const {test_choice, setMountEdge, choice} = useTest()
+  const {test_choice, setMountEdge, choice, mistake} = useTest()
   const {getNodes, getEdges} = useReactFlow()
   const [connexion, addConnexion] = useState(0)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -148,7 +149,6 @@ export const Workflow = () => {
 
   const onConnect = useCallback(
     (connection: Connection) => {
-      
       console.log(connection.sourceHandle, connection.targetHandle)
       const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
       let valid_connection:string
@@ -683,6 +683,7 @@ export const Workflow = () => {
       )}
       <MenuBar n={nodes} setN={setNodes}/>
       <UserGrade edgeConnected={edgeConnected} addEdgeConnected={addEdgeConnected}/>
+      <Alert n={nodes} setN={setNodes}/>
 
       <ReactFlow
         onInit={setRfInstance}

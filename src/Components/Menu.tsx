@@ -9,9 +9,9 @@ import { useTest } from '../Context/exo_type';
 import { useNavigate } from 'react-router-dom';
 
 const MenuBar=({n, setN}:any) => {
-  const {test_choice, handleChoice, user, setMountEdge} = useTest()
+  const {test_choice, handleChoice, user, setMountEdge, pannelS, setPannelS} = useTest()
   const [histVisible, setHistVisible] = useState("none");
-  const [exe, setExe] = useState(false)
+  // const [exe, setExe] = useState(false)
   const { timeHandle} = useAuth()
   const navigate = useNavigate()
 
@@ -24,7 +24,7 @@ const MenuBar=({n, setN}:any) => {
           <li className="menu-list"
             onClick={()=>{
               setN([])
-              setExe(false)
+              setPannelS(false)
               timeHandle()
               setMountEdge(0)
             }}
@@ -33,7 +33,7 @@ const MenuBar=({n, setN}:any) => {
               <ul>
                 <li className="menu-list-list"
                   onClick={()=>{
-                    setExe(false)
+                    setPannelS(false)
                     f_choice("free")
                   }}
                 >
@@ -41,7 +41,7 @@ const MenuBar=({n, setN}:any) => {
                 </li>
                 <li className="menu-list-list"
                   onClick={()=>{
-                    setExe(true)
+                    setPannelS(true)
                     f_choice("Démarreur pour un moteur")
                   }}
                 >
@@ -74,7 +74,7 @@ const MenuBar=({n, setN}:any) => {
           </li>
         </ul>
         
-      {exe ? <PanelSubject/> : <div></div>}
+      {pannelS ? <PanelSubject/> : <div></div>}
       </div>
       <Historic disp={histVisible} />
     </>

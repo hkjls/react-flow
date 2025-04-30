@@ -704,3 +704,59 @@
 #About-application input{
   width: 80px;
 }
+
+/*Alert Pannel*/
+
+#stop-interaction{
+  position: absolute;
+  border: solid black 0.1px;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(94, 93, 93, 0.295);
+  z-index: 3000;
+}
+
+#alert-pannel{
+  position: absolute;
+  left: 40%;
+  top:0;
+  z-index: 1001;
+  border: solid black 0.1px;
+  height: 140px;
+  background: #2e2e2e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: #000000 1px 2px 7px;
+  transition: 1s;
+}
+
+#alert-pannel h3{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: rgb(209, 6, 6);
+}
+
+#alert-pannel div{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 15px;
+}
+
+#alert-pannel p{
+  font-size: 20px;
+}
+
+#alert-pannel button{
+  background: #004087;
+  padding:5px;
+  border-radius: 7px;
+}

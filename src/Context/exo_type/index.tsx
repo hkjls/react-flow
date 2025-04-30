@@ -17,6 +17,9 @@ export const TestProvider=({children}:{children: ReactNode})=>{
     const [mistake, setMistake] = useState<string | null | undefined>(null)
     const [correct, setCorrect] = useState<string | null>(null)
     const [mountEdge, setMountEdge] = useState<number | null>(null)
+    const [activeAlert, setActiveAlert] = useState<number>(180)
+    const [pannelS, setPannelS] = useState<boolean>(false)
+    const [message, setMessage] = useState<string>("La limite d'erreur atteinte")
 
     const test_choice:test_choice = {
         choice: userChoice,
@@ -45,11 +48,17 @@ export const TestProvider=({children}:{children: ReactNode})=>{
                 mistake,
                 correct,
                 mountEdge,
+                activeAlert,
+                pannelS,
+                message,
                 user,
                 result,
                 setMistake,
                 setCorrect,
-                setMountEdge
+                setMountEdge,
+                setActiveAlert,
+                setPannelS,
+                setMessage
             }
         }>
             {children}

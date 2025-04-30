@@ -1,5 +1,4 @@
 import React, { ReactElement } from "react";
-// import "../index.css"
 import CertificatImage from "../images/Certification.png"
 import DownloadLogo from "../images/svg/Download.svg"
 import PrintLogo from "../images/svg/Print.svg"
