@@ -622,7 +622,7 @@ export const Workflow = () => {
   //   });
   // }, []);
 
-  const { mutateAsync: saveFlow, isPending } = useUpdateData();
+  // const { mutateAsync: saveFlow, isPending } = useUpdateData();
   const { data: reactFlowState } = useData();
 
   useEffect(() => {
@@ -639,12 +639,12 @@ export const Workflow = () => {
     Edge
   > | null>(null);
 
-  const onSave = () => {
-    if (rfInstance) {
-      const flow = rfInstance.toObject();
-      saveFlow(flow);
-    }
-  };
+  // const onSave = () => {
+  //   if (rfInstance) {
+  //     const flow = rfInstance.toObject();
+  //     saveFlow(flow);
+  //   }
+  // };
 
   const { isDark, toggleMode } = useDarkMode();
   
@@ -743,10 +743,10 @@ export const Workflow = () => {
               <Text fontSize="x-medium">Actemium ElecSim Tools</Text>
               <Flex mt={1} gap={3} flexWrap="wrap">
                 <IconButton
-                  icon={isPending ? <Spinner size="sm" /> : <Floppy />}
+                  // icon={isPending ? <Spinner size="sm" /> : <Floppy />}
                   aria-label="Save"
                   size="sm"
-                  onClick={onSave}
+                  // onClick={onSave}
                 />
                 <DownloadBtn />
               </Flex>

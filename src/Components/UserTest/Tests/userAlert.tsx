@@ -1,9 +1,9 @@
-import React, {ReactElement, useEffect} from "react";
+import {ReactElement, useEffect} from "react";
 import { useTest } from "../../../Context/exo_type";
 import { useAuth } from "../../../auth";
 
 const Alert=({n, setN}:any):ReactElement=>{
-    const {activeAlert, setActiveAlert, setMountEdge, setPannelS, message} = useTest()
+    const {activeAlert, setActiveAlert, setMountEdge, setPannelS, message, mistake, mountEdge} = useTest()
     const {timeHandle} = useAuth()
     const disp:string = activeAlert == 0  ? "block" : "none"
     return (
@@ -16,17 +16,29 @@ const Alert=({n, setN}:any):ReactElement=>{
                     }}
                 >
                 <h3>ATTENTION</h3>
-                <div>
+                <div id="alert-content">
                     <p>{message}</p>
-                    <button type="button"
-                        onClick={()=>{
-                            setN([])
-                            timeHandle()
-                            setMountEdge(0)
-                            setPannelS(false)
-                            setActiveAlert(180)
-                        }}
-                    >Recommencer</button>
+                    <div>
+                        {mistake/mountEdge < 0.1 ?
+                            <button
+                                type="button"
+                                onClick={()=>{
+                                    setActiveAlert(180)
+                                }}
+                            >Continuer</button>
+                            : ""
+                        }
+                        <button 
+                            type="button"
+                            onClick={()=>{
+                                setN([])
+                                timeHandle()
+                                setMountEdge(0)
+                                setPannelS(false)
+                                setActiveAlert(180)
+                            }}
+                        >Recommencer</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useReactFlow, useStore } from '@xyflow/react'
 import { useEffect, useState } from 'react'
 import CircuitElecModel from './Tests/CircuitElecModel'

@@ -3,6 +3,7 @@ import { ElectricalComponentData, ElectricalComponentType } from "../../types"
 import { Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
+import { useTest } from "../../Context/exo_type"
 
 import {default as CircuitBreakerNIcon} from "../../icons/ElecIcons/CircuitBreaker-32AN"
 
@@ -18,13 +19,15 @@ const CircuitBreakerN = ({
     const bottom_x : number = 0
     const bottom_y : number = 0
 
+    const {test_choice} = useTest()
+
     return(
         <Box>
             <CircuitBreakerNIcon height={135} />
             
             <Terminal
                 style={{ left: 59 + 0*top_x, top: 27 - top_y }}
-                type={true ? "source" : "target"}
+                type="source"
                 position={Position.Top}
                 id="left-up-cbrn"
             />
@@ -48,6 +51,38 @@ const CircuitBreakerN = ({
                 position={Position.Bottom}
                 id="right-bottom-cbrn"
             />
+
+            {
+                test_choice.choice == "free" ?
+                <>
+                    <Terminal
+                        style={{ left: 59 + 0*top_x, top: 27 - top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="left-up-cbrn"
+                    />
+                    
+                    <Terminal
+                        style={{ left: 88 + top_x, top: 26 - top_y }}
+                        type="source"
+                        position={Position.Top}
+                        id="right-up-cbrn"
+                    />
+                    
+                    <Terminal
+                        style={{ left: 60 + 0*bottom_x, bottom: 16 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="left-bottom-cbrn"
+                    />
+                    <Terminal
+                        style={{ left: 88 + bottom_x, bottom: 18 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="right-bottom-cbrn"
+                    />
+                </> : ""
+            }
         </Box>
     )
 }

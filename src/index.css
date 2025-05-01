@@ -380,7 +380,7 @@
   top: 100px;
   left: 40%;
   border-radius: 15px;
-  min-width: 450px;
+  min-width: 500px;
   min-height: 500px;
   display: flex;
   flex-direction: column;
@@ -674,13 +674,14 @@
 
 .content:nth-child(3) .User-Result:last-child{
   display: flex;
-  justify-content: center;
 }
 
 .content:nth-child(3) .User-Result:last-child label{
-  width: 80%;
+  display: flex;
+  justify-content: center;
+  width: 60%;
   height: 30px;
-  align-content: center;
+  align-items: center;
 }
 .content:nth-child(3) .User-Result:last-child input{
   width: 30%;
@@ -722,7 +723,10 @@
   top:0;
   z-index: 1001;
   border: solid black 0.1px;
-  height: 140px;
+  min-height: 200px;
+  max-height: 200px;
+  min-width: 300px;
+  max-width: 400px;
   background: #2e2e2e;
   color: white;
   display: flex;
@@ -744,10 +748,15 @@
   color: rgb(209, 6, 6);
 }
 
-#alert-pannel div{
+#alert-pannel #alert-content{
   display: flex;
   flex-direction: column;
   align-items: end;
+  gap: 15px;
+}
+
+#alert-content div{
+  display: flex;
   gap: 15px;
 }
 
@@ -759,4 +768,8 @@
   background: #004087;
   padding:5px;
   border-radius: 7px;
+}
+
+#alert-pannel button:active{
+  background-color: #04366e;
 }

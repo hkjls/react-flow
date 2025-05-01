@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import Historic from './Historic';
 import SimMotor from './UserTest/Tests/DefaultComponents';
@@ -9,7 +8,7 @@ import { useTest } from '../Context/exo_type';
 import { useNavigate } from 'react-router-dom';
 
 const MenuBar=({n, setN}:any) => {
-  const {test_choice, handleChoice, user, setMountEdge, pannelS, setPannelS} = useTest()
+  const {test_choice, user, setMountEdge, pannelS, setPannelS, setEmptyCertificat} = useTest()
   const [histVisible, setHistVisible] = useState("none");
   // const [exe, setExe] = useState(false)
   const { timeHandle} = useAuth()
@@ -60,6 +59,7 @@ const MenuBar=({n, setN}:any) => {
                   onClick={()=>{
                     user("******", "********")
                     navigate("/Certification")
+                    setEmptyCertificat(true)
                   }}
               >Voir
               </li>

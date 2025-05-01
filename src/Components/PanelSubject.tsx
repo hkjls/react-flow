@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 import images from '../images/Motor'
 import Numerika from '../icons/image/ICONEACTEMIUM.png'
 import { useTest } from "../Context/exo_type";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const PanelSubject=():ReactElement=>{
     const [nimg, setNimg] = useState(1)
-    const {user, result, setActiveAlert, setMessage} = useTest()
+    const {user, result, setActiveAlert, setMessage, setEmptyCertificat} = useTest()
 
     const navigate = useNavigate()
 
@@ -20,6 +20,7 @@ const PanelSubject=():ReactElement=>{
         const edgeInfo=document.querySelectorAll<HTMLSpanElement>(".user-level")
         const mountEdge:number = Number(edgeInfo[2].innerHTML)
         const correctEdge:number = Number(edgeInfo[0].innerHTML)
+        setEmptyCertificat(false)
         
         if(correctEdge < mountEdge){
             setMessage(`Le cablage réalisé est ${correctEdge}, il faut ${mountEdge} cablages`)

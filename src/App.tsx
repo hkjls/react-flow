@@ -8,6 +8,8 @@ import { TestProvider } from "./Context/exo_type";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Certification from "./Pages/Certification";
 
+// Étendre le thème par défaut (optionnel)
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -28,8 +30,8 @@ function App() {
             <TestProvider>
               <Router>
                 <Routes>
-                  <Route path="/" element={<Interface/>}/>
-                  <Route path="/Certification" element={<Certification/>}/>
+                  <Route path="/" element={<Interface />} />
+                  <Route path="/Certification" element={<Certification />} />
                 </Routes>
               </Router>
             </TestProvider>

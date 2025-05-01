@@ -3,6 +3,8 @@ import { ElectricalComponentData, ElectricalComponentType } from "../../types"
 import { Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
+import { useTest } from "../../Context/exo_type"
+
 
 import {default as ContactorDNIcon} from "../../icons/ElecIcons/Contactor-LS1"
 
@@ -18,6 +20,8 @@ const ContactorDN =({
 
     const bottom_x : number = 10
     const bottom_y : number = 0.5
+
+    const {test_choice} = useTest()
 
     return(
         <Box>
@@ -72,6 +76,61 @@ const ContactorDN =({
                 position={Position.Bottom}
                 id="right-bottom-dn"
             />
+
+            {
+                test_choice.choice == "free" ? 
+                <>
+                    <Terminal
+                        style={{ left: 43 + 0*top_x, top: 62 - top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="left-top-dn"
+                    />
+                    <Terminal
+                        style={{ left: 48 + 1*top_x, top: 62 - 18*top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="left-up-center-top-dn"
+                    />
+                    <Terminal
+                        style={{ left: 55 + 2*top_x, top: 62 - top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="left-center-top-dn"
+                    />
+                    <Terminal
+                        style={{ left: 65 + 4*top_x, top: 62 - top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="right-top-dn"
+                    />
+
+                    <Terminal
+                        style={{ left: 43 + 0*bottom_x, bottom: 40 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="left-bottom-dn"
+                    />
+                    <Terminal
+                        style={{ left: 48 + 1*bottom_x, bottom: 40 - 18*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="left-bottom-down-center-dn"
+                    />
+                    <Terminal
+                        style={{ left: 53 + 2*bottom_x, bottom: 40 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="left-bottom-center-dn"
+                    />
+                    <Terminal
+                        style={{ left: 65 + 4*bottom_x, bottom: 40 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="right-bottom-dn"
+                    />
+                </> : ""
+            }
         </Box>
     )
 }

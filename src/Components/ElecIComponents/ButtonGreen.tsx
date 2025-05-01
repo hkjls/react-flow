@@ -3,6 +3,7 @@ import { ElectricalComponentData, ElectricalComponentType } from "../../types"
 import { Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
+import { useTest } from "../../Context/exo_type"
 
 import {default as ButtonGreenIcon} from "../../icons/ElecIcons/ButtonGreen"
 
@@ -14,6 +15,7 @@ const ButtonGreen=({
 }:NodeProps<ButtonGreen_Node>)=>{
     const unit = getUnit(type as ElectricalComponentType)
     const x:number = 10
+    const {test_choice} = useTest()
 
     return(
         <Box style={{
@@ -32,6 +34,26 @@ const ButtonGreen=({
                 position={Position.Top}
                 id="down-btn-green"
             />
+            {
+            test_choice.choice == "free" ?
+                <Terminal
+                    style={{ left: 11, top: 25 + x}}
+                    type="source"
+                    position={Position.Top}
+                    id="up-btn-green"
+                />
+                : ""
+            }
+            {
+            test_choice.choice == "free"?
+                <Terminal
+                    style={{ left: 11, top: 50 + x}}
+                    type="source"
+                    position={Position.Top}
+                    id="down-btn-green"
+                />
+            : ""
+            }
         </Box>
     )}
 

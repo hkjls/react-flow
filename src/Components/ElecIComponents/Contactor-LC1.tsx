@@ -3,6 +3,7 @@ import { ElectricalComponentData, ElectricalComponentType } from "../../types"
 import { Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
+import { useTest } from "../../Context/exo_type"
 
 import {default as ContactorLCIIcon} from "../../icons/ElecIcons/Contactor-DN"
 
@@ -18,6 +19,8 @@ const ContactorLCI =({
 
     const bottom_x : number = 15
     const bottom_y : number = 0
+
+    const {test_choice}=useTest()
 
     return(
         <Box>
@@ -54,6 +57,43 @@ const ContactorLCI =({
                 position={Position.Bottom}
                 id="right-bottom-lci"
             />
+
+            {
+                test_choice.choice == "free" ?
+                <> 
+                    <Terminal
+                        style={{ left: 68 + 0*top_x, top: 28 - top_y }}
+                        type="source"
+                        position={Position.Top}
+                        id="left-top-lci"
+                    />
+                    <Terminal
+                        style={{ left: 85 + top_x, top: 28 - top_y }}
+                        type="source"
+                        position={Position.Top}
+                        id="right-top-lci"
+                    />
+
+                    <Terminal
+                        style={{ left: 54 + 0*bottom_x, bottom: 30 + 0*bottom_y }}
+                        type="target"
+                        position={Position.Bottom}
+                        id="left-bottom-lci"
+                    />
+                    <Terminal
+                        style={{ left: 60 + bottom_x, bottom: 30 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="center-bottom-lci"
+                    />
+                    <Terminal
+                        style={{ left: 85 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
+                        type="target"
+                        position={Position.Bottom}
+                        id="right-bottom-lci"
+                    />
+                </> : ""
+            }
         </Box>
     )
 }

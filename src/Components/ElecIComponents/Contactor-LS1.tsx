@@ -3,6 +3,7 @@ import { ElectricalComponentData, ElectricalComponentType } from "../../types"
 import { Box, Text} from "@chakra-ui/react"
 import { getUnit } from "../../utils"
 import Terminal from "../Terminal"
+import { useTest } from "../../Context/exo_type"
 
 import {default as ContactorLSIIcon} from "../../icons/ElecIcons/Contactor-LC1"
 
@@ -18,6 +19,8 @@ const ContactorLSI =({
 
     const bottom_x : number = 15
     const bottom_y : number = 0
+
+    const {test_choice} = useTest()
     return(
         <Box>
             <ContactorLSIIcon height={190} />
@@ -84,6 +87,74 @@ const ContactorLSI =({
                 position={Position.Bottom}
                 id="right-lsi"
             />
+
+            {
+                test_choice.choice == "free" ?
+                <>
+                    <Terminal
+                        style={{ left: 61 + 0*top_x, top: 55 - top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="left-up-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 61 + 0*top_x, top: 60 - 0*top_y}}
+                        type="target"
+                        position={Position.Top}
+                        id="left-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 68 + 1.5*top_x, top: 60 - 0*top_y}}
+                        type="target"
+                        position={Position.Top}
+                        id="left-center-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 71 + 3.5*top_x, top: 60 - 0*top_y}}
+                        type="target"
+                        position={Position.Top}
+                        id="right-center-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 78 + 5*top_x, top: 60 - 0*top_y}}
+                        type="target"
+                        position={Position.Top}
+                        id="right-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 78 + 5*top_x, top: 55 - top_y }}
+                        type="target"
+                        position={Position.Top}
+                        id="right-up-lsi"
+                    />
+
+
+                    <Terminal
+                        style={{ left: 64 + 0*bottom_x, bottom: 43 + 0*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="left-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 69 + bottom_x, bottom: 43 + bottom_y}}
+                        type="source"
+                        position={Position.Bottom}
+                        id="left-center-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 76 + 2*bottom_x, bottom: 43 + 2*bottom_y }}
+                        type="source"
+                        position={Position.Bottom}
+                        id="right-center-lsi"
+                    />
+                    <Terminal
+                        style={{ left: 83 + 3*bottom_x, bottom: 43 + 3*bottom_y}}
+                        type="source"
+                        position={Position.Bottom}
+                        id="right-lsi"
+                    />
+                </> : ""
+            }
         </Box>
     )
 }
