@@ -36,7 +36,7 @@ const ButtonRed2=({
                 id="down-btn-red2"
             />
             {
-               test_choice.choice ? <>
+               test_choice.choice == "free" ? <>
                     <Terminal
                         style={{ left: 7, top: 25 + x}}
                         type="source"

@@ -29,37 +29,37 @@ const ContactorLSI =({
                 style={{ left: 61 + 0*top_x, top: 55 - top_y }}
                 type="source"
                 position={Position.Top}
-                id="left-up-lsi"
+                id="left-up-1-lsi"
             />
             <Terminal
                 style={{ left: 61 + 0*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
-                id="left-lsi"
+                id="left-up-2-lsi"
             />
             <Terminal
                 style={{ left: 68 + 1.5*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
-                id="left-center-lsi"
+                id="left-center-up-2-lsi"
             />
             <Terminal
                 style={{ left: 71 + 3.5*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
-                id="right-center-lsi"
+                id="right-center-up-2-lsi"
             />
             <Terminal
                 style={{ left: 78 + 5*top_x, top: 60 - 0*top_y}}
                 type="source"
                 position={Position.Top}
-                id="right-lsi"
+                id="right-up-2-lsi"
             />
             <Terminal
                 style={{ left: 78 + 5*top_x, top: 55 - top_y }}
                 type="source"
                 position={Position.Top}
-                id="right-up-lsi"
+                id="right-up-1-lsi"
             />
 
 
@@ -67,25 +67,25 @@ const ContactorLSI =({
                 style={{ left: 64 + 0*bottom_x, bottom: 43 + 0*bottom_y }}
                 type="target"
                 position={Position.Bottom}
-                id="left-lsi"
+                id="left-down-lsi"
             />
             <Terminal
                 style={{ left: 69 + bottom_x, bottom: 43 + bottom_y}}
                 type="target"
                 position={Position.Bottom}
-                id="left-center-lsi"
+                id="left-center-down-lsi"
             />
             <Terminal
                 style={{ left: 76 + 2*bottom_x, bottom: 43 + 2*bottom_y }}
                 type="target"
                 position={Position.Bottom}
-                id="right-center-lsi"
+                id="right-center-down-lsi"
             />
             <Terminal
                 style={{ left: 83 + 3*bottom_x, bottom: 43 + 3*bottom_y}}
                 type="target"
                 position={Position.Bottom}
-                id="right-lsi"
+                id="right-down-lsi"
             />
 
             {
@@ -95,37 +95,37 @@ const ContactorLSI =({
                         style={{ left: 61 + 0*top_x, top: 55 - top_y }}
                         type="target"
                         position={Position.Top}
-                        id="left-up-lsi"
+                        id="left-up-1-lsi"
                     />
                     <Terminal
                         style={{ left: 61 + 0*top_x, top: 60 - 0*top_y}}
                         type="target"
                         position={Position.Top}
-                        id="left-lsi"
+                        id="left-up-2-lsi"
                     />
                     <Terminal
                         style={{ left: 68 + 1.5*top_x, top: 60 - 0*top_y}}
                         type="target"
                         position={Position.Top}
-                        id="left-center-lsi"
+                        id="left-center-up-2-lsi"
                     />
                     <Terminal
                         style={{ left: 71 + 3.5*top_x, top: 60 - 0*top_y}}
                         type="target"
                         position={Position.Top}
-                        id="right-center-lsi"
+                        id="right-center-up-2-lsi"
                     />
                     <Terminal
                         style={{ left: 78 + 5*top_x, top: 60 - 0*top_y}}
                         type="target"
                         position={Position.Top}
-                        id="right-lsi"
+                        id="right-up-2-lsi"
                     />
                     <Terminal
                         style={{ left: 78 + 5*top_x, top: 55 - top_y }}
                         type="target"
                         position={Position.Top}
-                        id="right-up-lsi"
+                        id="right-up-1-lsi"
                     />
 
 
@@ -133,25 +133,25 @@ const ContactorLSI =({
                         style={{ left: 64 + 0*bottom_x, bottom: 43 + 0*bottom_y }}
                         type="source"
                         position={Position.Bottom}
-                        id="left-lsi"
+                        id="left-down-lsi"
                     />
                     <Terminal
                         style={{ left: 69 + bottom_x, bottom: 43 + bottom_y}}
                         type="source"
                         position={Position.Bottom}
-                        id="left-center-lsi"
+                        id="left-center-down-lsi"
                     />
                     <Terminal
                         style={{ left: 76 + 2*bottom_x, bottom: 43 + 2*bottom_y }}
                         type="source"
                         position={Position.Bottom}
-                        id="right-center-lsi"
+                        id="right-center-down-lsi"
                     />
                     <Terminal
                         style={{ left: 83 + 3*bottom_x, bottom: 43 + 3*bottom_y}}
                         type="source"
                         position={Position.Bottom}
-                        id="right-lsi"
+                        id="right-down-lsi"
                     />
                 </> : ""
             }

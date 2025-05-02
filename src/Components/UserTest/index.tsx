@@ -12,7 +12,7 @@ type connectedEdge = {
 
 
 const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
-    const {setCorrect, mountEdge, setMistake, setActiveAlert, setMessage} = useTest()
+    const {setCorrect, mountEdge, setMistake, setActiveAlert, setMessage, test_choice} = useTest()
 
     const {time, timeHandle} = useAuth()
     const stateNode = useStore(state => state.nodes)
@@ -26,6 +26,8 @@ const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
     const [timeRef, setTimeRef] = useState(1)
     const [pauseRef, setPauseRef] = useState(0)
     const [useNote, addUserNote] = useState(0)
+
+    const edgeError:number = 0.3
 
     
     useEffect(()=>{
@@ -95,8 +97,8 @@ const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
         const timer = setTimeout(()=>{
             setMistake(edgeConnected - useNote)
             if(mountEdge){
-                (edgeConnected-useNote) / mountEdge > 0.1 ? setActiveAlert(0) : setActiveAlert(180)
-                setMessage(`Limite ${10}% d'erreur est atteinte`)
+                (edgeConnected-useNote) / mountEdge > edgeError ? setActiveAlert(0) : setActiveAlert(180)
+                setMessage(`Limite ${edgeError*100}% d'erreur est atteinte`)
             }
         }, 100)
         return ()=>clearTimeout(timer)
@@ -118,18 +120,23 @@ const UserGrades=({edgeConnected, addEdgeConnected}:any)=>{
                     <span id="lapsTime">{formatTime(elapsedTime)}</span>
                     
                 </li>
-                <li className="userInfo">
-                    <span>Cablage Correct : </span> 
-                    <span className='user-level'>{useNote}</span>
-                </li>
+                {
+                    test_choice.choice == "free" ? "" 
+                    : <li className="userInfo">
+                        <span>Cablage Correct : </span> 
+                        <span className='user-level'>{useNote}</span>
+                    </li>
+                }
                 <li className="userInfo">
                     <span >Tentative de Connection : </span>
                      <span className='user-level'>{edgeConnected}</span>
                 </li>
-                <li className="userInfo">
-                    <span>Connection à faire : </span>
-                    <span className='user-level'>{mountEdge ? mountEdge : 0}</span>
-                </li>
+                {
+                    test_choice.choice == "free" ? "" :<li className="userInfo">
+                        <span>Connection à faire : </span>
+                        <span className='user-level'>{mountEdge ? mountEdge : 0}</span>
+                    </li>
+                }
                 <li className="userInfo">
                     <span>Nombre de Composant : </span>
                     <span className='user-level'>{nd}</span>

@@ -20,21 +20,28 @@ const PanelSubject=():ReactElement=>{
         const edgeInfo=document.querySelectorAll<HTMLSpanElement>(".user-level")
         const mountEdge:number = Number(edgeInfo[2].innerHTML)
         const correctEdge:number = Number(edgeInfo[0].innerHTML)
-        setEmptyCertificat(false)
+        
+        if(name=="" || firstname==""){
+            setMessage(`Remplir correctement le champ nom et prenom`)
+            setActiveAlert(0)
+            return;
+        }
         
         if(correctEdge < mountEdge){
             setMessage(`Le cablage réalisé est ${correctEdge}, il faut ${mountEdge} cablages`)
             setActiveAlert(0)
             return;
         }
-
-        if(name=="" && firstname==""){
-            setMessage(`Remplir correctement le champ nom et prenom`)
+        
+        if(mountEdge == 0){
+            setMessage(`Vous n'avez même pas commencé le test. Choisi un TP dans la liste des Test et commences le cablage`)
             setActiveAlert(0)
             return;
         }
-
+        
+        
         if(correctEdge >= mountEdge){
+            setEmptyCertificat(false)
             navigate("/Certification")
         }
         result()
@@ -77,6 +84,14 @@ const PanelSubject=():ReactElement=>{
             {
                 nimg >= Object.entries(images).length ? 
                 <div id="Certificat-form">
+                    <div 
+                        id="close"
+                        onClick={()=>{
+                            setNimg(1)
+                        }}
+                        >
+
+                    </div>
                     <div>
                         <img src={Numerika} alt="" />
                         <h3>Actemium</h3>

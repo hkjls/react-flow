@@ -41,70 +41,70 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
         }
     }
 
-    if(source == "left-lsi" && target == "left-bottom-dn"){
+    if(source == "left-up-2-lsi" && target == "left-bottom-dn"){
         return {
             color:"green",
             status: true
         }
     }
 
-    if(source == "left-lsi" && target == "left-bottom-dn"){
+    // if(source == "left-lsi" && target == "left-bottom-dn"){
+    //     return {
+    //         color:"green",
+    //         status: true
+    //     }
+    // }
+
+    if(source == "left-center-up-2-lsi" && target == "left-bottom-center-dn"){
         return {
             color:"green",
             status: true
         }
     }
 
-    if(source == "left-center-lsi" && target == "left-bottom-center-dn"){
+    if(source == "right-center-up-2-lsi" && target == "right-bottom-dn"){
         return {
             color:"green",
             status: true
         }
     }
 
-    if(source == "right-center-lsi" && target == "right-bottom-dn"){
-        return {
-            color:"green",
-            status: true
-        }
-    }
-
-    if(source == "left-thr" && target == "left-lsi"){
+    if(source == "left-up-thr" && target == "left-down-lsi"){
         return {
             color:"blue",
             status: true
         }
     }
 
-    if(source == "center-thr" && target == "left-center-lsi"){
+    if(source == "center-up-thr" && target == "left-center-down-lsi"){
         return {
             color:"blue",
             status: true
         }
     }
 
-    if(source == "right-thr" && target == "right-center-lsi"){
+    if(source == "right-up-thr" && target == "right-center-down-lsi"){
         return {
             color:"blue",
             status: true
         }
     }
 
-    if(source == "left-center-2-sprt" && target == "right-up-thr"){
+    if(source == "left-center-2-sprt" && target == "left-down-2-thr"){
         return {
             color:"yellow",
             status: true
         }
     }
 
-    if(source == "right-center-2-sprt" && target == "center-up-thr"){
+    if(source == "right-center-2-sprt" && target == "center-down-2-thr"){
         return {
             color:"yellow",
             status: true
         }
     }
 
-    if(source == "right-2-sprt" && target == "left-up-thr"){
+    if(source == "right-2-sprt" && target == "right-down-2-thr"){
         return {
             color:"yellow",
             status: true
@@ -173,7 +173,7 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
             status: true
         }
     }
-    if(source == "right-up-lsi" && target == "left-bottom-cbrn"){
+    if(source == "right-up-1-lsi" && target == "left-bottom-cbrn"){
         return {
             color:"#6b7075",
             status: true
@@ -197,7 +197,7 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
             status: true
         }
     }
-    if(source == "right-center-thr" && target == "right-bottom-cbrn"){
+    if(source == "left-center-down-1-thr" && target == "right-bottom-cbrn"){
         return {
             color:"#6b7075",
             status: true
@@ -209,42 +209,46 @@ const CircuitElecModel = (source:(string | undefined | null), target:(string | u
             status: true
         }
     }
-    if(source == "right-2-sckt" && target == "left-center-thr"){
+    if(source == "right-2-sckt" && target == "right-center-down-1-thr"){
         return {
             color:"yellow",
             status: true
         }
     }
-    if(source == "left-2-sckt" && target == "left-thr"){
+    if(source == "left-5-sckt" && target == "left-down-1-thr"){
         return {
             color:"yellow",
             status: true
         }
     }
-    if(source == "right-lsi" && target == "left-3-sckt"){
+
+    if(source == "right-up-2-lsi" && target == "left-3-sckt"){
         return {
             color:"green",
             status: true
         }
     }
-    if(source == "left-4-sckt" && target == "right-lsi"){
+    if(source == "left-4-sckt" && target == "right-down-lsi"){
         return {
             color:"blue",
             status: true
         }
     }
-    if(source == "left-up-lsi" && target == "right-lsi"){
+    if(source == "left-up-1-lsi" && target == "right-down-lsi"){
         return {
             color:"blue",
             status: true
         }
     }
-    if(source == "left-5-sckt" && target == "right-thr"){
+    if(source == "left-2-sckt" && target == "right-down-1-thr"){
         return {
             color:"yellow",
             status: true
         }
     }
+
+
+
     if(source == "left-6-sckt-d" && target == "down-red1"){
         return {
             color:"black",

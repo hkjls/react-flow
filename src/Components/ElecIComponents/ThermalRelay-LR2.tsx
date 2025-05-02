@@ -25,61 +25,61 @@ const ThermalRelayR2 = ({
                 style={{ left: 94, top: 36 }}
                 type="source"
                 position={Position.Top}
-                id="left-thr"
+                id="left-up-thr"
             />
             <Terminal
                 style={{ left: 123, top: 36 }}
                 type="source"
                 position={Position.Top}
-                id="center-thr"
+                id="center-up-thr"
             />
             <Terminal
                 style={{ left: 154, top: 36 }}
                 type="source"
                 position={Position.Top}
-                id="right-thr"
+                id="right-up-thr"
             />
             <Terminal
                 style={{ left: 99, bottom: 57 }}
                 type="target"
                 position={Position.Bottom}
-                id="right-thr"
+                id="left-down-1-thr"
             />
             <Terminal
                 style={{ left: 105, bottom: 35 }}
                 type="target"
                 position={Position.Bottom}
-                id="right-up-thr"
+                id="left-down-2-thr"
             />
             <Terminal
                 style={{ left: 125, bottom: 57 }}
                 type="source"
                 position={Position.Bottom}
-                id="right-center-thr"
+                id="left-center-down-1-thr"
             />
             <Terminal
                 style={{ left: 135, bottom: 35 }}
                 type="target"
                 position={Position.Bottom}
-                id="center-up-thr"
+                id="center-down-2-thr"
             />
             <Terminal
                 style={{ left: 150, bottom: 57 }}
                 type="target"
                 position={Position.Bottom}
-                id="left-center-thr"
+                id="right-center-down-1-thr"
             />
             <Terminal
                 style={{ left: 165, bottom: 35 }}
                 type="target"
                 position={Position.Bottom}
-                id="left-up-thr"
+                id="right-down-2-thr"
             />
             <Terminal
                 style={{ left: 175, bottom: 57 }}
                 type="target"
                 position={Position.Bottom}
-                id="right-down-up-thr"
+                id="right-down-1-thr"
             />
 
             {
@@ -89,61 +89,61 @@ const ThermalRelayR2 = ({
                         style={{ left: 94, top: 36 }}
                         type="target"
                         position={Position.Top}
-                        id="left-thr"
+                        id="left-up-thr"
                     />
                     <Terminal
                         style={{ left: 123, top: 36 }}
                         type="target"
                         position={Position.Top}
-                        id="center-thr"
+                        id="center-up-thr"
                     />
                     <Terminal
                         style={{ left: 154, top: 36 }}
                         type="target"
                         position={Position.Top}
-                        id="right-thr"
+                        id="right-up-thr"
                     />
                     <Terminal
                         style={{ left: 99, bottom: 57 }}
                         type="source"
                         position={Position.Bottom}
-                        id="right-thr"
+                        id="left-down-1-thr"
                     />
                     <Terminal
                         style={{ left: 105, bottom: 35 }}
                         type="source"
                         position={Position.Bottom}
-                        id="right-up-thr"
+                        id="left-down-2-thr"
                     />
                     <Terminal
                         style={{ left: 125, bottom: 57 }}
                         type="target"
                         position={Position.Bottom}
-                        id="right-center-thr"
+                        id="left-center-down-1-thr"
                     />
                     <Terminal
                         style={{ left: 135, bottom: 35 }}
                         type="source"
                         position={Position.Bottom}
-                        id="center-up-thr"
+                        id="center-down-2-thr"
                     />
                     <Terminal
                         style={{ left: 150, bottom: 57 }}
                         type="source"
                         position={Position.Bottom}
-                        id="left-center-thr"
+                        id="right-center-down-1-thr"
                     />
                     <Terminal
                         style={{ left: 165, bottom: 35 }}
                         type="source"
                         position={Position.Bottom}
-                        id="left-up-thr"
+                        id="left-down-2-thr"
                     />
                     <Terminal
                         style={{ left: 175, bottom: 57 }}
                         type="source"
                         position={Position.Bottom}
-                        id="right-down-up-thr"
+                        id="right-down-1-thr"
                     />
                 </> : ""
 

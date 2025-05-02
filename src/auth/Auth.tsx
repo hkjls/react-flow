@@ -18,7 +18,7 @@ const Auth=()=>{
                     <div>
                         <ul id="user-auth-field" >
                             <li className="user-auth-info">
-                                <label htmlFor="">Name :</label>
+                                <label htmlFor="">Pseudo :</label>
                                 <input 
                                     type="text"
                                     onChange={(e)=>{

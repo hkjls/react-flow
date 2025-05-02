@@ -212,6 +212,37 @@
 }
 
 /* Panel Subject */
+
+#close{
+  position: absolute;
+  border: solid rgba(0, 0, 0, 0.274) 0.1px;
+  border-radius: 5px;
+  height: 45px;
+  width: 45px;
+  right: 5px;
+  top: 5px;
+}
+
+#close::after{
+  content: "";
+  border: solid rgb(199, 25, 25) 2px;
+  position: absolute;
+  height: 25px;
+  right: 20px;
+  top: 7px;
+  transform: rotateZ(45deg);
+}
+
+#close::before{
+  content: "";
+  border: solid rgb(199, 25, 25) 2px;
+  position: absolute;
+  height: 25px;
+  right: 20px;
+  top: 7px;
+  transform: rotateZ(-45deg);
+}
+
 #panel-subject{
   position: absolute;
   left: 15px;

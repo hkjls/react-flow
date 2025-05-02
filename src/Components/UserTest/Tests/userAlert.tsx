@@ -19,7 +19,8 @@ const Alert=({n, setN}:any):ReactElement=>{
                 <div id="alert-content">
                     <p>{message}</p>
                     <div>
-                        {mistake/mountEdge < 0.1 ?
+                        {
+                        mistake/mountEdge < 0.1 || isNaN(mistake/mountEdge) ?
                             <button
                                 type="button"
                                 onClick={()=>{

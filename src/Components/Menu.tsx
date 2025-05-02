@@ -33,6 +33,8 @@ const MenuBar=({n, setN}:any) => {
                 <li className="menu-list-list"
                   onClick={()=>{
                     setPannelS(false)
+                    timeHandle()
+                    setMountEdge(0)
                     f_choice("free")
                   }}
                 >
@@ -42,6 +44,8 @@ const MenuBar=({n, setN}:any) => {
                   onClick={()=>{
                     setPannelS(true)
                     f_choice("Démarreur pour un moteur")
+                    timeHandle()
+                    setMountEdge(0)
                   }}
                 >
                   <SimMotor n={n} setN={setN}/>
@@ -63,7 +67,7 @@ const MenuBar=({n, setN}:any) => {
                   }}
               >Voir
               </li>
-              <li className="certification">Détails</li>
+              {/* <li className="certification">Détails</li> */}
             </ul>
           </li>
           <li className='menu-list'

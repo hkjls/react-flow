@@ -20,11 +20,12 @@ const Certification=():ReactElement=>{
     const navigate = useNavigate()
     const date:Date = new Date()
     
-    const nf:number = emptyCertificate ? 0 : correct - mistake // n error
+    const nf:number = emptyCertificate ? 0 : mistake // n error
     const nc:number =  emptyCertificate ? 0 : mountEdge//n cablage
     const nfm:number = nc*50/100 // n error max
-    const userNote:number = emptyCertificate ? 0 : (1 - nf/nc)*100 // 
+    const userNote:number = emptyCertificate ? 0 : Math.round((1 - nf/nc)*100) // 
     var Note:string = ""
+    // console.log(emptyCertificate, correct, mistake, mountEdge, nf, nc)
     
     const divRef = useRef<HTMLDivElement>(null)
 

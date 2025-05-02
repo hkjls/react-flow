@@ -105,15 +105,15 @@ export const Workflow = () => {
     "right-top-dn right-1-sprt",
     "left-top-dn left-up-cbr",
     "left-center-top-dn right-up-cbr",
-    "left-lsi left-bottom-dn",
-    "left-center-lsi left-bottom-center-dn",
-    "right-center-lsi right-bottom-dn",
-    "left-thr left-lsi",
-    "center-thr left-center-lsi",
-    "right-thr right-center-lsi",
-    "left-center-2-sprt right-up-thr",
-    "right-center-2-sprt center-up-thr",
-    "right-2-sprt left-up-thr",
+    "left-up-2-lsi left-bottom-dn",
+    "left-center-up-2-lsi left-bottom-center-dn",
+    "right-center-up-2-lsi right-bottom-dn",
+    "left-up-thr left-down-lsi",
+    "center-up-thr left-center-down-lsi",
+    "right-up-thr right-center-down-lsi",
+    "left-center-2-sprt left-down-2-thr",
+    "right-center-2-sprt center-down-2-thr",
+    "right-2-sprt right-down-2-thr",
     "left-2-sprt left-4-msckt",
     "left-bottom-cbr left-top-lci",
     "right-bottom-cbr right-top-lci",
@@ -123,18 +123,18 @@ export const Workflow = () => {
     "left-bottom-lci left-5-msckt",
     "left-bottom-lci center-bottom-lci",
     "left-up-cbrn center-bottom-lci",
-    "right-up-lsi left-bottom-cbrn",
+    "right-up-1-lsi left-bottom-cbrn",
     "left-6-sckt left-bottom-cbrn",
     "right-bottom-lci right-up-cbrn",
     "left-up-center-top-dn right-bottom-cbrn",
-    "right-center-thr right-bottom-cbrn",
+    "left-center-down-1-thr right-bottom-cbrn",
     "right-1-sckt left-bottom-down-center-dn",
-    "right-2-sckt left-center-thr",
-    "left-2-sckt left-thr",
-    "right-lsi left-3-sckt",
-    "left-4-sckt right-lsi",
-    "left-up-lsi right-lsi",
-    "left-5-sckt right-thr",
+    "right-2-sckt right-center-down-1-thr",
+    "left-5-sckt left-down-1-thr",
+    "right-up-2-lsi left-3-sckt",
+    "left-4-sckt right-down-lsi",
+    "left-up-1-lsi right-down-lsi",
+    "left-2-sckt right-down-1-thr",
     "left-6-sckt-d down-red1",
     "right-1-sckt-d up-red3",
     "right-2-sckt-d down-red3",
@@ -403,10 +403,10 @@ export const Workflow = () => {
     edgeReconnectSuccessful.current = false;
   };
 
-  // const onReconnect: OnReconnect = (oldEdge, newConnection) => {
-  //   edgeReconnectSuccessful.current = true;
-  //   setEdges((prevEdges) => reconnectEdge(oldEdge, newConnection, prevEdges));
-  // };
+  const onReconnect: OnReconnect = (oldEdge, newConnection) => {
+    edgeReconnectSuccessful.current = true;
+    setEdges((prevEdges) => reconnectEdge(oldEdge, newConnection, prevEdges));
+  };
 
   const onReconnectEnd = (_: MouseEvent | TouchEvent, edge: Edge) => {
     if (!edgeReconnectSuccessful.current) {
@@ -685,7 +685,8 @@ export const Workflow = () => {
       <UserGrade edgeConnected={edgeConnected} addEdgeConnected={addEdgeConnected}/>
       <Alert n={nodes} setN={setNodes}/>
 
-      <ReactFlow
+      {test_choice.choice == "free" ?
+        <ReactFlow
         onInit={setRfInstance}
         nodes={nodes}
         edges={edges}
@@ -702,7 +703,7 @@ export const Workflow = () => {
         onNodeClick={onNodeClick}
         onPaneClick={onPaneClick}
         onReconnectStart={onReconnectStart}
-        // onReconnect={onReconnect}
+        onReconnect={onReconnect}
         onReconnectEnd={onReconnectEnd}
         onNodeDrag={onNodeDrag}
         onNodeDragStop={onNodeDragStop}
@@ -742,12 +743,12 @@ export const Workflow = () => {
             <div>
               <Text fontSize="x-medium">Actemium ElecSim Tools</Text>
               <Flex mt={1} gap={3} flexWrap="wrap">
-                <IconButton
+                {/* <IconButton
                   // icon={isPending ? <Spinner size="sm" /> : <Floppy />}
                   aria-label="Save"
                   size="sm"
                   // onClick={onSave}
-                />
+                /> */}
                 <DownloadBtn />
               </Flex>
             </div>
@@ -807,6 +808,128 @@ export const Workflow = () => {
           </defs>
         </svg>
       </ReactFlow>
+      : 
+      <ReactFlow
+        onInit={setRfInstance}
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        // connectionMode={ConnectionMode.Strict}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        connectionLineComponent={ConnectionLine}
+        isValidConnection={isValidConnection}
+        onDragOver={onDragOver}
+        onDrop={onDrop}
+        onNodeClick={onNodeClick}
+        onPaneClick={onPaneClick}
+        onReconnectStart={onReconnectStart}
+        onReconnectEnd={onReconnectEnd}
+        onNodeDrag={onNodeDrag}
+        onNodeDragStop={onNodeDragStop}
+        colorMode={isDark ? "dark" : "light"}
+        minZoom={0.7}
+      >
+        <Panel position="top-center">
+          <IconButton
+            icon={isDark ? <Sun /> : <Moon />}
+            aria-label="Light/Dark Mode"
+            size="xs"
+            colorScheme={isDark ? "orange" : "blackAlpha"}
+            onClick={toggleMode}
+          />
+        </Panel>
+        {test_choice.choice == "free" ? <Panel
+          position="top-right"
+          style={{
+            border: "1px solid #ccc",
+            padding: 20,
+            borderRadius: 12,
+            background: "white",
+            width: 280,
+            height: 400,
+          }}
+        >
+          <div id="Panel" style={{
+            display: "flex",
+            justifyContent: "left",
+            alignItems: "center",
+            marginBottom: 25
+          }}>
+            <img src={Numeric} alt="Numeric" width="80px" height="80px"></img>
+            <h2>Actemium</h2>
+          </div>
+          <Flex direction={"column"} gap={5}>
+            <div>
+              <Text fontSize="x-medium">Actemium ElecSim Tools</Text>
+              <Flex mt={1} gap={3} flexWrap="wrap">
+                {/* <IconButton
+                  // icon={isPending ? <Spinner size="sm" /> : <Floppy />}
+                  aria-label="Save"
+                  size="sm"
+                  // onClick={onSave}
+                /> */}
+                <DownloadBtn />
+              </Flex>
+            </div>
+
+            <div>
+              <Text fontSize="x-medium">Actemium ElecSim Components</Text>
+              <Flex mt={1} gap={1} flexWrap="wrap">
+                {COMPONENTS.map((component) => (
+                  <IconButton
+                    size="sm"
+                    key={component.label}
+                    aria-label={component.label}
+                    icon={component.icon}
+                    onDragStart={(event) => onDragStart(event, component.type)}
+                    draggable
+                  />
+                ))}
+              </Flex>
+            </div>
+          </Flex>
+        </Panel> 
+         
+          : <div id="Panel" style={{
+            position: "absolute",
+            width: "280px",
+            height:"125px",
+            right: "15px",
+            display: "flex",
+            gap: "5px",
+            justifyContent: "left",
+            alignItems: "center",
+            marginBottom: 25
+          }}>
+            <img src={Numeric} alt="Numeric" width="80px" height="80px"></img>
+            <h2>Actemium</h2>
+          </div> }
+
+        <Background
+          variant={BackgroundVariant.Lines}
+          gap={10}
+          color="#f1f1f1"
+          id="1"
+        />
+        <Background
+          variant={BackgroundVariant.Lines}
+          gap={100}
+          color="#ccc"
+          id="2"
+        />
+        <Controls />
+        <svg>
+          <defs>
+            <linearGradient id="wire">
+              <stop offset="0%" stopColor="#ecff02" />
+              <stop offset="100%" stopColor="#f69900" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </ReactFlow>}
     </Box>
   );
 };
