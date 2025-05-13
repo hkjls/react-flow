@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./auth";
 import Interface from "./auth/interface";
 import { TestProvider } from "./Context/exo_type";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Certification from "./Pages/Certification";
 
 // Étendre le thème par défaut (optionnel)

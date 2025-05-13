@@ -13,9 +13,12 @@ import {
   ButtonRed2,
   ButtonRed3,
   ButtonGreen,
-  MiniSocket
+  MiniSocket,
+  DMM,
+  DMT,
+  RDS
 } from "../icons";
-import { Box } from "@chakra-ui/react";
+import { Box, Icon } from "@chakra-ui/react";
 
 export const initialEdges: Edge[] = [
   
@@ -145,5 +148,20 @@ export const COMPONENTS = [
     icon: <MiniSocket height={8} />,
     type: ElectricalComponentType.MiniSocket,
     label: "MiniSocket"
+  },
+  {
+    icon: <DMM height={30} />,
+    type: ElectricalComponentType.DMM,
+    label: "DMM"
+  },
+  {
+    icon: <DMT height={28} />,
+    type: ElectricalComponentType.DMT,
+    label: "DMT"
+  },
+  {
+    icon: <RDS height={28} />,
+    type: ElectricalComponentType.RDS,
+    label: "RDS"
   }
 ];

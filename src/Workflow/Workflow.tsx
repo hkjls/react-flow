@@ -35,19 +35,22 @@ import ConnectionLine from "../Components/ConnectionLine";
 import { ElectricalComponentState, ElectricalComponentType, ElectricalComponentData } from "../types";
 import Bulb from "../Components/Bulb";
 import Battery from "../Components/Battery";
-import ThermalRelayLR2 from "../Components/ElecIComponents/ThermalRelay-LR2"
-import ContactorLSI from "../Components/ElecIComponents/Contactor-LS1";
-import ContactorLCI from "../Components/ElecIComponents/Contactor-LC1";
-import ContactorDN from "../Components/ElecIComponents/Contactor-DN";
-import CircuitBreaker from "../Components/ElecIComponents/CircuitBreaker-32A";
-import CircuitBreakerN from "../Components/ElecIComponents/CircuitBreaker-32AN";
-import SupportElec from "../Components/ElecIComponents/SupportElec";
-import SocketElecII from "../Components/ElecIComponents/SocketElec2";
-import ButtonRed1 from "../Components/ElecIComponents/ButtonRed1";
-import ButtonRed2 from "../Components/ElecIComponents/ButtonRed2";
-import ButtonRed3 from "../Components/ElecIComponents/ButtonRed3";
-import ButtonGreen from "../Components/ElecIComponents/ButtonGreen";
-import MiniSocket from "../Components/ElecIComponents/MiniSocket";
+import ThermalRelayLR2 from "../Components/MotorTestComponents/ThermalRelay-LR2"
+import ContactorLSI from "../Components/MotorTestComponents/Contactor-LS1";
+import ContactorLCI from "../Components/MotorTestComponents/Contactor-LC1";
+import ContactorDN from "../Components/MotorTestComponents/Contactor-DN";
+import CircuitBreaker from "../Components/MotorTestComponents/CircuitBreaker-32A";
+import CircuitBreakerN from "../Components/MotorTestComponents/CircuitBreaker-32AN";
+import SupportElec from "../Components/MotorTestComponents/SupportElec";
+import SocketElecII from "../Components/MotorTestComponents/SocketElec2";
+import ButtonRed1 from "../Components/MotorTestComponents/ButtonRed1";
+import ButtonRed2 from "../Components/MotorTestComponents/ButtonRed2";
+import ButtonRed3 from "../Components/MotorTestComponents/ButtonRed3";
+import ButtonGreen from "../Components/MotorTestComponents/ButtonGreen";
+import MiniSocket from "../Components/MotorTestComponents/MiniSocket";
+import DMM from "../Components/SecurityRelais/DMM";
+import DMT from "../Components/SecurityRelais/DMT";
+import RDS from "../Components/SecurityRelais/RDS";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -83,6 +86,9 @@ const nodeTypes = {
   buttonrediii: ButtonRed3,
   buttongreen: ButtonGreen,
   minisocket: MiniSocket,
+  dmm: DMM,
+  dmt: DMT,
+  rds: RDS,
 };
 
 const edgeTypes = {
@@ -381,6 +387,27 @@ export const Workflow = () => {
         type,
         position,
         data: { value: 15, Desc: "Composant Electronique", nEntry:6, nOutput:0},
+      };
+    }else if(type == ElectricalComponentType.DMM){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { Desc: "Composant Electronique"},
+      };
+    }else if(type == ElectricalComponentType.DMT){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { Desc: "Composant Electronique"},
+      };
+    }else if(type == ElectricalComponentType.RDS){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { Desc: "Composant Electronique"},
       };
     }
 

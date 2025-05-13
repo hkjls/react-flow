@@ -50,6 +50,7 @@ const MenuBar=({n, setN}:any) => {
                 >
                   <SimMotor n={n} setN={setN}/>
                 </li>
+                <li className="menu-list-list">Cablage Relais</li>
               </ul>
           </li>
           {/*           

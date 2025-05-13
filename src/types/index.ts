@@ -18,6 +18,9 @@ export enum ElectricalComponentType {
   ButtonRedIII = "buttonrediii",
   ButtonGreen = "buttongreen",
   MiniSocket = "minisocket",
+  DMM = "dmm",
+  DMT = "dmt",
+  RDS = "rds",
 }
 
 export enum ElectricalComponentState {
