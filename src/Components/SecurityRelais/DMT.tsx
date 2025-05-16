@@ -1,7 +1,6 @@
 import {Node, NodeProps, Position} from "@xyflow/react"
 import { ElectricalComponentData, ElectricalComponentType } from "../../types"
-import { Box, Text} from "@chakra-ui/react"
-import { getUnit } from "../../utils"
+import { Box} from "@chakra-ui/react"
 import Terminal from "../Terminal"
 import { useTest } from "../../Context/exo_type"
 

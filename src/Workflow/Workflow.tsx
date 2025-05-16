@@ -51,6 +51,8 @@ import MiniSocket from "../Components/MotorTestComponents/MiniSocket";
 import DMM from "../Components/SecurityRelais/DMM";
 import DMT from "../Components/SecurityRelais/DMT";
 import RDS from "../Components/SecurityRelais/RDS";
+import CM from "../Components/SecurityRelais/CM";
+import MT from "../Components/SecurityRelais/MT";
 import ComponentDetail from "../Components/ComponentDetail";
 import Board from "../Components/Board";
 import { isPointInBox, zoomSelector } from "../utils";
@@ -89,6 +91,8 @@ const nodeTypes = {
   dmm: DMM,
   dmt: DMT,
   rds: RDS,
+  cm: CM,
+  mt: MT
 };
 
 const edgeTypes = {
@@ -403,6 +407,20 @@ export const Workflow = () => {
         data: { Desc: "Composant Electronique"},
       };
     }else if(type == ElectricalComponentType.RDS){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { Desc: "Composant Electronique"},
+      };
+    }else if(type == ElectricalComponentType.CM){
+      node = {
+        id: uuid(),
+        type,
+        position,
+        data: { Desc: "Composant Electronique"},
+      };
+    }else if(type == ElectricalComponentType.MT){
       node = {
         id: uuid(),
         type,

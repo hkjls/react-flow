@@ -14,22 +14,20 @@ const ButtonGreen=({
     data:{value}
 }:NodeProps<ButtonGreen_Node>)=>{
     const unit = getUnit(type as ElectricalComponentType)
-    const x:number = 10
+    const x:number = 4
     const {test_choice} = useTest()
 
     return(
-        <Box style={{
-            transform:"rotateZ(90deg)"
-        }}>
+        <Box>
             <ButtonGreenIcon height={90} />
             <Terminal
-                style={{ left: 11, top: 25 + x}}
+                style={{ left: 18, top: 25 + x}}
                 type="target"
                 position={Position.Top}
                 id="up-btn-green"
             />
             <Terminal
-                style={{ left: 11, top: 50 + x}}
+                style={{ left: 18, top: 50 + x}}
                 type="target"
                 position={Position.Top}
                 id="down-btn-green"
@@ -37,7 +35,7 @@ const ButtonGreen=({
             {
             test_choice.choice == "free" ?
                 <Terminal
-                    style={{ left: 11, top: 25 + x}}
+                    style={{ left: 18, top: 25 + x}}
                     type="source"
                     position={Position.Top}
                     id="up-btn-green"
@@ -47,7 +45,7 @@ const ButtonGreen=({
             {
             test_choice.choice == "free"?
                 <Terminal
-                    style={{ left: 11, top: 50 + x}}
+                    style={{ left: 18, top: 50 + x}}
                     type="source"
                     position={Position.Top}
                     id="down-btn-green"

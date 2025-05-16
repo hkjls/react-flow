@@ -21,6 +21,8 @@ export enum ElectricalComponentType {
   DMM = "dmm",
   DMT = "dmt",
   RDS = "rds",
+  CM = "cm",
+  MT = "mt",
 }
 
 export enum ElectricalComponentState {

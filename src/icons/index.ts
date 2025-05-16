@@ -19,3 +19,5 @@ export { default as MiniSocket} from "./MotorTestComponents/MiniSocket";
 export { default as DMM} from "./SecurityRelais/DMM";
 export { default as DMT} from "./SecurityRelais/DMT";
 export { default as RDS} from "./SecurityRelais/RDS";
+export { default as CM} from "./SecurityRelais/CM";
+export { default as MT} from "./SecurityRelais/MT";

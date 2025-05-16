@@ -16,7 +16,9 @@ import {
   MiniSocket,
   DMM,
   DMT,
-  RDS
+  RDS,
+  CM,
+  MT
 } from "../icons";
 import { Box, Icon } from "@chakra-ui/react";
 
@@ -162,6 +164,16 @@ export const COMPONENTS = [
   {
     icon: <RDS height={28} />,
     type: ElectricalComponentType.RDS,
+    label: "RDS"
+  },
+  {
+    icon: <CM height={28} />,
+    type: ElectricalComponentType.CM,
+    label: "RDS"
+  },
+  {
+    icon: <MT height={28} />,
+    type: ElectricalComponentType.MT,
     label: "RDS"
   }
 ];
