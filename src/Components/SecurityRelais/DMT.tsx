@@ -60,9 +60,6 @@ const DMT=({type, data:{value}}:NodeProps<DMT_Node>)=>{
                 />
             
             </>
-
-            {
-                test_choice.choice == "free" ?
                 <>
                     <Terminal
                         style={{left: 54, top: 31}}
@@ -108,8 +105,7 @@ const DMT=({type, data:{value}}:NodeProps<DMT_Node>)=>{
                         id="down-dmt-right"
                     />
                 
-                </>:""
-            }
+                </>
         </Box>
     )
 }

@@ -35,22 +35,20 @@ const ButtonRed3=({
                 position={Position.Top}
                 id="down-red3"
             />
-            {test_choice.choice == "free" ?
-                <>
-                    <Terminal
-                        style={{ left: 15, top: 25+ x}}
-                        type="source"
-                        position={Position.Top}
-                        id="up-red3"
-                    />
-                    <Terminal
-                        style={{ left: 15, top: 50 + x}}
-                        type="source"
-                        position={Position.Top}
-                        id="down-red3"
-                    />
-                </> : ""
-            }
+            <>
+                <Terminal
+                    style={{ left: 15, top: 25+ x}}
+                    type="source"
+                    position={Position.Top}
+                    id="up-red3"
+                />
+                <Terminal
+                    style={{ left: 15, top: 50 + x}}
+                    type="source"
+                    position={Position.Top}
+                    id="down-red3"
+                />
+            </>
         </Box>
     )}
 

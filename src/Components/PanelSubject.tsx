@@ -1,12 +1,13 @@
 import { ReactElement, useState } from "react";
-import images from '../images/Motor'
+import images from '../images/Motor';
+import imgSec from '../images/SecureWire'
 import Numerika from '../icons/image/ICONEACTEMIUM.png'
 import { useTest } from "../Context/exo_type";
 import { useNavigate } from "react-router-dom";
 
 const PanelSubject=():ReactElement=>{
     const [nimg, setNimg] = useState(1)
-    const {user, result, setActiveAlert, setMessage, setEmptyCertificat} = useTest()
+    const {user, result, setActiveAlert, setMessage, setEmptyCertificat, test_choice} = useTest()
 
     const navigate = useNavigate()
 
@@ -52,7 +53,8 @@ const PanelSubject=():ReactElement=>{
             <h2>Commande</h2>
             <div id="Circuit-Image">
                 <img 
-                    src={`${images['./Capture_'+nimg+'.png']}`} 
+                    src={`${
+                        test_choice.choice == "Démarreur pour un moteur" ? images['./Capture_'+nimg+'.png']: imgSec['./Sec'+nimg+'.png']}`} 
                     width={190}
                     style={{
                         margin: "2px"
@@ -73,7 +75,7 @@ const PanelSubject=():ReactElement=>{
                     <li
                         onClick={
                             ()=>{
-                                if(nimg < Object.entries(images).length){
+                                if(nimg < Object.entries(test_choice.choice == "Démarreur pour un moteur" ?images:imgSec).length){
                                     setNimg(nimg + 1)
                                 }
                             }
@@ -82,7 +84,7 @@ const PanelSubject=():ReactElement=>{
                 </ul>
             </div>
             {
-                nimg >= Object.entries(images).length ? 
+                nimg >= Object.entries(test_choice.choice == "Démarreur pour un moteur" ? images:imgSec).length ? 
                 <div id="Certificat-form">
                     <div 
                         id="close"

@@ -23,6 +23,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import "../index.css";
+import SecureCableCondition from "../Components/UserTest/Condition/SecureCableRelais.json"
 import { Box, Flex, IconButton, position, Spinner, Text } from "@chakra-ui/react";
 import { COMPONENTS, initialEdges, initialNodes } from "../constants";
 import { v4 as uuid } from "uuid";
@@ -108,8 +109,17 @@ export const Workflow = () => {
   // const [edges, setEdges] = useEdgesState(initialEdges)
   const [edgeConnected, addEdgeConnected] = useState(0)
 
-  let valid_list:string[]
-  valid_list = [
+  type relation_node={
+    condition:string,
+    cscnd:string,
+    validation:boolean,
+    color:"string"
+  }
+
+  let valid_list:string[] | object[]
+  let DrmMoteur:string[]
+  // let valid_list_scnd:string[] | object[]
+  DrmMoteur = [
     "left-top-dn left-center-1-sprt",
     "left-center-top-dn right-center-1-sprt",
     "right-top-dn right-1-sprt",
@@ -155,15 +165,31 @@ export const Workflow = () => {
     "left-5-sckt-d up-red1"
   ];
 
+
   const { addNode, removeNode, addEdge, removeEdge, undo, redo } = useHistory();
 
   const onConnect = useCallback(
     (connection: Connection) => {
       console.log(connection.sourceHandle, connection.targetHandle)
       const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
-      let valid_connection:string
+      let valid_connection:string=""
+      // let valid_connection_scnd:string =""
+      valid_list = [""]
+      // valid_list_scnd = [""]
+      
+      if(test_choice.choice == "Démarreur pour un moteur"){
+        valid_list = DrmMoteur
+      }
+      
+      if(test_choice.choice =="Secure Cablage"){
+        valid_list = SecureCableCondition.map((e)=>e.condition)
+        // valid_list_scnd = SecureCableCondition.map((e)=>e.cscnd)
+      }
+      
       valid_connection = `${connection.sourceHandle} ${connection.targetHandle}`
+      // valid_connection_scnd = `${connection.sourceHandle} ${connection.targetHandle}`
       var exist:boolean = valid_list.includes(valid_connection)
+      // var exist_inv:boolean = valid_list_scnd.includes(valid_connection_scnd)
 
       setMountEdge(valid_list.length)
 

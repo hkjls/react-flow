@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Historic from './Historic';
 import SimMotor from './UserTest/Tests/DefaultComponents';
+import SecurCablage from './UserTest/Tests/SecureCablaRelaisComponents';
 import FreeSim from './UserTest/Tests/FreeSim';
 import PanelSubject from './PanelSubject';
 import { useAuth } from '../auth';
@@ -50,7 +51,16 @@ const MenuBar=({n, setN}:any) => {
                 >
                   <SimMotor n={n} setN={setN}/>
                 </li>
-                <li className="menu-list-list">Cablage Relais</li>
+                <li className="menu-list-list"
+                  onClick={()=>{
+                    setPannelS(true)
+                    f_choice("Secure Cablage")
+                    timeHandle()
+                    setMountEdge(0)
+                  }}
+                >
+                  <SecurCablage n={n} setN={setN} />
+                </li>
               </ul>
           </li>
           {/*           

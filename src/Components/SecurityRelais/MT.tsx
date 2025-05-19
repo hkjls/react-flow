@@ -34,8 +34,6 @@ const MT=({type, data:{value}}:NodeProps<MT_Node>)=>{
                     id="mt-right"
                 />
             </>
-            {
-                test_choice.choice == "free" ?
                 <>
                     <Terminal
                         style={{left: 70, top: 42}}
@@ -55,8 +53,7 @@ const MT=({type, data:{value}}:NodeProps<MT_Node>)=>{
                         position={Position.Top}
                         id="mt-right"
                     />
-                </>:""
-            }
+                </>
         </Box>
     )
 }

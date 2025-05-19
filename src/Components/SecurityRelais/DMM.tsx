@@ -47,8 +47,6 @@ const DMM=({
                     id="down-dmm-right"
                 />
             </>
-            {
-                test_choice.choice == "free" ?
                 <>
                     <Terminal
                         style={{left: 98, top: 48}}
@@ -77,8 +75,7 @@ const DMM=({
                         position={Position.Bottom}
                         id="down-dmm-right"
                     />
-                </>: ""
-            }
+                </>
         </Box>
     )
 }

@@ -20,19 +20,19 @@ const RDS =({type, data:{value}}:NodeProps<RDS_Node>)=>{
                     style={{left: 86, top: 27}}
                     type="target"
                     position={Position.Top}
-                    id="up-1-dmt-left"
+                    id="p-up-1-dmt-left"
                 />
                 <Terminal
                     style={{left: 86 + x, top: 27}}
                     type="target"
                     position={Position.Top}
-                    id="up-1-dmt-center"
+                    id="p-up-1-dmt-center"
                 />
                 <Terminal
                     style={{left: 86 + 2*x, top: 27}}
                     type="target"
                     position={Position.Top}
-                    id="up-1-dmt-right"
+                    id="p-up-1-dmt-right"
                 />
 
 
@@ -40,19 +40,19 @@ const RDS =({type, data:{value}}:NodeProps<RDS_Node>)=>{
                     style={{left: 86, top: 59}}
                     type="target"
                     position={Position.Top}
-                    id="up-2-dmt-left"
+                    id="p-up-2-dmt-left"
                 />
                 <Terminal
                     style={{left: 86 + x, top: 59}}
                     type="target"
                     position={Position.Top}
-                    id="up-2-dmt-center"
+                    id="p-up-2-dmt-center"
                 />
                 <Terminal
                     style={{left: 86 + 2*x, top: 59}}
                     type="target"
                     position={Position.Top}
-                    id="up-2-dmt-right"
+                    id="p-up-2-dmt-right"
                 />
 
 
@@ -60,61 +60,58 @@ const RDS =({type, data:{value}}:NodeProps<RDS_Node>)=>{
                     style={{left: 86, bottom: 35}}
                     type="source"
                     position={Position.Bottom}
-                    id="down-1-dmt-left"
+                    id="p-down-1-dmt-left"
                 />
                 <Terminal
                     style={{left: 86 + x, bottom: 35}}
                     type="source"
                     position={Position.Bottom}
-                    id="down-1-dmt-center"
+                    id="p-down-1-dmt-center"
                 />
                 <Terminal
                     style={{left: 86 + 2*x, bottom: 35}}
                     type="source"
                     position={Position.Bottom}
-                    id="down-1-dmt-right"
+                    id="p-down-1-dmt-right"
                 />
 
                 <Terminal
                     style={{left: 86, bottom: 17}}
                     type="source"
                     position={Position.Bottom}
-                    id="down-2-dmt-left"
+                    id="p-down-2-dmt-left"
                 />
                 <Terminal
                     style={{left: 86 + x, bottom: 17}}
                     type="source"
                     position={Position.Bottom}
-                    id="down-2-dmt-center"
+                    id="p-down-2-dmt-center"
                 />
                 <Terminal
                     style={{left: 86 + x*2, bottom: 17}}
                     type="source"
                     position={Position.Bottom}
-                    id="down-2-dmt-bottom"
+                    id="p-down-2-dmt-bottom"
                 />
             </>
-
-            {
-                test_choice.choice == "free" ?
                 <>
                     <Terminal
                         style={{left: 86, top: 27}}
                         type="source"
                         position={Position.Top}
-                        id="up-1-dmt-left"
+                        id="s-up-1-dmt-left"
                     />
                     <Terminal
                         style={{left: 86 + x, top: 27}}
                         type="source"
                         position={Position.Top}
-                        id="up-1-dmt-center"
+                        id="s-up-1-dmt-center"
                     />
                     <Terminal
                         style={{left: 86 + 2*x, top: 27}}
                         type="source"
                         position={Position.Top}
-                        id="up-1-dmt-right"
+                        id="s-up-1-dmt-right"
                     />
 
 
@@ -122,19 +119,19 @@ const RDS =({type, data:{value}}:NodeProps<RDS_Node>)=>{
                         style={{left: 86, top: 59}}
                         type="source"
                         position={Position.Top}
-                        id="up-2-dmt-left"
+                        id="s-up-2-dmt-left"
                     />
                     <Terminal
                         style={{left: 86 + x, top: 59}}
                         type="source"
                         position={Position.Top}
-                        id="up-2-dmt-center"
+                        id="s-up-2-dmt-center"
                     />
                     <Terminal
                         style={{left: 86 + 2*x, top: 59}}
                         type="source"
                         position={Position.Top}
-                        id="up-2-dmt-right"
+                        id="s-up-2-dmt-right"
                     />
 
 
@@ -142,41 +139,40 @@ const RDS =({type, data:{value}}:NodeProps<RDS_Node>)=>{
                         style={{left: 86, bottom: 35}}
                         type="target"
                         position={Position.Bottom}
-                        id="down-1-dmt-left"
+                        id="s-down-1-dmt-left"
                     />
                     <Terminal
                         style={{left: 86 + x, bottom: 35}}
                         type="target"
                         position={Position.Bottom}
-                        id="down-1-dmt-center"
+                        id="s-down-1-dmt-center"
                     />
                     <Terminal
                         style={{left: 86 + 2*x, bottom: 35}}
                         type="target"
                         position={Position.Bottom}
-                        id="down-1-dmt-right"
+                        id="s-down-1-dmt-right"
                     />
 
                     <Terminal
                         style={{left: 86, bottom: 17}}
                         type="target"
                         position={Position.Bottom}
-                        id="down-2-dmt-left"
+                        id="s-down-2-dmt-left"
                     />
                     <Terminal
                         style={{left: 86 + x, bottom: 17}}
                         type="target"
                         position={Position.Bottom}
-                        id="down-2-dmt-center"
+                        id="s-down-2-dmt-center"
                     />
                     <Terminal
                         style={{left: 86 + x*2, bottom: 17}}
                         type="target"
                         position={Position.Bottom}
-                        id="down-2-dmt-bottom"
+                        id="s-down-2-dmt-bottom"
                     />
-                </>:""
-            }
+                </>
         </Box>
     )
 }

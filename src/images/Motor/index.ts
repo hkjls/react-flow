@@ -6,4 +6,3 @@ const Images = import.meta.glob<{ default: string }>('./*.png', {
   });
   
 export default Images
-  

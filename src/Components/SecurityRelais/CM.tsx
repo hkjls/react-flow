@@ -87,8 +87,6 @@ const CM=({type, data:{value}}:NodeProps<CM_Node>)=>{
                     id="down-5-cm"
                 />
             </>
-            {
-                test_choice.choice == "free" ?
                 <>
                     <Terminal
                         style={{left: 54, top: 53}}
@@ -160,8 +158,7 @@ const CM=({type, data:{value}}:NodeProps<CM_Node>)=>{
                         position={Position.Bottom}
                         id="down-5-cm"
                     />
-            </>:""
-            }
+            </>
         </Box>
     )
 }

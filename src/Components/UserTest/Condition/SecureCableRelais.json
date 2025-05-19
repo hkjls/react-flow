@@ -1,0 +1,135 @@
+[
+    {
+        "condition":"up-dmm-left left-1-sckt",
+        "cscnd": "left-1-sckt up-dmm-left",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"p-down-1-dmt-right down-dmm-left",
+        "cscnd":"down-dmm-left p-down-1-dmt-right",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"left-4-sckt up-dmm-right",
+        "cscnd":"up-dmm-right left-4-sckt",
+        "validation":true,
+        "color":"yellow"
+    },
+    {
+        "condition":"down-red3 down-dmm-right",
+        "cscnd":"down-dmm-right down-red3",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"up-red3 down-red3",
+        "cscnd":"down-red3 up-red3",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"up-red3 p-up-2-dmt-left",
+        "cscnd":"p-up-2-dmt-left up-red3",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"s-up-2-dmt-center up-btn-green",
+        "cscnd":"up-btn-green s-up-2-dmt-center",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"s-up-2-dmt-right down-btn-green",
+        "cscnd":"down-btn-green s-up-2-dmt-right",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"left-top-lci left-1-sckt",
+        "cscnd":"left-1-sckt left-top-lci",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"center-right-top-lci left-3-sckt",
+        "cscnd":"left-3-sckt center-right-top-lci",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"down-5-cm left-bottom-lci",
+        "cscnd":"left-bottom-lci down-5-cm",
+        "validation":true,
+        "color":"brown"
+    },
+    {
+        "condition":"s-up-1-dmt-left right-bottom-lci",
+        "cscnd":"right-bottom-lci s-up-1-dmt-left",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"left-2-sckt up-dmt-left",
+        "cscnd":"left-2-sckt up-dmt-left",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"up-dmt-center left-3-sckt",
+        "cscnd":"up-dmt-center left-3-sckt",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-4-sckt up-dmt-right",
+        "cscnd":"left-4-sckt up-dmt-right",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"up-1-cm down-dmt-left",
+        "cscnd":"down-dmt-left up-1-cm",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"up-2-cm down-dmt-center",
+        "cscnd":"down-dmt-center up-2-cm",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"up-3-cm down-dmt-right",
+        "cscnd":"down-dmt-right up-3-cm",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"up-5-cm s-down-2-dmt-left",
+        "cscnd":"s-down-2-dmt-left up-5-cm",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"mt-left down-1-cm",
+        "cscnd":"down-1-cm mt-left",
+        "validation":true,
+        "color":"#0ab6b6"
+    },
+    {
+        "condition":"mt-center down-2-cm",
+        "cscnd":"down-2-cm mt-center",
+        "validation":true,
+        "color":"#0ab6b6"
+    },
+    {
+        "condition":"mt-right down-3-cm",
+        "cscnd":"down-3-cm mt-right",
+        "validation":true,
+        "color":"#0ab6b6"
+    }
+
+]

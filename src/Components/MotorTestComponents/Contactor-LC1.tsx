@@ -27,10 +27,29 @@ const ContactorLCI =({
             <ContactorLCIIcon height={150} />
 
             <Terminal
+                style={{ left: 83 - 1*top_x, top: 28 - top_y }}
+                type="target"
+                position={Position.Top}
+                id="left-left-top-lci"
+            />
+
+            <Terminal
                 style={{ left: 68 + 0*top_x, top: 28 - top_y }}
                 type="target"
                 position={Position.Top}
                 id="left-top-lci"
+            />
+            <Terminal
+                style={{ left: 52 + top_x, top: 28 - top_y }}
+                type="target"
+                position={Position.Top}
+                id="left-center-top-lci"
+            />
+            <Terminal
+                style={{ left: 65 + top_x, top: 28 - top_y }}
+                type="target"
+                position={Position.Top}
+                id="center-right-top-lci"
             />
             <Terminal
                 style={{ left: 85 + top_x, top: 28 - top_y }}
@@ -52,48 +71,88 @@ const ContactorLCI =({
                 id="center-bottom-lci"
             />
             <Terminal
+                style={{ left: 55 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
+                type="source"
+                position={Position.Bottom}
+                id="right-center-bottom-lci"
+            />
+            <Terminal
+                style={{ left: 69 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
+                type="source"
+                position={Position.Bottom}
+                id="right-center-bottom-lci"
+            />
+            <Terminal
                 style={{ left: 85 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
                 type="source"
                 position={Position.Bottom}
                 id="right-bottom-lci"
             />
 
-            {
-                test_choice.choice == "free" ?
-                <> 
-                    <Terminal
-                        style={{ left: 68 + 0*top_x, top: 28 - top_y }}
-                        type="source"
-                        position={Position.Top}
-                        id="left-top-lci"
-                    />
-                    <Terminal
-                        style={{ left: 85 + top_x, top: 28 - top_y }}
-                        type="source"
-                        position={Position.Top}
-                        id="right-top-lci"
-                    />
+            <> 
+                <Terminal
+                    style={{ left: 83 - 1*top_x, top: 28 - top_y }}
+                    type="source"
+                    position={Position.Top}
+                    id="left-left-top-lci"
+                />
 
-                    <Terminal
-                        style={{ left: 54 + 0*bottom_x, bottom: 30 + 0*bottom_y }}
-                        type="target"
-                        position={Position.Bottom}
-                        id="left-bottom-lci"
-                    />
-                    <Terminal
-                        style={{ left: 60 + bottom_x, bottom: 30 + 0*bottom_y }}
-                        type="source"
-                        position={Position.Bottom}
-                        id="center-bottom-lci"
-                    />
-                    <Terminal
-                        style={{ left: 85 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
-                        type="target"
-                        position={Position.Bottom}
-                        id="right-bottom-lci"
-                    />
-                </> : ""
-            }
+                <Terminal
+                    style={{ left: 68 + 0*top_x, top: 28 - top_y }}
+                    type="source"
+                    position={Position.Top}
+                    id="left-top-lci"
+                />
+                <Terminal
+                    style={{ left: 52 + top_x, top: 28 - top_y }}
+                    type="source"
+                    position={Position.Top}
+                    id="left-center-top-lci"
+                />
+                <Terminal
+                    style={{ left: 65 + top_x, top: 28 - top_y }}
+                    type="source"
+                    position={Position.Top}
+                    id="center-right-top-lci"
+                />
+                <Terminal
+                    style={{ left: 85 + top_x, top: 28 - top_y }}
+                    type="source"
+                    position={Position.Top}
+                    id="right-top-lci"
+                />
+
+                <Terminal
+                    style={{ left: 54 + 0*bottom_x, bottom: 30 + 0*bottom_y }}
+                    type="target"
+                    position={Position.Bottom}
+                    id="left-bottom-lci"
+                />
+                <Terminal
+                    style={{ left: 60 + bottom_x, bottom: 30 + 0*bottom_y }}
+                    type="source"
+                    position={Position.Bottom}
+                    id="center-bottom-lci"
+                />
+                <Terminal
+                    style={{ left: 55 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
+                    type="target"
+                    position={Position.Bottom}
+                    id="right-center-bottom-lci"
+                />
+                <Terminal
+                    style={{ left: 69 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
+                    type="target"
+                    position={Position.Bottom}
+                    id="right-center-bottom-lci"
+                />
+                <Terminal
+                    style={{ left: 85 + 2.3*bottom_x, bottom: 30 + 0*bottom_y }}
+                    type="target"
+                    position={Position.Bottom}
+                    id="right-bottom-lci"
+                />
+            </>
         </Box>
     )
 }

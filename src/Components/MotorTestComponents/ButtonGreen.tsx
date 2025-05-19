@@ -32,26 +32,18 @@ const ButtonGreen=({
                 position={Position.Top}
                 id="down-btn-green"
             />
-            {
-            test_choice.choice == "free" ?
-                <Terminal
-                    style={{ left: 18, top: 25 + x}}
-                    type="source"
-                    position={Position.Top}
-                    id="up-btn-green"
-                />
-                : ""
-            }
-            {
-            test_choice.choice == "free"?
-                <Terminal
-                    style={{ left: 18, top: 50 + x}}
-                    type="source"
-                    position={Position.Top}
-                    id="down-btn-green"
-                />
-            : ""
-            }
+            <Terminal
+                style={{ left: 18, top: 25 + x}}
+                type="source"
+                position={Position.Top}
+                id="up-btn-green"
+            />
+            <Terminal
+                style={{ left: 18, top: 50 + x}}
+                type="source"
+                position={Position.Top}
+                id="down-btn-green"
+            />
         </Box>
     )}
 
