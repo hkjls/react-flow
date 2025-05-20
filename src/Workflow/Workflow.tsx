@@ -24,6 +24,7 @@ import {
 import "@xyflow/react/dist/style.css";
 import "../index.css";
 import SecureCableCondition from "../Components/UserTest/Condition/SecureCableRelais.json"
+import EnginCableCondition from "../Components/UserTest/Condition/EngineCable.json"
 import { Box, Flex, IconButton, position, Spinner, Text } from "@chakra-ui/react";
 import { COMPONENTS, initialEdges, initialNodes } from "../constants";
 import { v4 as uuid } from "uuid";
@@ -109,61 +110,22 @@ export const Workflow = () => {
   // const [edges, setEdges] = useEdgesState(initialEdges)
   const [edgeConnected, addEdgeConnected] = useState(0)
 
-  type relation_node={
+  let valid_list:string[] | object[]
+  type condition_key = {
     condition:string,
-    cscnd:string,
     validation:boolean,
-    color:"string"
+    color:string
   }
 
-  let valid_list:string[] | object[]
-  let DrmMoteur:string[]
-  // let valid_list_scnd:string[] | object[]
-  DrmMoteur = [
-    "left-top-dn left-center-1-sprt",
-    "left-center-top-dn right-center-1-sprt",
-    "right-top-dn right-1-sprt",
-    "left-top-dn left-up-cbr",
-    "left-center-top-dn right-up-cbr",
-    "left-up-2-lsi left-bottom-dn",
-    "left-center-up-2-lsi left-bottom-center-dn",
-    "right-center-up-2-lsi right-bottom-dn",
-    "left-up-thr left-down-lsi",
-    "center-up-thr left-center-down-lsi",
-    "right-up-thr right-center-down-lsi",
-    "left-center-2-sprt left-down-2-thr",
-    "right-center-2-sprt center-down-2-thr",
-    "right-2-sprt right-down-2-thr",
-    "left-2-sprt left-4-msckt",
-    "left-bottom-cbr left-top-lci",
-    "right-bottom-cbr right-top-lci",
-    "left-1-msckt left-1-sprt",
-    "left-3-msckt left-1-sckt",
-    "left-2-msckt right-3-sckt",
-    "left-bottom-lci left-5-msckt",
-    "left-bottom-lci center-bottom-lci",
-    "left-up-cbrn center-bottom-lci",
-    "right-up-1-lsi left-bottom-cbrn",
-    "left-6-sckt left-bottom-cbrn",
-    "right-bottom-lci right-up-cbrn",
-    "left-up-center-top-dn right-bottom-cbrn",
-    "left-center-down-1-thr right-bottom-cbrn",
-    "right-1-sckt left-bottom-down-center-dn",
-    "right-2-sckt right-center-down-1-thr",
-    "left-5-sckt left-down-1-thr",
-    "right-up-2-lsi left-3-sckt",
-    "left-4-sckt right-down-lsi",
-    "left-up-1-lsi right-down-lsi",
-    "left-2-sckt right-down-1-thr",
-    "left-6-sckt-d down-red1",
-    "right-1-sckt-d up-red3",
-    "right-2-sckt-d down-red3",
-    "left-2-sckt-d up-btn-red2",
-    "down-btn-red2 up-btn-green",
-    "down-btn-red2 left-3-sckt-d",
-    "left-4-sckt-d down-btn-green",
-    "left-5-sckt-d up-red1"
-  ];
+  const set_condition_list=(list:condition_key[]):string[]=>{
+    var conditions=list.map((e)=>e.condition)
+    var inv_condition=list.map((e)=>{
+      var chaines = e.condition
+      var split_chaines = chaines.split(" ")
+      return `${split_chaines[1]} ${split_chaines[0]}`
+    })
+    return [...conditions, ...inv_condition]
+  }
 
 
   const { addNode, removeNode, addEdge, removeEdge, undo, redo } = useHistory();
@@ -173,23 +135,18 @@ export const Workflow = () => {
       console.log(connection.sourceHandle, connection.targetHandle)
       const isEdgeValid = CircuitElecModel(connection.sourceHandle, connection.targetHandle)
       let valid_connection:string=""
-      // let valid_connection_scnd:string =""
       valid_list = [""]
-      // valid_list_scnd = [""]
       
       if(test_choice.choice == "Démarreur pour un moteur"){
-        valid_list = DrmMoteur
+        valid_list = set_condition_list(EnginCableCondition)
       }
       
       if(test_choice.choice =="Secure Cablage"){
-        valid_list = SecureCableCondition.map((e)=>e.condition)
-        // valid_list_scnd = SecureCableCondition.map((e)=>e.cscnd)
+        valid_list = set_condition_list(SecureCableCondition)
       }
       
       valid_connection = `${connection.sourceHandle} ${connection.targetHandle}`
-      // valid_connection_scnd = `${connection.sourceHandle} ${connection.targetHandle}`
       var exist:boolean = valid_list.includes(valid_connection)
-      // var exist_inv:boolean = valid_list_scnd.includes(valid_connection_scnd)
 
       setMountEdge(valid_list.length)
 

@@ -1,0 +1,217 @@
+[
+    {
+        "condition":"left-top-dn left-center-1-sprt",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-center-top-dn right-center-1-sprt",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-top-dn right-1-sprt",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-top-dn left-up-cbr",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-center-top-dn right-up-cbr",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-up-2-lsi left-bottom-dn",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"left-center-up-2-lsi left-bottom-center-dn",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"right-center-up-2-lsi right-bottom-dn",
+        "validation":true,
+        "color":"green"
+    },
+    {
+        "condition":"left-up-thr left-down-lsi",
+        "validation":true,
+        "color":"yellow"
+    },
+    {
+        "condition":"center-up-thr left-center-down-lsi",
+        "validation":true,
+        "color":"yellow"
+    },
+    {
+        "condition":"right-up-thr right-center-down-lsi",
+        "validation":true,
+        "color":"yellow"
+    },
+    {
+        "condition":"left-center-2-sprt left-down-2-thr",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"right-center-2-sprt center-down-2-thr",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"right-2-sprt right-down-2-thr",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"left-2-sprt left-4-msckt",
+        "validation":true,
+        "color":"purple"
+    },
+    {
+        "condition":"left-bottom-cbr left-top-lci",
+        "validation":true,
+        "color":"brown"
+    },
+    {
+        "condition":"right-bottom-cbr right-top-lci",
+        "validation":true,
+        "color":"brown"
+    },
+    {
+        "condition":"left-1-msckt left-1-sprt",
+        "validation":true,
+        "color":"pink"
+    },
+    {
+        "condition":"left-3-msckt left-1-sckt",
+        "validation":true,
+        "color":"pink"
+    },
+    {
+        "condition":"left-2-msckt right-3-sckt",
+        "validation":true,
+        "color":"pink"
+    },
+    {
+        "condition":"left-bottom-lci left-5-msckt",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"left-bottom-lci center-bottom-lci",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"left-up-cbrn center-bottom-lci",
+        "validation":true,
+        "color":"black"
+    },
+    {
+        "condition":"right-up-1-lsi left-bottom-cbrn",
+        "validation":true,
+        "color":"black"
+    },
+    {
+        "condition":"left-6-sckt left-bottom-cbr",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-bottom-lci right-up-cbrn",
+        "validation":true,
+        "color":"orange"
+    },
+    {
+        "condition":"left-up-center-top-dn right-bottom-cbrn",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-center-down-1-thr right-bottom-cbrn",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-1-sckt left-bottom-down-center-dn",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-2-sckt right-center-down-1-thr",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-5-sckt left-down-1-thr",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-up-2-lsi left-3-sckt",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-4-sckt right-down-lsi",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-up-1-lsi right-down-lsi",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-2-sckt right-down-1-thr",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-6-sckt-d down-red1",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-1-sckt-d up-red3",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"right-2-sckt-d down-red3",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-2-sckt-d up-btn-red2",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"down-btn-red2 up-btn-green",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"down-btn-red2 left-3-sckt-d",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-4-sckt-d down-btn-green",
+        "validation":true,
+        "color":"blue"
+    },
+    {
+        "condition":"left-5-sckt-d up-red1",
+        "validation":true,
+        "color":"blue"
+    }
+]

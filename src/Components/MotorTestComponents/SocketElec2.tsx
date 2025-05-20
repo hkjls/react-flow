@@ -17,8 +17,6 @@ const SocketElecII=({
     const top_x : number = 0
     const top_y : number = -3
 
-    const {test_choice} = useTest()
-
     return(
         <Box>
             <SupportElecIcon height={130} width={350} />
@@ -133,10 +131,6 @@ const SocketElecII=({
                 id="right-3-sckt-d"
             />
 
-
-
-            {
-                test_choice.choice == "free" ? 
                 <>
                     <Terminal
                         style={{ left: 30 + 0* top_x, top: 27 + top_y}}
@@ -248,8 +242,7 @@ const SocketElecII=({
                         position={Position.Top}
                         id="right-3-sckt-d"
                     />
-                </> : ""
-            }
+                </> 
         </Box>
     )
 }
