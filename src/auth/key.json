@@ -1,12 +1,12 @@
 [
 	{
 		"name": "Mohammed",
-		"role": "Admin",
+		"role": "adminActemium",
 		"password": "act*123"
 	},
 	{
 		"name": "Joelas",
-		"role": "Admin",
+		"role": "adminNumerika",
 		"password": "act*123"
 	}
 ]

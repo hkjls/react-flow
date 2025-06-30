@@ -712,6 +712,20 @@ export const Workflow = () => {
       <MenuBar n={nodes} setN={setNodes}/>
       <UserGrade edgeConnected={edgeConnected} addEdgeConnected={addEdgeConnected}/>
       <Alert n={nodes} setN={setNodes}/>
+      <div
+        style={{
+          position:"absolute",
+          top:"200px",
+          left:"30px",
+          zIndex:"4000"
+        }}
+      >
+        Change Color
+        <input type="text" style={{
+          marginLeft:"10px"
+        }}
+        />
+      </div>
 
       {test_choice.choice == "free" ?
         <ReactFlow
